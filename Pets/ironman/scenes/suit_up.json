@@ -1,0 +1,43 @@
+{
+  "id": "suit_up",
+  "name": "Suit Up",
+  "tier": "rare",
+  "weight": 1.0,
+  "tags": [
+    "surprise",
+    "greeting"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "suit_up",
+      "duration": 3.6,
+      "effects": [
+        {
+          "type": "fade",
+          "mode": "in",
+          "duration": 0.4
+        }
+      ],
+      "speech": {
+        "pool": "suit",
+        "chance": 0.7
+      },
+      "sound": "blip"
+    },
+    {
+      "clip": "pose",
+      "duration": 1.1
+    },
+    {
+      "clip": "rise",
+      "duration": 1.4,
+      "motion": {
+        "type": "exit",
+        "to": "top_offscreen",
+        "curve": "easeIn"
+      }
+    }
+  ]
+}

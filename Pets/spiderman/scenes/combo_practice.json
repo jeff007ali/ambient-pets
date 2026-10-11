@@ -1,0 +1,67 @@
+{
+  "id": "combo_practice",
+  "name": "Combo Practice",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "sprint",
+      "duration": 1.0,
+      "motion": {
+        "type": "enter",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "skid",
+      "duration": 0.35
+    },
+    {
+      "clip": "jab",
+      "duration": 0.4
+    },
+    {
+      "clip": "punch",
+      "duration": 0.55
+    },
+    {
+      "clip": "kick",
+      "duration": 0.7
+    },
+    {
+      "clip": "flipkick",
+      "duration": 1.0
+    },
+    {
+      "clip": "idle",
+      "duration": 1.1,
+      "speech": {
+        "pool": "combo",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "jump",
+      "duration": 0.9,
+      "effects": [
+        {
+          "type": "tether_line",
+          "shoot": 0.08
+        }
+      ],
+      "motion": {
+        "type": "exit",
+        "to": "top_offscreen",
+        "curve": "easeIn"
+      },
+      "sound": "thwip"
+    }
+  ]
+}

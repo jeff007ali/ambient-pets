@@ -1,0 +1,66 @@
+{
+  "id": "glide_landing",
+  "name": "Glide Landing",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "greeting"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "glide2",
+      "duration": 1.6,
+      "motion": {
+        "type": "enter",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "offset": [
+          0,
+          120
+        ],
+        "curve": "easeOut"
+      },
+      "sound": "swish"
+    },
+    {
+      "clip": "drop",
+      "duration": 0.4,
+      "motion": {
+        "type": "drop"
+      }
+    },
+    {
+      "clip": "crouch",
+      "duration": 0.5,
+      "effects": [
+        "dust_puff",
+        "squash"
+      ],
+      "sound": "thud"
+    },
+    {
+      "clip": "brood",
+      "duration": 1.8,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "brood",
+        "chance": 0.4
+      }
+    },
+    {
+      "clip": "cape",
+      "duration": 0.6
+    },
+    {
+      "clip": "walk",
+      "duration": 2.2,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "curve": "linear"
+      }
+    }
+  ]
+}

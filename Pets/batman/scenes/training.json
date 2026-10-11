@@ -1,0 +1,60 @@
+{
+  "id": "training",
+  "name": "Training",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [],
+  "cooldownMinutes": 30,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "punch",
+      "duration": 0.45,
+      "facing": "toward_center"
+    },
+    {
+      "clip": "kick",
+      "duration": 0.45
+    },
+    {
+      "clip": "jumpkick",
+      "duration": 0.7,
+      "motion": {
+        "type": "hop",
+        "height": 26
+      }
+    },
+    {
+      "clip": "twirl",
+      "duration": 0.6,
+      "sound": "swish"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "fight",
+        "chance": 0.4
+      }
+    },
+    {
+      "clip": "walk",
+      "duration": 2.2,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "curve": "linear"
+      }
+    }
+  ]
+}

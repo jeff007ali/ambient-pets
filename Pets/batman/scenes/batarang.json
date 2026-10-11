@@ -1,0 +1,75 @@
+{
+  "id": "batarang",
+  "name": "Batarang",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "windup",
+      "duration": 0.35,
+      "facing": "toward_center"
+    },
+    {
+      "clip": "throw",
+      "duration": 1.0,
+      "effects": [
+        {
+          "type": "projectile",
+          "clip": "batarang",
+          "at": "hand",
+          "speed": 560,
+          "distance": 300
+        }
+      ],
+      "speech": {
+        "pool": "throw",
+        "chance": 0.25
+      },
+      "sound": "swish"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0
+    },
+    {
+      "clip": "grapple",
+      "duration": 0.5,
+      "effects": [
+        {
+          "type": "tether_line",
+          "at": "web"
+        }
+      ]
+    },
+    {
+      "clip": "jumpup",
+      "duration": 0.8,
+      "effects": [
+        {
+          "type": "tether_line",
+          "shoot": 0
+        }
+      ],
+      "motion": {
+        "type": "exit",
+        "to": "top_offscreen",
+        "curve": "easeIn"
+      }
+    }
+  ]
+}

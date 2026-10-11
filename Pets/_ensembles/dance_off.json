@@ -1,0 +1,159 @@
+{
+  "formatVersion": 1,
+  "id": "dance_off",
+  "name": "Dance-off",
+  "tier": "rare",
+  "weight": 1.0,
+  "cooldownMinutes": 120,
+  "roles": [
+    {
+      "id": "a",
+      "position": "left",
+      "steps": [
+        {
+          "clip": "walk",
+          "duration": 1.8,
+          "motion": {
+            "type": "moveTo",
+            "from": "side_offscreen",
+            "to": "anchor",
+            "curve": "linear"
+          }
+        },
+        {
+          "clip": "idle",
+          "duration": 0.5,
+          "facing": "partner",
+          "waitFor": "b:2"
+        },
+        {
+          "clip": "celebrate",
+          "duration": 0.8,
+          "motion": {
+            "type": "hop",
+            "height": 26
+          },
+          "speech": {
+            "text": "Your turn!"
+          }
+        },
+        {
+          "clip": "idle",
+          "duration": 0.9,
+          "facing": "partner"
+        },
+        {
+          "clip": "idle",
+          "duration": 0.45,
+          "motion": {
+            "type": "hop",
+            "height": 18
+          },
+          "facing": "partner",
+          "waitFor": "b:5"
+        },
+        {
+          "clip": "idle",
+          "duration": 0.45,
+          "motion": {
+            "type": "hop",
+            "height": 18
+          }
+        },
+        {
+          "clip": "celebrate",
+          "duration": 0.6,
+          "motion": {
+            "type": "hop",
+            "height": 28
+          }
+        },
+        {
+          "clip": "walk",
+          "duration": 1.8,
+          "motion": {
+            "type": "exit",
+            "to": "side_offscreen",
+            "curve": "linear"
+          },
+          "waitFor": "b:8"
+        }
+      ]
+    },
+    {
+      "id": "b",
+      "position": "right",
+      "steps": [
+        {
+          "clip": "walk",
+          "duration": 2.0,
+          "motion": {
+            "type": "moveTo",
+            "from": "side_offscreen",
+            "to": "anchor",
+            "curve": "linear"
+          }
+        },
+        {
+          "clip": "idle",
+          "duration": 0.5,
+          "facing": "partner",
+          "waitFor": "a:2"
+        },
+        {
+          "clip": "idle",
+          "duration": 0.8,
+          "facing": "partner",
+          "waitFor": "a:4"
+        },
+        {
+          "clip": "celebrate",
+          "duration": 0.8,
+          "motion": {
+            "type": "hop",
+            "height": 26
+          },
+          "speech": {
+            "text": "Ta-da!"
+          }
+        },
+        {
+          "clip": "idle",
+          "duration": 0.45,
+          "motion": {
+            "type": "hop",
+            "height": 18
+          },
+          "facing": "partner",
+          "waitFor": "a:5"
+        },
+        {
+          "clip": "idle",
+          "duration": 0.45,
+          "motion": {
+            "type": "hop",
+            "height": 18
+          }
+        },
+        {
+          "clip": "celebrate",
+          "duration": 0.6,
+          "motion": {
+            "type": "hop",
+            "height": 28
+          }
+        },
+        {
+          "clip": "walk",
+          "duration": 1.8,
+          "motion": {
+            "type": "exit",
+            "to": "side_offscreen",
+            "curve": "linear"
+          },
+          "waitFor": "a:8"
+        }
+      ]
+    }
+  ]
+}

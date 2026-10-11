@@ -1,0 +1,55 @@
+{
+  "id": "combo_drill",
+  "name": "Combo Drill",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [],
+  "cooldownMinutes": 30,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "glide",
+      "duration": 1.6,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "curve": "easeOut"
+      }
+    },
+    {
+      "clip": "jab",
+      "duration": 0.6,
+      "facing": "toward_center"
+    },
+    {
+      "clip": "punch",
+      "duration": 0.65
+    },
+    {
+      "clip": "uppercut",
+      "duration": 1.0
+    },
+    {
+      "clip": "finisher",
+      "duration": 1.1
+    },
+    {
+      "clip": "idle",
+      "duration": 0.8,
+      "speech": {
+        "pool": "praise",
+        "chance": 0.3
+      }
+    },
+    {
+      "clip": "rise",
+      "duration": 1.3,
+      "motion": {
+        "type": "exit",
+        "to": "top_offscreen",
+        "curve": "easeIn"
+      }
+    }
+  ]
+}

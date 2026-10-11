@@ -1,0 +1,49 @@
+{
+  "praise": [
+    "Good work.",
+    "Systems nominal.",
+    "Carry on.",
+    "Looking sharp.",
+    "Nice commit."
+  ],
+  "scan": [
+    "Scanning\u2026",
+    "No threats detected.",
+    "Code looks clean.",
+    "Diagnostics: green."
+  ],
+  "oops": [
+    "That was a test.",
+    "Totally intended.",
+    "Recalibrating\u2026",
+    "Nobody saw that."
+  ],
+  "peek": [
+    "\u2026",
+    "Just checking in."
+  ],
+  "idle_chat": [
+    "Stretching the legs.",
+    "Nice desktop."
+  ],
+  "yawn": [
+    "Five more minutes."
+  ],
+  "suit": [
+    "Let's go.",
+    "Suit's ready.",
+    "Systems online."
+  ],
+  "cannon": [
+    "Overkill? Never.",
+    "Proton cannon: online."
+  ],
+  "charge": [
+    "Charging\u2026",
+    "Hold still."
+  ],
+  "slam": [
+    "Landing: nailed it.",
+    "Oops. Dented the floor."
+  ]
+}

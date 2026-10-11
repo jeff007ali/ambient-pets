@@ -1,0 +1,312 @@
+{
+ "formatVersion": 1,
+ "clips": {
+  "idle": {
+   "frames": [
+    "idle_0",
+    "idle_1",
+    "idle_2",
+    "idle_3"
+   ],
+   "fps": 6,
+   "loop": true,
+   "points": {
+    "head": [
+     7,
+     86
+    ]
+   }
+  },
+  "walk": {
+   "frames": [
+    "walk_0",
+    "walk_1",
+    "walk_2",
+    "walk_3",
+    "walk_4",
+    "walk_5"
+   ],
+   "fps": 10,
+   "loop": true
+  },
+  "punch": {
+   "frames": [
+    "punch_0",
+    "punch_1",
+    "punch_2"
+   ],
+   "fps": 10,
+   "loop": false
+  },
+  "twirl": {
+   "frames": [
+    "twirl_0",
+    "twirl_1",
+    "twirl_2",
+    "twirl_3"
+   ],
+   "fps": 10,
+   "loop": false
+  },
+  "kick": {
+   "frames": [
+    "kick_0",
+    "kick_1"
+   ],
+   "fps": 8,
+   "loop": false
+  },
+  "jump": {
+   "frames": [
+    "jump_0",
+    "jump_1",
+    "jump_2",
+    "jump_3",
+    "jump_4"
+   ],
+   "fps": 10,
+   "loop": false
+  },
+  "flykick": {
+   "frames": [
+    "flykick_0",
+    "flykick_1"
+   ],
+   "fps": 8,
+   "loop": false
+  },
+  "jumpkick": {
+   "frames": [
+    "jumpkick_0",
+    "jumpkick_1",
+    "jumpkick_2",
+    "jumpkick_3"
+   ],
+   "fps": 10,
+   "loop": false
+  },
+  "glide": {
+   "frames": [
+    "glide_0"
+   ],
+   "fps": 1,
+   "loop": false,
+   "points": {
+    "head": [
+     60,
+     50
+    ]
+   }
+  },
+  "glide2": {
+   "frames": [
+    "glide2_0"
+   ],
+   "fps": 1,
+   "loop": false,
+   "points": {
+    "head": [
+     17,
+     85
+    ]
+   }
+  },
+  "windup": {
+   "frames": [
+    "windup_0",
+    "windup_1",
+    "windup_2"
+   ],
+   "fps": 12,
+   "loop": false
+  },
+  "throw": {
+   "frames": [
+    "throw_0"
+   ],
+   "fps": 1,
+   "loop": false,
+   "points": {
+    "hand": [
+     36,
+     58
+    ]
+   }
+  },
+  "batarang": {
+   "frames": [
+    "batarang_0",
+    "batarang_1",
+    "batarang_2",
+    "batarang_3"
+   ],
+   "fps": 16,
+   "loop": true
+  },
+  "hang": {
+   "frames": [
+    "ropekick_0",
+    "ropekick_1"
+   ],
+   "fps": 3,
+   "loop": true,
+   "points": {
+    "web": [
+     -4,
+     72
+    ]
+   }
+  },
+  "ropekick": {
+   "frames": [
+    "rope_0",
+    "rope_1",
+    "rope_2",
+    "rope_3"
+   ],
+   "fps": 8,
+   "loop": false
+  },
+  "land": {
+   "frames": [
+    "land_0"
+   ],
+   "fps": 1,
+   "loop": false
+  },
+  "brood": {
+   "frames": [
+    "brood_0",
+    "brood_1"
+   ],
+   "fps": 3,
+   "loop": true,
+   "points": {
+    "head": [
+     -3,
+     88
+    ]
+   }
+  },
+  "hit": {
+   "frames": [
+    "hit_0"
+   ],
+   "fps": 1,
+   "loop": false
+  },
+  "knockdown": {
+   "frames": [
+    "knockdown_0",
+    "knockdown_1",
+    "knockdown_2",
+    "knockdown_3"
+   ],
+   "fps": 8,
+   "loop": false
+  },
+  "cape": {
+   "frames": [
+    "cape_0",
+    "cape_1"
+   ],
+   "fps": 6,
+   "loop": false
+  },
+  "gun": {
+   "frames": [
+    "gun_0",
+    "gun_1",
+    "gun_2"
+   ],
+   "fps": 8,
+   "loop": false,
+   "points": {
+    "hand": [
+     54,
+     79
+    ]
+   }
+  },
+  "grapple": {
+   "frames": [
+    "grapple_0",
+    "grapple_1"
+   ],
+   "fps": 6,
+   "loop": false,
+   "points": {
+    "web": [
+     32,
+     104
+    ]
+   }
+  },
+  "pellet": {
+   "frames": [
+    "pellet_0",
+    "pellet_1",
+    "pellet_2"
+   ],
+   "fps": 8,
+   "loop": false
+  },
+  "jumpup": {
+   "frames": [
+    "jumpup_0",
+    "jumpup_1"
+   ],
+   "fps": 8,
+   "loop": false
+  },
+  "capeopen": {
+   "frames": [
+    "capeopen_0",
+    "capeopen_1",
+    "capeopen_2"
+   ],
+   "fps": 8,
+   "loop": false
+  },
+  "drop": {
+   "frames": [
+    "drop_0"
+   ],
+   "fps": 1,
+   "loop": false
+  },
+  "crouch": {
+   "frames": [
+    "crouch_0",
+    "crouch_1"
+   ],
+   "fps": 6,
+   "loop": false
+  },
+  "look": {
+   "fallback": "brood"
+  },
+  "sleep": {
+   "fallback": "brood"
+  },
+  "wings": {
+   "frames": [
+    "capeopen_2"
+   ],
+   "fps": 1,
+   "loop": false
+  },
+  "run": {
+   "fallback": "walk"
+  },
+  "celebrate": {
+   "fallback": "twirl"
+  },
+  "surprised": {
+   "fallback": "hit"
+  },
+  "attack": {
+   "fallback": "punch"
+  }
+ }
+}

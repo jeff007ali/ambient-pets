@@ -1,0 +1,888 @@
+{
+  "clips" : {
+    "apex" : {
+      "fps" : 12,
+      "frames" : [
+        "apex_0",
+        "apex_1",
+        "apex_2",
+        "apex_3",
+        "apex_4"
+      ],
+      "loop" : true
+    },
+    "beam" : {
+      "fps" : 12,
+      "frames" : [
+        "beam_0",
+        "beam_1",
+        "beam_2",
+        "beam_3",
+        "beam_4",
+        "beam_5",
+        "beam_6",
+        "beam_7"
+      ],
+      "loop" : true
+    },
+    "beam_end" : {
+      "fps" : 12,
+      "frames" : [
+        "beam_end_0",
+        "beam_end_1",
+        "beam_end_2",
+        "beam_end_3",
+        "beam_end_4",
+        "beam_end_5"
+      ],
+      "loop" : true
+    },
+    "beam_start" : {
+      "fps" : 12,
+      "frames" : [
+        "beam_start_0",
+        "beam_start_0",
+        "beam_start_0",
+        "beam_start_0",
+        "beam_start_0",
+        "beam_start_0",
+        "beam_start_0",
+        "beam_start_0",
+        "beam_start_0",
+        "beam_start_0",
+        "beam_start_0",
+        "beam_start_1",
+        "beam_start_2",
+        "beam_start_3",
+        "beam_start_4",
+        "beam_start_5",
+        "beam_start_6",
+        "beam_start_7",
+        "beam_start_8",
+        "beam_start_9",
+        "beam_start_10"
+      ],
+      "loop" : true
+    },
+    "block" : {
+      "fps" : 12,
+      "frames" : [
+        "block_0",
+        "block_1",
+        "block_2",
+        "block_3"
+      ],
+      "loop" : true
+    },
+    "bolt" : {
+      "fps" : 12,
+      "frames" : [
+        "bolt_0",
+        "bolt_1",
+        "bolt_2",
+        "bolt_3",
+        "bolt_4"
+      ],
+      "loop" : true
+    },
+    "bolt_hit" : {
+      "fps" : 12,
+      "frames" : [
+        "bolt_hit_0",
+        "bolt_hit_1",
+        "bolt_hit_2"
+      ],
+      "loop" : true
+    },
+    "charge" : {
+      "fps" : 12,
+      "frames" : [
+        "charge_0",
+        "charge_1",
+        "charge_2"
+      ],
+      "loop" : true
+    },
+    "charge_fire" : {
+      "fps" : 12,
+      "frames" : [
+        "charge_fire_0",
+        "charge_fire_1",
+        "charge_fire_2",
+        "charge_fire_3",
+        "charge_fire_4",
+        "charge_fire_5",
+        "charge_fire_6",
+        "charge_fire_7",
+        "charge_fire_8"
+      ],
+      "loop" : true
+    },
+    "charge_start" : {
+      "fps" : 12,
+      "frames" : [
+        "charge_start_0",
+        "charge_start_1"
+      ],
+      "loop" : true
+    },
+    "dash_punch" : {
+      "fps" : 12,
+      "frames" : [
+        "dash_punch_0",
+        "dash_punch_1",
+        "dash_punch_2",
+        "dash_punch_3",
+        "dash_punch_4",
+        "dash_punch_3",
+        "dash_punch_4",
+        "dash_punch_3",
+        "dash_punch_4",
+        "dash_punch_3",
+        "dash_punch_4",
+        "dash_punch_5",
+        "dash_punch_6",
+        "dash_punch_7",
+        "dash_punch_8"
+      ],
+      "loop" : true
+    },
+    "dive" : {
+      "fps" : 12,
+      "frames" : [
+        "dive_0",
+        "dive_1",
+        "dive_2",
+        "dive_3"
+      ],
+      "loop" : true
+    },
+    "dive_start" : {
+      "fps" : 12,
+      "frames" : [
+        "dive_start_0",
+        "dive_start_1",
+        "dive_start_0",
+        "dive_start_1",
+        "dive_start_0",
+        "dive_start_1",
+        "dive_start_2"
+      ],
+      "loop" : true
+    },
+    "fall" : {
+      "fps" : 12,
+      "frames" : [
+        "fall_0",
+        "fall_1"
+      ],
+      "loop" : true
+    },
+    "finisher" : {
+      "fps" : 12,
+      "frames" : [
+        "finisher_0",
+        "finisher_1",
+        "finisher_2",
+        "finisher_3",
+        "finisher_4",
+        "finisher_5",
+        "finisher_6",
+        "finisher_7",
+        "finisher_8",
+        "finisher_9",
+        "finisher_10",
+        "finisher_11",
+        "finisher_12",
+        "finisher_13",
+        "finisher_14"
+      ],
+      "loop" : true
+    },
+    "fly" : {
+      "fps" : 12,
+      "frames" : [
+        "fly_0",
+        "fly_1",
+        "fly_2",
+        "fly_3"
+      ],
+      "loop" : true
+    },
+    "fly_end" : {
+      "fps" : 12,
+      "frames" : [
+        "fly_end_0",
+        "fly_end_1",
+        "fly_end_2",
+        "fly_end_3",
+        "fly_end_4",
+        "fly_end_5",
+        "fly_end_6",
+        "fly_end_7"
+      ],
+      "loop" : true
+    },
+    "fly_start" : {
+      "fps" : 12,
+      "frames" : [
+        "fly_start_0",
+        "fly_start_1",
+        "fly_start_2"
+      ],
+      "loop" : true
+    },
+    "getup" : {
+      "fps" : 12,
+      "frames" : [
+        "getup_0",
+        "getup_1",
+        "getup_2",
+        "getup_3",
+        "getup_4",
+        "getup_5",
+        "getup_6",
+        "getup_7",
+        "getup_8",
+        "getup_9"
+      ],
+      "loop" : true
+    },
+    "glide" : {
+      "fps" : 12,
+      "frames" : [
+        "glide_0",
+        "glide_1",
+        "glide_2",
+        "glide_3"
+      ],
+      "loop" : true
+    },
+    "glide_end" : {
+      "fps" : 12,
+      "frames" : [
+        "glide_end_0",
+        "glide_end_1",
+        "glide_end_2",
+        "glide_end_3",
+        "glide_end_4",
+        "glide_end_5"
+      ],
+      "loop" : true
+    },
+    "glide_start" : {
+      "fps" : 12,
+      "frames" : [
+        "glide_start_0",
+        "glide_start_1",
+        "glide_start_2",
+        "glide_start_3",
+        "glide_start_4",
+        "glide_start_5"
+      ],
+      "loop" : true
+    },
+    "hit" : {
+      "fps" : 12,
+      "frames" : [
+        "hit_0",
+        "hit_1"
+      ],
+      "loop" : true
+    },
+    "idle" : {
+      "fps" : 12,
+      "frames" : [
+        "idle_0",
+        "idle_1",
+        "idle_2",
+        "idle_3",
+        "idle_4",
+        "idle_5",
+        "idle_6",
+        "idle_7",
+        "idle_8",
+        "idle_9",
+        "idle_10",
+        "idle_11",
+        "idle_12",
+        "idle_13",
+        "idle_14",
+        "idle_15",
+        "idle_16",
+        "idle_13",
+        "idle_14",
+        "idle_15",
+        "idle_16",
+        "idle_13",
+        "idle_14",
+        "idle_15",
+        "idle_16",
+        "idle_13",
+        "idle_14",
+        "idle_15",
+        "idle_17",
+        "idle_18",
+        "idle_19",
+        "idle_20",
+        "idle_21",
+        "idle_22",
+        "idle_23",
+        "idle_24",
+        "idle_25",
+        "idle_26",
+        "idle_27",
+        "idle_28",
+        "idle_29",
+        "idle_30",
+        "idle_27",
+        "idle_28",
+        "idle_29",
+        "idle_30"
+      ],
+      "loop" : true
+    },
+    "jab" : {
+      "fps" : 12,
+      "frames" : [
+        "jab_0",
+        "jab_1",
+        "jab_2",
+        "jab_3",
+        "jab_4",
+        "jab_5",
+        "jab_6",
+        "jab_7"
+      ],
+      "loop" : true
+    },
+    "knockdown" : {
+      "fps" : 12,
+      "frames" : [
+        "knockdown_0",
+        "knockdown_1",
+        "knockdown_2",
+        "knockdown_3",
+        "knockdown_4",
+        "knockdown_5",
+        "knockdown_6",
+        "knockdown_7",
+        "knockdown_8",
+        "knockdown_9",
+        "knockdown_10",
+        "knockdown_11",
+        "knockdown_12",
+        "knockdown_13"
+      ],
+      "loop" : true
+    },
+    "land" : {
+      "fps" : 12,
+      "frames" : [
+        "land_0",
+        "land_1",
+        "land_2",
+        "land_3",
+        "land_4",
+        "land_5",
+        "land_6",
+        "land_7"
+      ],
+      "loop" : true
+    },
+    "orb" : {
+      "fps" : 12,
+      "frames" : [
+        "orb_0",
+        "orb_1",
+        "orb_2",
+        "orb_3",
+        "orb_4",
+        "orb_5",
+        "orb_6",
+        "orb_7",
+        "orb_8",
+        "orb_9",
+        "orb_10",
+        "orb_11",
+        "orb_12",
+        "orb_13",
+        "orb_14",
+        "orb_15",
+        "orb_16",
+        "orb_17",
+        "orb_18",
+        "orb_19",
+        "orb_20",
+        "orb_21",
+        "orb_22",
+        "orb_23",
+        "orb_24",
+        "orb_25",
+        "orb_26",
+        "orb_27",
+        "orb_28",
+        "orb_29",
+        "orb_30",
+        "orb_31",
+        "orb_32",
+        "orb_33",
+        "orb_34",
+        "orb_35",
+        "orb_36",
+        "orb_37",
+        "orb_38",
+        "orb_39",
+        "orb_40",
+        "orb_41",
+        "orb_42",
+        "orb_43",
+        "orb_44",
+        "orb_45",
+        "orb_46",
+        "orb_47"
+      ],
+      "loop" : true
+    },
+    "orb_end" : {
+      "fps" : 12,
+      "frames" : [
+        "orb_end_0",
+        "orb_end_1",
+        "orb_end_2",
+        "orb_end_3",
+        "orb_end_4",
+        "orb_end_5"
+      ],
+      "loop" : true
+    },
+    "orb_start" : {
+      "fps" : 12,
+      "frames" : [
+        "orb_start_0",
+        "orb_start_1",
+        "orb_start_2",
+        "orb_start_3",
+        "orb_start_4",
+        "orb_start_5",
+        "orb_start_6",
+        "orb_start_7",
+        "orb_start_8",
+        "orb_start_9",
+        "orb_start_10",
+        "orb_start_11",
+        "orb_start_12"
+      ],
+      "loop" : true
+    },
+    "parry" : {
+      "fps" : 12,
+      "frames" : [
+        "parry_0",
+        "parry_1",
+        "parry_2",
+        "parry_3",
+        "parry_4",
+        "parry_5",
+        "parry_6",
+        "parry_7",
+        "parry_8",
+        "parry_9",
+        "parry_10",
+        "parry_11",
+        "parry_12",
+        "parry_13"
+      ],
+      "loop" : true
+    },
+    "pose" : {
+      "fps" : 12,
+      "frames" : [
+        "pose_0",
+        "pose_1",
+        "pose_2",
+        "pose_3",
+        "pose_4",
+        "pose_5",
+        "pose_6",
+        "pose_7",
+        "pose_8",
+        "pose_9",
+        "pose_10",
+        "pose_11",
+        "pose_12",
+        "pose_13",
+        "pose_14",
+        "pose_15",
+        "pose_16",
+        "pose_17",
+        "pose_18",
+        "pose_19",
+        "pose_20",
+        "pose_21",
+        "pose_22",
+        "pose_23",
+        "pose_24",
+        "pose_25",
+        "pose_26"
+      ],
+      "loop" : true
+    },
+    "punch" : {
+      "fps" : 12,
+      "frames" : [
+        "punch_0",
+        "punch_1",
+        "punch_2",
+        "punch_3",
+        "punch_4",
+        "punch_3",
+        "punch_4",
+        "punch_5",
+        "punch_6"
+      ],
+      "loop" : true
+    },
+    "rainbow_in" : {
+      "fps" : 12,
+      "frames" : [
+        "rainbow_in_0",
+        "rainbow_in_1",
+        "rainbow_in_2",
+        "rainbow_in_3",
+        "rainbow_in_4",
+        "rainbow_in_5",
+        "rainbow_in_6",
+        "rainbow_in_7",
+        "rainbow_in_8",
+        "rainbow_in_9",
+        "rainbow_in_10",
+        "rainbow_in_11",
+        "rainbow_in_12",
+        "rainbow_in_13",
+        "rainbow_in_14",
+        "rainbow_in_15",
+        "rainbow_in_16",
+        "rainbow_in_17",
+        "rainbow_in_18",
+        "rainbow_in_19",
+        "rainbow_in_20",
+        "rainbow_in_21",
+        "rainbow_in_22",
+        "rainbow_in_23",
+        "rainbow_in_24",
+        "rainbow_in_25",
+        "rainbow_in_26",
+        "rainbow_in_27",
+        "rainbow_in_28",
+        "rainbow_in_29",
+        "rainbow_in_30",
+        "rainbow_in_31",
+        "rainbow_in_32",
+        "rainbow_in_33",
+        "rainbow_in_34",
+        "rainbow_in_35"
+      ],
+      "loop" : true
+    },
+    "rainbow_out" : {
+      "fps" : 12,
+      "frames" : [
+        "rainbow_out_0",
+        "rainbow_out_1",
+        "rainbow_out_2",
+        "rainbow_out_3",
+        "rainbow_out_4",
+        "rainbow_out_5",
+        "rainbow_out_6",
+        "rainbow_out_7",
+        "rainbow_out_8",
+        "rainbow_out_9",
+        "rainbow_out_10",
+        "rainbow_out_11",
+        "rainbow_out_12",
+        "rainbow_out_13",
+        "rainbow_out_14",
+        "rainbow_out_15",
+        "rainbow_out_16",
+        "rainbow_out_17",
+        "rainbow_out_18",
+        "rainbow_out_19",
+        "rainbow_out_20",
+        "rainbow_out_21",
+        "rainbow_out_22",
+        "rainbow_out_23",
+        "rainbow_out_24",
+        "rainbow_out_25",
+        "rainbow_out_26",
+        "rainbow_out_27",
+        "rainbow_out_28",
+        "rainbow_out_29",
+        "rainbow_out_30",
+        "rainbow_out_31",
+        "rainbow_out_32",
+        "rainbow_out_33",
+        "rainbow_out_34",
+        "rainbow_out_35"
+      ],
+      "loop" : true
+    },
+    "rise" : {
+      "fps" : 12,
+      "frames" : [
+        "rise_0",
+        "rise_1",
+        "rise_2",
+        "rise_3"
+      ],
+      "loop" : true
+    },
+    "shockwave" : {
+      "fps" : 12,
+      "frames" : [
+        "shockwave_0",
+        "shockwave_1",
+        "shockwave_2",
+        "shockwave_3",
+        "shockwave_4",
+        "shockwave_5",
+        "shockwave_6",
+        "shockwave_7",
+        "shockwave_8",
+        "shockwave_9",
+        "shockwave_10",
+        "shockwave_11",
+        "shockwave_12",
+        "shockwave_13",
+        "shockwave_14"
+      ],
+      "loop" : true
+    },
+    "shoot" : {
+      "fps" : 12,
+      "frames" : [
+        "shoot_0",
+        "shoot_1",
+        "shoot_2",
+        "shoot_3",
+        "shoot_4",
+        "shoot_5",
+        "shoot_6",
+        "shoot_5",
+        "shoot_6"
+      ],
+      "loop" : true
+    },
+    "shoot_end" : {
+      "fps" : 12,
+      "frames" : [
+        "shoot_end_0",
+        "shoot_end_1",
+        "shoot_end_2"
+      ],
+      "loop" : true
+    },
+    "shoot_start" : {
+      "fps" : 12,
+      "frames" : [
+        "shoot_start_0",
+        "shoot_start_1",
+        "shoot_start_2",
+        "shoot_start_3",
+        "shoot_start_4",
+        "shoot_start_5"
+      ],
+      "loop" : true
+    },
+    "slam" : {
+      "fps" : 12,
+      "frames" : [
+        "slam_0",
+        "slam_1",
+        "slam_1",
+        "slam_0",
+        "slam_2",
+        "slam_3",
+        "slam_4",
+        "slam_5",
+        "slam_6",
+        "slam_7"
+      ],
+      "loop" : true
+    },
+    "suit_up" : {
+      "fps" : 12,
+      "frames" : [
+        "suit_up_0",
+        "suit_up_1",
+        "suit_up_2",
+        "suit_up_3",
+        "suit_up_4",
+        "suit_up_5",
+        "suit_up_6",
+        "suit_up_7",
+        "suit_up_8",
+        "suit_up_9",
+        "suit_up_10",
+        "suit_up_11",
+        "suit_up_12",
+        "suit_up_13",
+        "suit_up_14",
+        "suit_up_15",
+        "suit_up_16",
+        "suit_up_17",
+        "suit_up_18",
+        "suit_up_19",
+        "suit_up_20",
+        "suit_up_21",
+        "suit_up_22",
+        "suit_up_23",
+        "suit_up_24",
+        "suit_up_25",
+        "suit_up_26",
+        "suit_up_27",
+        "suit_up_28",
+        "suit_up_29",
+        "suit_up_30",
+        "suit_up_31",
+        "suit_up_32",
+        "suit_up_33",
+        "suit_up_34",
+        "suit_up_35",
+        "suit_up_36",
+        "suit_up_37",
+        "suit_up_38",
+        "suit_up_39",
+        "suit_up_40",
+        "suit_up_41",
+        "suit_up_42",
+        "suit_up_43",
+        "suit_up_20",
+        "suit_up_21",
+        "suit_up_22",
+        "suit_up_23",
+        "suit_up_24",
+        "suit_up_25",
+        "suit_up_26",
+        "suit_up_27",
+        "suit_up_28",
+        "suit_up_29",
+        "suit_up_30",
+        "suit_up_31",
+        "suit_up_32",
+        "suit_up_33",
+        "suit_up_34",
+        "suit_up_35",
+        "suit_up_36",
+        "suit_up_37",
+        "suit_up_38",
+        "suit_up_39",
+        "suit_up_40",
+        "suit_up_41",
+        "suit_up_42",
+        "suit_up_43",
+        "suit_up_20",
+        "suit_up_21",
+        "suit_up_22",
+        "suit_up_23",
+        "suit_up_24",
+        "suit_up_25",
+        "suit_up_26",
+        "suit_up_27",
+        "suit_up_28",
+        "suit_up_29",
+        "suit_up_30",
+        "suit_up_44",
+        "suit_up_45",
+        "suit_up_46",
+        "suit_up_47",
+        "suit_up_48",
+        "suit_up_49",
+        "suit_up_50",
+        "suit_up_51",
+        "suit_up_51",
+        "suit_up_52",
+        "suit_up_53"
+      ],
+      "loop" : true
+    },
+    "uni" : {
+      "fps" : 12,
+      "frames" : [
+        "uni_0",
+        "uni_1",
+        "uni_2",
+        "uni_3",
+        "uni_4",
+        "uni_5"
+      ],
+      "loop" : true
+    },
+    "uni_end" : {
+      "fps" : 12,
+      "frames" : [
+        "uni_end_0",
+        "uni_end_1",
+        "uni_end_2",
+        "uni_end_3",
+        "uni_end_2",
+        "uni_end_3",
+        "uni_end_4",
+        "uni_end_5",
+        "uni_end_6",
+        "uni_end_7",
+        "uni_end_8",
+        "uni_end_9",
+        "uni_end_10"
+      ],
+      "loop" : true
+    },
+    "uni_start" : {
+      "fps" : 12,
+      "frames" : [
+        "uni_start_0",
+        "uni_start_1",
+        "uni_start_2",
+        "uni_start_3",
+        "uni_start_4",
+        "uni_start_5",
+        "uni_start_6",
+        "uni_start_7",
+        "uni_start_8",
+        "uni_start_9",
+        "uni_start_10",
+        "uni_start_11",
+        "uni_start_10",
+        "uni_start_11",
+        "uni_start_10",
+        "uni_start_11",
+        "uni_start_10",
+        "uni_start_11",
+        "uni_start_10",
+        "uni_start_11",
+        "uni_start_10"
+      ],
+      "loop" : true
+    },
+    "uppercut" : {
+      "fps" : 12,
+      "frames" : [
+        "uppercut_0",
+        "uppercut_1",
+        "uppercut_2",
+        "uppercut_3",
+        "uppercut_4",
+        "uppercut_5",
+        "uppercut_6",
+        "uppercut_5",
+        "uppercut_6",
+        "uppercut_5",
+        "uppercut_7",
+        "uppercut_8",
+        "uppercut_9",
+        "uppercut_10"
+      ],
+      "loop" : true
+    }
+  }
+}

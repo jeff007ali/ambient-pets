@@ -1,0 +1,51 @@
+{
+  "id": "vanish",
+  "name": "Smoke Vanish",
+  "tier": "rare",
+  "weight": 1.0,
+  "tags": [
+    "surprise"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "brood",
+      "duration": 0.9,
+      "effects": [
+        {
+          "type": "fade",
+          "mode": "in"
+        }
+      ]
+    },
+    {
+      "clip": "brood",
+      "duration": 1.4,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "brood",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "pellet",
+      "duration": 0.6
+    },
+    {
+      "clip": "pellet",
+      "duration": 0.7,
+      "effects": [
+        "dust_puff",
+        {
+          "type": "fade",
+          "mode": "out"
+        }
+      ],
+      "speech": {
+        "pool": "vanish",
+        "chance": 0.4
+      }
+    }
+  ]
+}

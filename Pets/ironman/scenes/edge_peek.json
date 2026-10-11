@@ -1,0 +1,43 @@
+{
+  "id": "edge_peek",
+  "name": "Edge Peek",
+  "tier": "quick",
+  "weight": 1.2,
+  "tags": [
+    "surprise"
+  ],
+  "cooldownMinutes": 10,
+  "region": "side_edge",
+  "steps": [
+    {
+      "clip": "glide",
+      "duration": 0.9,
+      "facing": "toward_center",
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "curve": "easeOut"
+      }
+    },
+    {
+      "clip": "idle",
+      "duration": 1.6,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "peek",
+        "chance": 0.25
+      }
+    },
+    {
+      "clip": "glide",
+      "duration": 0.7,
+      "facing": "keep",
+      "motion": {
+        "type": "moveTo",
+        "to": "side_offscreen",
+        "curve": "easeIn"
+      }
+    }
+  ]
+}

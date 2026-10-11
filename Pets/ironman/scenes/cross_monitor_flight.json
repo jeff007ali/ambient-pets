@@ -1,0 +1,56 @@
+{
+  "id": "cross_monitor_flight",
+  "name": "Cross-Monitor Flight",
+  "tier": "elaborate",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 60,
+  "region": "air",
+  "steps": [
+    {
+      "clip": "fly",
+      "duration": 1.3,
+      "sound": "whoosh",
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "curve": "easeOut"
+      }
+    },
+    {
+      "clip": "fly_end",
+      "duration": 0.5
+    },
+    {
+      "clip": "idle",
+      "duration": 0.9,
+      "motion": {
+        "type": "hover",
+        "amplitude": 3
+      },
+      "speech": {
+        "pool": "scan",
+        "chance": 0.25
+      }
+    },
+    {
+      "clip": "fly_start",
+      "duration": 0.25
+    },
+    {
+      "clip": "fly",
+      "duration": 5.0,
+      "sound": "whoosh",
+      "motion": {
+        "type": "cross_display",
+        "curve": "easeIn"
+      }
+    }
+  ],
+  "requires": {
+    "minDisplays": 2
+  }
+}

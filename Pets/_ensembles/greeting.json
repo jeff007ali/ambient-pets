@@ -1,0 +1,108 @@
+{
+  "formatVersion": 1,
+  "id": "greeting",
+  "name": "Greeting",
+  "tier": "funny",
+  "weight": 1.3,
+  "cooldownMinutes": 30,
+  "roles": [
+    {
+      "id": "a",
+      "position": "left",
+      "steps": [
+        {
+          "clip": "walk",
+          "duration": 1.8,
+          "motion": {
+            "type": "moveTo",
+            "from": "side_offscreen",
+            "to": "anchor",
+            "curve": "linear"
+          }
+        },
+        {
+          "clip": "idle",
+          "duration": 0.8,
+          "facing": "partner",
+          "waitFor": "b:2"
+        },
+        {
+          "clip": "celebrate",
+          "duration": 0.8,
+          "motion": {
+            "type": "hop",
+            "height": 24
+          },
+          "facing": "partner",
+          "speech": {
+            "text": "Hey!"
+          }
+        },
+        {
+          "clip": "idle",
+          "duration": 1.4,
+          "facing": "partner"
+        },
+        {
+          "clip": "walk",
+          "duration": 2.0,
+          "motion": {
+            "type": "exit",
+            "to": "side_offscreen",
+            "curve": "linear"
+          },
+          "waitFor": "b:5"
+        }
+      ]
+    },
+    {
+      "id": "b",
+      "position": "right",
+      "steps": [
+        {
+          "clip": "walk",
+          "duration": 2.0,
+          "motion": {
+            "type": "moveTo",
+            "from": "side_offscreen",
+            "to": "anchor",
+            "curve": "linear"
+          }
+        },
+        {
+          "clip": "idle",
+          "duration": 0.6,
+          "facing": "partner",
+          "waitFor": "a:2"
+        },
+        {
+          "clip": "idle",
+          "duration": 0.7,
+          "facing": "partner",
+          "waitFor": "a:4"
+        },
+        {
+          "clip": "celebrate",
+          "duration": 0.8,
+          "motion": {
+            "type": "hop",
+            "height": 24
+          },
+          "facing": "partner",
+          "speech": {
+            "text": "Oh hi!"
+          }
+        },
+        {
+          "clip": "walk",
+          "duration": 2.0,
+          "motion": {
+            "type": "exit",
+            "to": "side_offscreen",
+            "curve": "linear"
+          }
+        }
+      ]
+    }
+  ]
+}

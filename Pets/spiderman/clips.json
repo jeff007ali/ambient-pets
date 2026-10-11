@@ -1,0 +1,576 @@
+{
+ "formatVersion": 1,
+ "clips": {
+  "idle": {
+   "frames": [
+    "idle_0",
+    "idle_1",
+    "idle_2",
+    "idle_3",
+    "idle_4",
+    "idle_5",
+    "idle_6",
+    "idle_7"
+   ],
+   "fps": 10,
+   "points": {
+    "head": [
+     -19,
+     64
+    ]
+   }
+  },
+  "walk": {
+   "frames": [
+    "walk_0",
+    "walk_1",
+    "walk_2",
+    "walk_3",
+    "walk_4",
+    "walk_5",
+    "walk_6",
+    "walk_7"
+   ],
+   "fps": 12
+  },
+  "sprint": {
+   "frames": [
+    "sprint_0",
+    "sprint_1",
+    "sprint_2",
+    "sprint_3",
+    "sprint_4",
+    "sprint_5",
+    "sprint_6",
+    "sprint_7"
+   ],
+   "fps": 14
+  },
+  "jump": {
+   "frames": [
+    "jump_0"
+   ],
+   "fps": 1,
+   "loop": false,
+   "points": {
+    "web": [
+     -6,
+     100
+    ]
+   }
+  },
+  "apex": {
+   "frames": [
+    "apex_0",
+    "apex_1",
+    "apex_2",
+    "apex_3",
+    "apex_4"
+   ],
+   "fps": 12,
+   "loop": false
+  },
+  "fall": {
+   "frames": [
+    "fall_0"
+   ],
+   "fps": 1,
+   "loop": false
+  },
+  "land": {
+   "frames": [
+    "land_0",
+    "land_1",
+    "land_2",
+    "land_3"
+   ],
+   "fps": 12,
+   "loop": false
+  },
+  "swing": {
+   "frames": [
+    "swing_0"
+   ],
+   "fps": 1,
+   "loop": false,
+   "points": {
+    "web": [
+     -24,
+     78
+    ]
+   }
+  },
+  "hang": {
+   "frames": [
+    "hang_0",
+    "hang_1",
+    "hang_2",
+    "hang_3",
+    "hang_4",
+    "hang_5",
+    "hang_6",
+    "hang_7",
+    "hang_8",
+    "hang_9",
+    "hang_10",
+    "hang_11"
+   ],
+   "fps": 8,
+   "points": {
+    "web": [
+     -2,
+     95
+    ],
+    "head": [
+     -2,
+     40
+    ]
+   }
+  },
+  "sense": {
+   "frames": [
+    "sense_0",
+    "sense_1"
+   ],
+   "fps": 8,
+   "points": {
+    "head": [
+     0,
+     84
+    ]
+   }
+  },
+  "hit": {
+   "frames": [
+    "hit_0",
+    "hit_1"
+   ],
+   "fps": 8
+  },
+  "dodge": {
+   "frames": [
+    "dodge_0",
+    "dodge_1",
+    "dodge_2",
+    "dodge_3",
+    "dodge_4",
+    "dodge_5",
+    "dodge_6",
+    "dodge_7",
+    "dodge_8",
+    "dodge_9",
+    "dodge_10",
+    "dodge_11"
+   ],
+   "fps": 14,
+   "loop": false
+  },
+  "look": {
+   "fallback": "idle"
+  },
+  "sleep": {
+   "fallback": "idle"
+  },
+  "skid": {
+   "frames": [
+    "skid_0",
+    "skid_1",
+    "skid_2",
+    "skid_3"
+   ],
+   "fps": 14,
+   "loop": false
+  },
+  "jab": {
+   "frames": [
+    "a1_0",
+    "a1_1",
+    "a1_2",
+    "a1_2",
+    "a1_3"
+   ],
+   "fps": 14,
+   "loop": false
+  },
+  "punch": {
+   "frames": [
+    "a2_0",
+    "a2_1",
+    "a2_2",
+    "a2_3",
+    "a2_4",
+    "a2_5",
+    "a2_6"
+   ],
+   "fps": 14,
+   "loop": false
+  },
+  "kick": {
+   "frames": [
+    "a3_0",
+    "a3_1",
+    "a3_2",
+    "a3_3",
+    "a3_4",
+    "a3_5",
+    "a3_6",
+    "a3_7",
+    "a3_8"
+   ],
+   "fps": 14,
+   "loop": false
+  },
+  "flipkick": {
+   "frames": [
+    "a4_0",
+    "a4_1",
+    "a4_2",
+    "a4_3",
+    "a4_4",
+    "a4_5",
+    "a4_6",
+    "a4_7",
+    "a4_8",
+    "a4_9",
+    "a4_10",
+    "a4_11",
+    "a4_12"
+   ],
+   "fps": 14,
+   "loop": false
+  },
+  "divekick": {
+   "frames": [
+    "divekick_0",
+    "divekick_1",
+    "divekick_2",
+    "divekick_3",
+    "divekick_4"
+   ],
+   "fps": 12,
+   "loop": false
+  },
+  "charge": {
+   "frames": [
+    "charge_0",
+    "charge_1",
+    "charge_2",
+    "charge_3",
+    "charge_4"
+   ],
+   "fps": 10,
+   "loop": true
+  },
+  "chargekick": {
+   "frames": [
+    "chargekick_0",
+    "chargekick_1",
+    "chargekick_2",
+    "chargekick_3",
+    "chargekick_4"
+   ],
+   "fps": 12,
+   "loop": false
+  },
+  "swingkick": {
+   "frames": [
+    "swingkick_0",
+    "swingkick_1",
+    "swingkick_2",
+    "swingkick_3",
+    "swingkick_4",
+    "swingkick_5",
+    "swingkick_6",
+    "swingkick_7",
+    "swingkick_4",
+    "swingkick_5",
+    "swingkick_6",
+    "swingkick_7",
+    "swingkick_4",
+    "swingkick_5",
+    "swingkick_6",
+    "swingkick_7",
+    "swingkick_4",
+    "swingkick_5",
+    "swingkick_6",
+    "swingkick_7",
+    "swingkick_4",
+    "swingkick_5",
+    "swingkick_6",
+    "swingkick_7",
+    "swingkick_4",
+    "swingkick_5",
+    "swingkick_6",
+    "swingkick_7"
+   ],
+   "fps": 16,
+   "loop": true,
+   "points": {
+    "web": [
+     -20,
+     80
+    ]
+   }
+  },
+  "webshot": {
+   "frames": [
+    "webshot_0",
+    "webshot_1",
+    "webshot_2",
+    "webshot_3",
+    "webshot_4",
+    "webshot_4",
+    "webshot_5",
+    "webshot_6",
+    "webshot_7"
+   ],
+   "fps": 14,
+   "loop": false,
+   "points": {
+    "hand": [
+     40,
+     35
+    ]
+   }
+  },
+  "webshot2": {
+   "frames": [
+    "webshot2_0",
+    "webshot2_1",
+    "webshot2_2",
+    "webshot2_2",
+    "webshot2_3",
+    "webshot2_4",
+    "webshot2_5"
+   ],
+   "fps": 14,
+   "loop": false,
+   "points": {
+    "hand": [
+     40,
+     37
+    ]
+   }
+  },
+  "airshot": {
+   "frames": [
+    "airshot_0",
+    "airshot_1",
+    "airshot_2",
+    "airshot_3",
+    "airshot_4",
+    "airshot_4",
+    "airshot_5",
+    "airshot_6",
+    "airshot_7"
+   ],
+   "fps": 14,
+   "loop": false,
+   "points": {
+    "hand": [
+     40,
+     62
+    ]
+   }
+  },
+  "special": {
+   "frames": [
+    "special_0",
+    "special_1",
+    "special_2",
+    "special_3",
+    "special_4",
+    "special_5",
+    "special_6",
+    "special_7",
+    "special_8",
+    "special_9",
+    "special_10",
+    "special_11"
+   ],
+   "fps": 14,
+   "loop": false
+  },
+  "rainbow_in": {
+   "frames": [
+    "rainbow_in_0",
+    "rainbow_in_1",
+    "rainbow_in_2",
+    "rainbow_in_3",
+    "rainbow_in_4",
+    "rainbow_in_5",
+    "rainbow_in_6",
+    "rainbow_in_7",
+    "rainbow_in_8",
+    "rainbow_in_9",
+    "rainbow_in_10",
+    "rainbow_in_11",
+    "rainbow_in_12",
+    "rainbow_in_13",
+    "rainbow_in_14",
+    "rainbow_in_15",
+    "rainbow_in_16",
+    "rainbow_in_17",
+    "rainbow_in_18",
+    "rainbow_in_19",
+    "rainbow_in_20",
+    "rainbow_in_21",
+    "rainbow_in_22",
+    "rainbow_in_23",
+    "rainbow_in_24",
+    "rainbow_in_25",
+    "rainbow_in_26",
+    "rainbow_in_27",
+    "rainbow_in_28",
+    "rainbow_in_29",
+    "rainbow_in_30",
+    "rainbow_in_31",
+    "rainbow_in_32",
+    "rainbow_in_33",
+    "rainbow_in_34",
+    "rainbow_in_35"
+   ],
+   "fps": 24,
+   "loop": false
+  },
+  "rainbow_out": {
+   "frames": [
+    "rainbow_out_0",
+    "rainbow_out_1",
+    "rainbow_out_2",
+    "rainbow_out_3",
+    "rainbow_out_4",
+    "rainbow_out_5",
+    "rainbow_out_6",
+    "rainbow_out_7",
+    "rainbow_out_8",
+    "rainbow_out_9",
+    "rainbow_out_10",
+    "rainbow_out_11",
+    "rainbow_out_12",
+    "rainbow_out_13",
+    "rainbow_out_14",
+    "rainbow_out_15",
+    "rainbow_out_16",
+    "rainbow_out_17",
+    "rainbow_out_18",
+    "rainbow_out_19",
+    "rainbow_out_20",
+    "rainbow_out_21",
+    "rainbow_out_22",
+    "rainbow_out_23",
+    "rainbow_out_24",
+    "rainbow_out_25",
+    "rainbow_out_26",
+    "rainbow_out_27",
+    "rainbow_out_28",
+    "rainbow_out_29",
+    "rainbow_out_30",
+    "rainbow_out_31",
+    "rainbow_out_32",
+    "rainbow_out_33",
+    "rainbow_out_34",
+    "rainbow_out_35"
+   ],
+   "fps": 24,
+   "loop": false
+  },
+  "knockdown": {
+   "frames": [
+    "knockdown_0",
+    "knockdown_1",
+    "knockdown_2",
+    "knockdown_3",
+    "knockdown_4",
+    "knockdown_5",
+    "knockdown_6",
+    "knockdown_7",
+    "knockdown_8",
+    "knockdown_9",
+    "knockdown_10",
+    "knockdown_11",
+    "knockdown_12",
+    "knockdown_13",
+    "knockdown_14"
+   ],
+   "fps": 12,
+   "loop": false
+  },
+  "getup": {
+   "frames": [
+    "getup_0",
+    "getup_1",
+    "getup_2",
+    "getup_3",
+    "getup_4",
+    "getup_5"
+   ],
+   "fps": 12,
+   "loop": false
+  },
+  "webball": {
+   "frames": [
+    "webball_0",
+    "webball_1",
+    "webball_2",
+    "webball_3",
+    "webball_4",
+    "webball_5"
+   ],
+   "fps": 14,
+   "loop": true
+  },
+  "websplat": {
+   "frames": [
+    "websplat_0",
+    "websplat_1",
+    "websplat_2",
+    "websplat_3",
+    "websplat_4",
+    "websplat_5",
+    "websplat_6",
+    "websplat_7",
+    "websplat_8"
+   ],
+   "fps": 18,
+   "loop": false
+  },
+  "bigweb": {
+   "frames": [
+    "bigweb_0",
+    "bigweb_1",
+    "bigweb_2",
+    "bigweb_3"
+   ],
+   "fps": 12,
+   "loop": true
+  },
+  "bigsplat": {
+   "frames": [
+    "bigsplat_0",
+    "bigsplat_1",
+    "bigsplat_2",
+    "bigsplat_3",
+    "bigsplat_4",
+    "bigsplat_5",
+    "bigsplat_6",
+    "bigsplat_7",
+    "bigsplat_8"
+   ],
+   "fps": 18,
+   "loop": false
+  },
+  "run": {
+   "fallback": "sprint"
+  },
+  "celebrate": {
+   "fallback": "apex"
+  },
+  "surprised": {
+   "fallback": "hit"
+  },
+  "attack": {
+   "fallback": "jab"
+  }
+ }
+}

@@ -1,0 +1,84 @@
+{
+  "id": "wall_cling",
+  "name": "Wall Cling",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "explore"
+  ],
+  "cooldownMinutes": 25,
+  "region": "side_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.2,
+      "motion": {
+        "type": "cling",
+        "from": "wall_below",
+        "to": "wall",
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "sense",
+      "duration": 1.4,
+      "motion": {
+        "type": "cling",
+        "to": "current"
+      },
+      "speech": {
+        "pool": "wall",
+        "chance": 0.4
+      }
+    },
+    {
+      "clip": "walk",
+      "duration": 1.2,
+      "motion": {
+        "type": "cling",
+        "to": "wall_high",
+        "curve": "easeInOut"
+      }
+    },
+    {
+      "clip": "apex",
+      "duration": 0.45,
+      "facing": "toward_center",
+      "motion": {
+        "type": "arc",
+        "advance": [
+          150,
+          30
+        ],
+        "height": 40,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "fall",
+      "duration": 0.6,
+      "motion": {
+        "type": "drop",
+        "to": "ground"
+      }
+    },
+    {
+      "clip": "land",
+      "duration": 0.35,
+      "sound": "thud",
+      "effects": [
+        "dust_puff",
+        "squash"
+      ]
+    },
+    {
+      "clip": "sprint",
+      "duration": 1.3,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "curve": "linear"
+      }
+    }
+  ]
+}

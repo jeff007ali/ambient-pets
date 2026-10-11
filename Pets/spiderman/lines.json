@@ -1,0 +1,54 @@
+{
+  "hang": [
+    "Just hanging around.",
+    "Nice view from up here.",
+    "Hi there.",
+    "Don't mind me."
+  ],
+  "sense": [
+    "Something's up\u2026",
+    "Heads up!",
+    "Hm. Felt that."
+  ],
+  "stroll": [
+    "Nice desktop.",
+    "Thwip!",
+    "Busy day?"
+  ],
+  "swing": [
+    "Wheee!",
+    "Coming through!"
+  ],
+  "combo": [
+    "Still got it.",
+    "Hi-yah!",
+    "Warm-up done."
+  ],
+  "oops": [
+    "Ow.",
+    "Meant to do that.",
+    "Nobody saw that, right?"
+  ],
+  "thwip": [
+    "Thwip!",
+    "Gotcha."
+  ],
+  "charge": [
+    "Hold on\u2026",
+    "Wait for it\u2026"
+  ],
+  "rainbow": [
+    "Nice entrance, huh?",
+    "Ta-da!"
+  ],
+  "wall": [
+    "Nice view from here.",
+    "Just hanging out.",
+    "Wall's fine."
+  ],
+  "peek": [
+    "\u2026",
+    "Psst.",
+    "Hey there."
+  ]
+}

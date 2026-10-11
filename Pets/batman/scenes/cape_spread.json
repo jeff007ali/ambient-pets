@@ -1,0 +1,62 @@
+{
+  "id": "cape_spread",
+  "name": "Cape Spread",
+  "tier": "funny",
+  "weight": 1.2,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 25,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "brood",
+      "duration": 1.0,
+      "facing": "toward_center"
+    },
+    {
+      "clip": "capeopen",
+      "duration": 0.45,
+      "sound": "swish"
+    },
+    {
+      "clip": "wings",
+      "duration": 1.3,
+      "effects": [
+        {
+          "type": "squash",
+          "amount": 0.06
+        }
+      ],
+      "speech": {
+        "pool": "wings",
+        "chance": 0.35
+      }
+    },
+    {
+      "clip": "glide2",
+      "duration": 1.8,
+      "motion": {
+        "type": "arc",
+        "to": "opposite_offscreen",
+        "offset": [
+          0,
+          220
+        ],
+        "height": 90,
+        "curve": "easeIn"
+      },
+      "sound": "swish"
+    }
+  ]
+}

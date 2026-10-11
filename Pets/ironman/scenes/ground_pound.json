@@ -1,0 +1,71 @@
+{
+  "id": "ground_pound",
+  "name": "Ground Pound",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy",
+    "surprise"
+  ],
+  "cooldownMinutes": 30,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "apex",
+      "duration": 1.0,
+      "motion": {
+        "type": "enter",
+        "from": "top_offscreen",
+        "to": "anchor",
+        "offset": [
+          0,
+          150
+        ],
+        "curve": "easeOut"
+      }
+    },
+    {
+      "clip": "dive_start",
+      "duration": 0.3
+    },
+    {
+      "clip": "dive",
+      "duration": 0.3,
+      "motion": {
+        "type": "drop",
+        "to": "ground"
+      }
+    },
+    {
+      "clip": "slam",
+      "duration": 0.9,
+      "effects": [
+        "squash",
+        {
+          "type": "overlay",
+          "clip": "shockwave",
+          "at": "feet",
+          "hold": false
+        }
+      ],
+      "sound": "boom"
+    },
+    {
+      "clip": "idle",
+      "duration": 0.9,
+      "speech": {
+        "pool": "slam",
+        "chance": 0.4
+      }
+    },
+    {
+      "clip": "rise",
+      "duration": 1.3,
+      "motion": {
+        "type": "exit",
+        "to": "top_offscreen",
+        "curve": "easeIn"
+      }
+    }
+  ]
+}

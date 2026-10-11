@@ -1,0 +1,13 @@
+# Build output
+.build/
+build/
+DerivedData/
+*.xcodeproj
+.swiftpm/
+.DS_Store
+
+# Art: ripped sheets are personal-use only and never committed (see docs/ART_SOURCES.md).
+# ThirdParty/source-assets/
+# Pets/*/sprites/sheet.png
+# Pets/*/sprites/*.suggested.json
+# Pets/*/sprites/work/

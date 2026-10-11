@@ -1,0 +1,99 @@
+{
+  "formatVersion": 1,
+  "id": "boo",
+  "name": "Boo!",
+  "tier": "rare",
+  "weight": 1.0,
+  "cooldownMinutes": 120,
+  "roles": [
+    {
+      "id": "a",
+      "position": "right",
+      "enters": "left",
+      "steps": [
+        {
+          "clip": "walk",
+          "duration": 2.0,
+          "motion": {
+            "type": "moveTo",
+            "from": "side_offscreen",
+            "to": "anchor",
+            "curve": "linear"
+          }
+        },
+        {
+          "clip": "idle",
+          "duration": 1.6,
+          "facing": "right"
+        },
+        {
+          "clip": "surprised",
+          "duration": 0.7,
+          "motion": {
+            "type": "hop",
+            "height": 30
+          },
+          "facing": "partner",
+          "waitFor": "b:2",
+          "speech": {
+            "text": "Gah!"
+          }
+        },
+        {
+          "clip": "run",
+          "duration": 1.4,
+          "motion": {
+            "type": "exit",
+            "to": "opposite_offscreen",
+            "curve": "easeIn"
+          },
+          "facing": "right"
+        }
+      ]
+    },
+    {
+      "id": "b",
+      "position": "left",
+      "enters": "left",
+      "steps": [
+        {
+          "clip": "walk",
+          "duration": 2.4,
+          "motion": {
+            "type": "moveTo",
+            "from": "side_offscreen",
+            "to": "anchor",
+            "curve": "easeOut"
+          },
+          "waitFor": "a:2"
+        },
+        {
+          "clip": "attack",
+          "duration": 0.6,
+          "facing": "partner",
+          "speech": {
+            "text": "Boo!"
+          }
+        },
+        {
+          "clip": "celebrate",
+          "duration": 0.9,
+          "motion": {
+            "type": "hop",
+            "height": 20
+          },
+          "waitFor": "a:4"
+        },
+        {
+          "clip": "walk",
+          "duration": 1.8,
+          "motion": {
+            "type": "exit",
+            "to": "side_offscreen",
+            "curve": "linear"
+          }
+        }
+      ]
+    }
+  ]
+}

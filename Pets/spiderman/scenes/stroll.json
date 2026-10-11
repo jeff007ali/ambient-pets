@@ -1,0 +1,82 @@
+{
+  "id": "stroll",
+  "name": "Stroll",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "explore"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "hang",
+      "duration": 1.2,
+      "effects": [
+        {
+          "type": "tether_line"
+        }
+      ],
+      "motion": {
+        "type": "enter",
+        "from": "top_offscreen",
+        "to": "anchor",
+        "offset": [
+          0,
+          70
+        ],
+        "curve": "easeOut"
+      },
+      "sound": "thwip"
+    },
+    {
+      "clip": "fall",
+      "duration": 0.35,
+      "motion": {
+        "type": "drop"
+      }
+    },
+    {
+      "clip": "land",
+      "duration": 0.35,
+      "effects": [
+        "dust_puff",
+        "squash"
+      ],
+      "sound": "thud"
+    },
+    {
+      "clip": "walk",
+      "duration": 3.0,
+      "motion": {
+        "type": "walk",
+        "speed": 45,
+        "direction": "toward_center"
+      }
+    },
+    {
+      "clip": "idle",
+      "duration": 1.4,
+      "speech": {
+        "pool": "stroll",
+        "chance": 0.3
+      }
+    },
+    {
+      "clip": "jump",
+      "duration": 0.9,
+      "effects": [
+        {
+          "type": "tether_line",
+          "shoot": 0.08
+        }
+      ],
+      "motion": {
+        "type": "exit",
+        "to": "top_offscreen",
+        "curve": "easeIn"
+      },
+      "sound": "thwip"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "formatVersion": 1,
+  "id": "batman",
+  "name": "Batman",
+  "version": "0.1.0",
+  "renderer": "sprite",
+  "personality": {
+    "activity": 0.9,
+    "friendliness": 0.3,
+    "mischievousness": 0.5,
+    "interaction": 0.4,
+    "curiosity": 0.7
+  },
+  "capabilities": {
+    "canWalk": true,
+    "canGlide": true,
+    "canGrapple": true,
+    "cursorTracking": true,
+    "multiMonitor": true
+  },
+  "sounds": {
+    "swish": "sounds/swish.wav",
+    "thud": "sounds/thud.wav",
+    "whoosh": "sounds/whoosh.wav"
+  },
+  "height": 90
+}

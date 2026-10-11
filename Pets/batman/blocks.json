@@ -1,0 +1,170 @@
+{
+  "enter": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "curve": "linear"
+      }
+    }
+  ],
+  "exit": [
+    {
+      "clip": "grapple",
+      "duration": 0.5,
+      "effects": [
+        {
+          "type": "tether_line",
+          "at": "web"
+        }
+      ],
+      "sound": "whoosh"
+    },
+    {
+      "clip": "jumpup",
+      "duration": 0.8,
+      "motion": {
+        "type": "exit",
+        "to": "top_offscreen",
+        "curve": "easeIn"
+      },
+      "effects": [
+        {
+          "type": "tether_line",
+          "shoot": 0
+        }
+      ]
+    }
+  ],
+  "blocks": {
+    "brood": {
+      "description": "stands still and broods",
+      "steps": [
+        {
+          "clip": "brood",
+          "duration": 1.4,
+          "facing": "toward_center"
+        }
+      ]
+    },
+    "batarang": {
+      "description": "throws a spinning batarang",
+      "steps": [
+        {
+          "clip": "windup",
+          "duration": 0.35,
+          "facing": "toward_center"
+        },
+        {
+          "clip": "throw",
+          "duration": 1.0,
+          "sound": "swish",
+          "effects": [
+            {
+              "type": "projectile",
+              "clip": "batarang",
+              "at": "hand",
+              "speed": 560,
+              "distance": 300
+            }
+          ]
+        }
+      ]
+    },
+    "punch_kick": {
+      "description": "a punch then a kick",
+      "steps": [
+        {
+          "clip": "punch",
+          "duration": 0.45,
+          "facing": "toward_center"
+        },
+        {
+          "clip": "kick",
+          "duration": 0.45
+        }
+      ]
+    },
+    "jump_kick": {
+      "description": "a leaping jump kick",
+      "steps": [
+        {
+          "clip": "jumpkick",
+          "duration": 0.7,
+          "motion": {
+            "type": "hop",
+            "height": 26
+          }
+        }
+      ]
+    },
+    "cape_twirl": {
+      "description": "twirls his cape",
+      "steps": [
+        {
+          "clip": "twirl",
+          "duration": 0.6,
+          "sound": "swish"
+        }
+      ]
+    },
+    "cape_spread": {
+      "description": "spreads his cape like bat wings",
+      "steps": [
+        {
+          "clip": "capeopen",
+          "duration": 0.45,
+          "sound": "swish"
+        },
+        {
+          "clip": "wings",
+          "duration": 1.0,
+          "effects": [
+            {
+              "type": "squash",
+              "amount": 0.06
+            }
+          ]
+        }
+      ]
+    },
+    "patrol": {
+      "description": "walks a few steps on patrol",
+      "steps": [
+        {
+          "clip": "walk",
+          "duration": 1.8,
+          "motion": {
+            "type": "walk",
+            "speed": 45,
+            "direction": "random"
+          }
+        }
+      ]
+    },
+    "smoke": {
+      "description": "drops a smoke pellet",
+      "steps": [
+        {
+          "clip": "pellet",
+          "duration": 0.8,
+          "effects": [
+            "dust_puff"
+          ]
+        }
+      ]
+    },
+    "cape_wrap": {
+      "description": "wraps himself in his cape",
+      "steps": [
+        {
+          "clip": "cape",
+          "duration": 0.7
+        }
+      ]
+    }
+  }
+}

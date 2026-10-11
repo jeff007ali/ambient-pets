@@ -1,0 +1,30 @@
+{
+  "formatVersion": 1,
+  "id": "ironman",
+  "name": "Iron Man",
+  "version": "0.2.0",
+  "renderer": "sprite",
+  "personality": {
+    "activity": 1.0,
+    "friendliness": 0.6,
+    "mischievousness": 0.4,
+    "interaction": 0.6,
+    "curiosity": 0.7
+  },
+  "capabilities": {
+    "canFly": true,
+    "canWalk": true,
+    "cursorTracking": true,
+    "multiMonitor": true,
+    "audio": true
+  },
+  "sounds": {
+    "beam": "sounds/beam.wav",
+    "blip": "sounds/blip.wav",
+    "boom": "sounds/boom.wav",
+    "thud": "sounds/thud.wav",
+    "whoosh": "sounds/whoosh.wav",
+    "zap": "sounds/zap.wav"
+  },
+  "height": 68
+}

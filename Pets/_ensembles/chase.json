@@ -1,0 +1,81 @@
+{
+  "formatVersion": 1,
+  "id": "chase",
+  "name": "Chase",
+  "tier": "funny",
+  "weight": 1.0,
+  "cooldownMinutes": 45,
+  "roles": [
+    {
+      "id": "a",
+      "position": "right",
+      "enters": "left",
+      "steps": [
+        {
+          "clip": "run",
+          "duration": 1.2,
+          "motion": {
+            "type": "moveTo",
+            "from": "side_offscreen",
+            "to": "anchor",
+            "curve": "linear"
+          }
+        },
+        {
+          "clip": "surprised",
+          "duration": 0.6,
+          "facing": "left",
+          "speech": {
+            "text": "Uh-oh."
+          }
+        },
+        {
+          "clip": "run",
+          "duration": 1.8,
+          "motion": {
+            "type": "exit",
+            "to": "opposite_offscreen",
+            "curve": "linear"
+          },
+          "facing": "right"
+        }
+      ]
+    },
+    {
+      "id": "b",
+      "position": "left",
+      "enters": "left",
+      "steps": [
+        {
+          "clip": "run",
+          "duration": 1.3,
+          "motion": {
+            "type": "moveTo",
+            "from": "side_offscreen",
+            "to": "anchor",
+            "curve": "linear"
+          },
+          "waitFor": "a:2"
+        },
+        {
+          "clip": "attack",
+          "duration": 0.5,
+          "facing": "partner",
+          "speech": {
+            "text": "Come back here!"
+          }
+        },
+        {
+          "clip": "run",
+          "duration": 1.7,
+          "motion": {
+            "type": "exit",
+            "to": "opposite_offscreen",
+            "curve": "linear"
+          },
+          "facing": "right"
+        }
+      ]
+    }
+  ]
+}

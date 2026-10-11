@@ -1,0 +1,99 @@
+{
+  "id": "sneak_attack",
+  "name": "Dodge Roll",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "surprise",
+    "flashy"
+  ],
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "sprint",
+      "duration": 1.0,
+      "motion": {
+        "type": "enter",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "dodge",
+      "duration": 0.9,
+      "motion": {
+        "type": "walk",
+        "distance": 120,
+        "direction": "toward_center"
+      }
+    },
+    {
+      "clip": "sense",
+      "duration": 1.2,
+      "speech": {
+        "pool": "sense",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "hit",
+      "duration": 0.5,
+      "effects": [
+        {
+          "type": "tilt",
+          "angle": -10
+        }
+      ]
+    },
+    {
+      "clip": "apex",
+      "duration": 0.5,
+      "motion": {
+        "type": "hop",
+        "height": 24
+      }
+    },
+    {
+      "clip": "swing",
+      "duration": 1.6,
+      "effects": [
+        {
+          "type": "tether_line"
+        }
+      ],
+      "motion": {
+        "type": "swing",
+        "to": "opposite_offscreen",
+        "sweep": 80,
+        "curve": "easeInOut",
+        "attach": "top"
+      },
+      "sound": "thwip"
+    },
+    {
+      "clip": "apex",
+      "duration": 0.45,
+      "motion": {
+        "type": "arc",
+        "advance": [
+          140,
+          0
+        ],
+        "height": 45,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "apex",
+      "duration": 0.7,
+      "motion": {
+        "type": "arc",
+        "to": "opposite_offscreen",
+        "height": 50,
+        "curve": "linear"
+      }
+    }
+  ],
+  "cooldownMinutes": 30
+}

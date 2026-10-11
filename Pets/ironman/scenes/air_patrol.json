@@ -1,0 +1,74 @@
+{
+  "id": "air_patrol",
+  "name": "Air Patrol",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 20,
+  "region": "air",
+  "steps": [
+    {
+      "clip": "fly",
+      "duration": 1.4,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "curve": "easeOut"
+      },
+      "sound": "whoosh"
+    },
+    {
+      "clip": "fly_end",
+      "duration": 0.55
+    },
+    {
+      "clip": "idle",
+      "duration": 0.9,
+      "facing": "toward_center",
+      "motion": {
+        "type": "hover",
+        "amplitude": 3
+      }
+    },
+    {
+      "clip": "shoot",
+      "duration": 0.9,
+      "effects": [
+        {
+          "type": "projectile",
+          "clip": "bolt",
+          "hit": "bolt_hit",
+          "at": "hand",
+          "speed": 600,
+          "distance": 260,
+          "delay": 0.3
+        }
+      ],
+      "speech": {
+        "pool": "scan",
+        "chance": 0.3
+      },
+      "sound": "zap"
+    },
+    {
+      "clip": "fly_start",
+      "duration": 0.25
+    },
+    {
+      "clip": "fly",
+      "duration": 1.5,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "offset": [
+          0,
+          60
+        ],
+        "curve": "easeIn"
+      }
+    }
+  ]
+}

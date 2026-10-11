@@ -1,0 +1,93 @@
+{
+  "id": "swing_across",
+  "name": "Swing Across",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 10,
+  "region": "air",
+  "requires": {
+    "capabilities": [
+      "canSwing"
+    ]
+  },
+  "steps": [
+    {
+      "clip": "swing",
+      "duration": 1.6,
+      "effects": [
+        {
+          "type": "tether_line"
+        }
+      ],
+      "motion": {
+        "type": "swing",
+        "to": "opposite_offscreen",
+        "sweep": 80,
+        "curve": "easeInOut",
+        "from": "side_offscreen",
+        "attach": "top"
+      },
+      "speech": {
+        "pool": "swing",
+        "chance": 0.15
+      },
+      "sound": "thwip"
+    },
+    {
+      "clip": "apex",
+      "duration": 0.45,
+      "motion": {
+        "type": "arc",
+        "advance": [
+          140,
+          0
+        ],
+        "height": 45,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "swing",
+      "duration": 1.6,
+      "effects": [
+        {
+          "type": "tether_line"
+        }
+      ],
+      "motion": {
+        "type": "swing",
+        "to": "opposite_offscreen",
+        "sweep": 80,
+        "curve": "easeInOut",
+        "attach": "top"
+      },
+      "sound": "whoosh"
+    },
+    {
+      "clip": "apex",
+      "duration": 0.45,
+      "motion": {
+        "type": "arc",
+        "advance": [
+          140,
+          0
+        ],
+        "height": 45,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "apex",
+      "duration": 0.8,
+      "motion": {
+        "type": "arc",
+        "to": "opposite_offscreen",
+        "height": 60,
+        "curve": "linear"
+      }
+    }
+  ]
+}

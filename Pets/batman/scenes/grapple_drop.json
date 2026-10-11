@@ -1,0 +1,62 @@
+{
+  "id": "grapple_drop",
+  "name": "Grapple Drop",
+  "tier": "quick",
+  "weight": 1.2,
+  "tags": [
+    "surprise"
+  ],
+  "cooldownMinutes": 10,
+  "region": "air",
+  "steps": [
+    {
+      "clip": "hang",
+      "duration": 1.3,
+      "effects": [
+        {
+          "type": "tether_line"
+        }
+      ],
+      "motion": {
+        "type": "enter",
+        "from": "top_offscreen",
+        "to": "anchor",
+        "curve": "easeOut"
+      }
+    },
+    {
+      "clip": "hang",
+      "duration": 2.0,
+      "effects": [
+        {
+          "type": "tether_line",
+          "shoot": 0
+        }
+      ],
+      "motion": {
+        "type": "hover",
+        "amplitude": 4,
+        "frequency": 0.4
+      },
+      "speech": {
+        "pool": "hang",
+        "chance": 0.3
+      }
+    },
+    {
+      "clip": "hang",
+      "duration": 0.8,
+      "effects": [
+        {
+          "type": "tether_line",
+          "shoot": 0
+        }
+      ],
+      "motion": {
+        "type": "exit",
+        "to": "top_offscreen",
+        "curve": "easeIn"
+      }
+    }
+  ]
+}

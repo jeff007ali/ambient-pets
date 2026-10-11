@@ -1,0 +1,82 @@
+{
+  "id": "hover_stroll",
+  "name": "Hover Stroll",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "explore"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "fall",
+      "duration": 1.2,
+      "motion": {
+        "type": "enter",
+        "from": "top_offscreen",
+        "to": "anchor",
+        "offset": [
+          0,
+          40
+        ],
+        "curve": "easeOut"
+      }
+    },
+    {
+      "clip": "land",
+      "duration": 0.6,
+      "effects": [
+        "dust_puff",
+        "squash"
+      ],
+      "motion": {
+        "type": "drop"
+      },
+      "sound": "thud"
+    },
+    {
+      "clip": "glide_start",
+      "duration": 0.5
+    },
+    {
+      "clip": "glide",
+      "duration": 2.6,
+      "motion": {
+        "type": "walk",
+        "speed": 55,
+        "direction": "toward_center"
+      }
+    },
+    {
+      "clip": "glide_end",
+      "duration": 0.5
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "idle_chat",
+        "chance": 0.2
+      }
+    },
+    {
+      "clip": "fly_start",
+      "duration": 0.25
+    },
+    {
+      "clip": "fly",
+      "duration": 1.5,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "offset": [
+          0,
+          60
+        ],
+        "curve": "easeIn"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

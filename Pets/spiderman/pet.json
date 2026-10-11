@@ -1,0 +1,27 @@
+{
+  "formatVersion": 1,
+  "id": "spiderman",
+  "name": "Spider-Man",
+  "version": "0.1.0",
+  "renderer": "sprite",
+  "personality": {
+    "activity": 1.1,
+    "friendliness": 0.6,
+    "mischievousness": 0.7,
+    "interaction": 0.6,
+    "curiosity": 0.6
+  },
+  "capabilities": {
+    "canWalk": true,
+    "canSwing": true,
+    "canClimb": true,
+    "cursorTracking": true,
+    "multiMonitor": true
+  },
+  "sounds": {
+    "thud": "sounds/thud.wav",
+    "thwip": "sounds/thwip.wav",
+    "whoosh": "sounds/whoosh.wav"
+  },
+  "height": 68
+}

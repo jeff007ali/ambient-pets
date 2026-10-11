@@ -1,0 +1,27 @@
+{
+  "brood": [
+    "Quiet night.",
+    "All clear.",
+    "\u2026",
+    "Stay alert."
+  ],
+  "throw": [
+    "Heads up."
+  ],
+  "vanish": [
+    "Gone.",
+    "Later."
+  ],
+  "fight": [
+    "Too slow.",
+    "Keep moving."
+  ],
+  "hang": [
+    "Just checking.",
+    "Don't mind me."
+  ],
+  "wings": [
+    "\u2026",
+    "This city needs me."
+  ]
+}

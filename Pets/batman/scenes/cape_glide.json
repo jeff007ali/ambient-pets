@@ -1,0 +1,29 @@
+{
+  "id": "cape_glide",
+  "name": "Cape Glide",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 10,
+  "region": "air",
+  "steps": [
+    {
+      "clip": "glide2",
+      "duration": 4.2,
+      "motion": {
+        "type": "arc",
+        "from": "side_offscreen",
+        "to": "opposite_offscreen",
+        "offset": [
+          0,
+          -60
+        ],
+        "height": 50,
+        "curve": "linear"
+      },
+      "sound": "swish"
+    }
+  ]
+}

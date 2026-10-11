@@ -1,0 +1,54 @@
+{
+  "id": "slip_up",
+  "name": "Slip-Up",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "surprise"
+  ],
+  "cooldownMinutes": 45,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "knockdown",
+      "duration": 1.3,
+      "effects": [
+        {
+          "type": "squash",
+          "amount": 0.12
+        }
+      ],
+      "speech": {
+        "pool": "oops",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "getup",
+      "duration": 0.55
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0
+    },
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "side_offscreen",
+        "curve": "linear"
+      }
+    }
+  ]
+}

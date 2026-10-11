@@ -1,0 +1,125 @@
+{
+  "source": "ThirdParty/source-assets/cosmic-spiderman/default (Marvel Cosmic Invasion, Playable Characters - Spider-Man, Default suit)",
+  "dir": "ThirdParty/source-assets/cosmic-spiderman/default",
+  "facing": "right",
+  "anchorFrom": "Idle_00.png",
+  "clips": {
+    "idle": [
+      "Idle_*"
+    ],
+    "walk": [
+      "Walk_*"
+    ],
+    "sprint": [
+      "Sprint_*"
+    ],
+    "jump": [
+      "Jump.png"
+    ],
+    "apex": [
+      "Jumpapex_*"
+    ],
+    "fall": [
+      "Jumpfall.png"
+    ],
+    "land": [
+      "Land_*"
+    ],
+    "swing": [
+      "Webswing.png"
+    ],
+    "hang": [
+      "Selectscreen_*"
+    ],
+    "sense": [
+      "Idle_00.png+Spidersense_*"
+    ],
+    "hit": [
+      "Hitstun_*"
+    ],
+    "dodge": [
+      "Dodge_*"
+    ],
+    "skid": [
+      "Sprintend_*"
+    ],
+    "a1": [
+      "Attack1_*"
+    ],
+    "a2": [
+      "Attack2_*"
+    ],
+    "a3": [
+      "Attack3_*"
+    ],
+    "a4": [
+      "Attack4_*"
+    ],
+    "divekick": [
+      "Attackairstart_*",
+      "Attackair_*"
+    ],
+    "charge": [
+      "Attackchargedstart_*",
+      "Attackchargedheld_*"
+    ],
+    "chargekick": [
+      "Attackcharged_*",
+      "Attackchargedend_*"
+    ],
+    "swingkick": [
+      "Attackswinging_*"
+    ],
+    "webshot": [
+      "Power1start_*",
+      "Power1_*",
+      "Power1end_*"
+    ],
+    "webshot2": [
+      "Power2_*",
+      "Power2end_*"
+    ],
+    "airshot": [
+      "Powerair1start_*",
+      "Powerair1_*",
+      "Powerair1end_*"
+    ],
+    "special": [
+      "Special_*"
+    ],
+    "rainbow_in": [
+      "Spawnrainbow_*"
+    ],
+    "rainbow_out": [
+      "Spawnrainbowend_*"
+    ],
+    "knockdown": [
+      "Hitstun_*",
+      "Kd_*",
+      "Kdfall.png",
+      "Down.png",
+      "Downbounce_*"
+    ],
+    "getup": [
+      "Downgetup_*"
+    ],
+    "webball": [
+      "../projectiles/PowerProjectileActive_*"
+    ],
+    "websplat": [
+      "../projectiles/PowerProjectileDeath_*"
+    ],
+    "bigweb": [
+      "../projectiles/SpecialProjectileActive_*"
+    ],
+    "bigsplat": [
+      "../projectiles/SpecialProjectileDeath_*"
+    ]
+  },
+  "pivotByClip": {
+    "webball": "center",
+    "websplat": "center",
+    "bigweb": "center",
+    "bigsplat": "center"
+  }
+}

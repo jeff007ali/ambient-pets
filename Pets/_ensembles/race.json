@@ -1,0 +1,82 @@
+{
+  "formatVersion": 1,
+  "id": "race",
+  "name": "Race",
+  "tier": "funny",
+  "weight": 1.0,
+  "cooldownMinutes": 45,
+  "roles": [
+    {
+      "id": "a",
+      "position": "left",
+      "enters": "left",
+      "steps": [
+        {
+          "clip": "walk",
+          "duration": 1.0,
+          "motion": {
+            "type": "moveTo",
+            "from": "side_offscreen",
+            "to": "anchor",
+            "curve": "linear"
+          }
+        },
+        {
+          "clip": "idle",
+          "duration": 0.6,
+          "facing": "right",
+          "waitFor": "b:2",
+          "speech": {
+            "text": "Race you!"
+          }
+        },
+        {
+          "clip": "run",
+          "duration": 2.4,
+          "motion": {
+            "type": "exit",
+            "to": "opposite_offscreen",
+            "curve": "easeIn"
+          },
+          "waitFor": "b:3"
+        }
+      ]
+    },
+    {
+      "id": "b",
+      "position": "right",
+      "enters": "left",
+      "steps": [
+        {
+          "clip": "walk",
+          "duration": 1.3,
+          "motion": {
+            "type": "moveTo",
+            "from": "side_offscreen",
+            "to": "anchor",
+            "curve": "linear"
+          }
+        },
+        {
+          "clip": "idle",
+          "duration": 0.6,
+          "facing": "right",
+          "waitFor": "a:2"
+        },
+        {
+          "clip": "run",
+          "duration": 2.9,
+          "motion": {
+            "type": "exit",
+            "to": "opposite_offscreen",
+            "curve": "easeIn"
+          },
+          "waitFor": "a:3",
+          "speech": {
+            "text": "Hey, no fair!"
+          }
+        }
+      ]
+    }
+  ]
+}

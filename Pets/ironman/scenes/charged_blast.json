@@ -1,0 +1,74 @@
+{
+  "id": "charged_blast",
+  "name": "Charged Blast",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 30,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "glide",
+      "duration": 1.6,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "curve": "easeOut"
+      }
+    },
+    {
+      "clip": "charge_start",
+      "duration": 0.25,
+      "facing": "toward_center"
+    },
+    {
+      "clip": "charge",
+      "duration": 1.0,
+      "speech": {
+        "pool": "charge",
+        "chance": 0.4
+      }
+    },
+    {
+      "clip": "charge_fire",
+      "duration": 0.9,
+      "effects": [
+        {
+          "type": "projectile",
+          "clip": "orb",
+          "hit": "orb_end",
+          "at": "hand",
+          "speed": 460,
+          "distance": 280,
+          "delay": 0.1
+        }
+      ],
+      "sound": "zap"
+    },
+    {
+      "clip": "idle",
+      "duration": 0.5
+    },
+    {
+      "clip": "fly_start",
+      "duration": 0.25
+    },
+    {
+      "clip": "fly",
+      "duration": 1.5,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "offset": [
+          0,
+          60
+        ],
+        "curve": "easeIn"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}
