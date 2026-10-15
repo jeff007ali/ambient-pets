@@ -239,12 +239,16 @@ private struct AITab: View {
                 Toggle("Give each pet a mood for the day", isOn: $store.settings.aiMoods)
                 Toggle("Share the frontmost window title (needs Screen Recording)", isOn: $store.settings.aiShareWindowTitles)
             } footer: {
-                Text("Off by default. The AI only chooses among scenes that already passed every rule (quiet hours, meetings, limits) and is asked at most once per appearance; if it's slow (over 2 s) or anything fails, the normal picker is used.")
+                Text("Off by default. The AI only chooses among scenes that already passed every rule (quiet hours, meetings, limits) and is asked only when your situation changes (activity, part of the day, a long focus streak, coming back, today's moods); in between, pets use their own lines. If it's slow (over 2 s) or anything fails, the normal picker is used.")
                     .font(.caption).foregroundStyle(.secondary)
             }
             Section("\(provider.displayName) API key") {
                 if hasKey {
                     LabeledContent("API key", value: "Saved in Keychain")
+                    if !store.settings.aiEnabled {
+                        Text("The AI is off: turn on “Let AI pick scenes” above to use this key.")
+                            .font(.caption).foregroundStyle(.orange)
+                    }
                     Button("Remove Key", role: .destructive) {
                         AIKeychain.delete(provider)
                         draft.refresh += 1
@@ -252,7 +256,8 @@ private struct AITab: View {
                 } else {
                     SecureField(provider == .openai ? "sk-…" : "sk-ant-…", text: $draft.text)
                     Button("Save to Keychain") {
-                        AIKeychain.save(draft.text, for: provider)
+                        // Saving a key means "use the AI": turn it on (the toggle above can switch it off again).
+                        if AIKeychain.save(draft.text, for: provider) { store.settings.aiEnabled = true }
                         draft.text = ""
                         draft.refresh += 1
                     }
@@ -270,6 +275,26 @@ private struct AITab: View {
                     if let r = draft.testResult ?? engine.lastAIResult { Text(r).font(.caption).foregroundStyle(.secondary).lineLimit(3) }
                 }
             }
+            Section {
+                let today = engine.aiUsageToday, total = engine.aiUsage.total
+                LabeledContent("Today", value: Self.describe(today))
+                LabeledContent("All time", value: Self.describe(total))
+                if !engine.aiUsage.recent.isEmpty {
+                    DisclosureGroup("Recent calls (\(engine.aiUsage.recent.count))") {
+                        ForEach(Array(engine.aiUsage.recent.enumerated()), id: \.offset) { _, e in
+                            Text("\(e.date.formatted(date: .omitted, time: .shortened))  \(e.summary)")
+                                .font(.caption).foregroundStyle(.secondary).textSelection(.enabled)
+                        }
+                    }
+                }
+                Button("Reset Counts") { engine.resetAIUsage() }
+                    .disabled(engine.aiUsage.total.calls == 0 && engine.aiUsage.total.skipped == 0)
+            } header: {
+                Text("Usage")
+            } footer: {
+                Text("Every request counts: cameos, Summon Now and Test. “Skipped” cameos didn't call the AI (same situation as its last line). Tokens are as reported by \(provider.displayName); see your provider's usage page for cost.")
+                    .font(.caption).foregroundStyle(.secondary)
+            }
             Section("What is sent") {
                 Text("The activity (e.g. WORKING), the frontmost app's category (e.g. developer-tools — not its name), the time of day and weekday, general stats (minutes focused or away, cameos today), your last five scenes, the pets' moods, and the candidate scenes and moves. Window titles only if you turn that on above. Nothing else: no screenshots, text, or file names.")
                     .font(.caption).foregroundStyle(.secondary)
@@ -277,6 +302,14 @@ private struct AITab: View {
         }
         .formStyle(.grouped)
         .onAppear { draft.refresh += 1 }
+    }
+
+    static func describe(_ t: AIUsage.Tally) -> String {
+        var s = "\(t.calls) call\(t.calls == 1 ? "" : "s")"
+        if t.calls > 0 { s += " (\(t.answered) answered, \(t.failed) failed)" }
+        if t.skipped > 0 { s += " · \(t.skipped) skipped" }
+        if t.inputTokens + t.outputTokens > 0 { s += " · \((t.inputTokens + t.outputTokens).formatted()) tokens" }
+        return s
     }
 }
 

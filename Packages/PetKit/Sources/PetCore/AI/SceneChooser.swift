@@ -6,6 +6,8 @@ public struct AIContextSummary: Codable, Sendable, Hashable {
     public var state: String
     public var appCategory: String?
     public var timeOfDay: String
+    /// Local time, "HH:mm".
+    public var localTime: String
     public var weekday: String
     public var recentScenes: [String]
     public var windowTitle: String?
@@ -16,10 +18,12 @@ public struct AIContextSummary: Codable, Sendable, Hashable {
     public var appearancesToday: Int
     /// Today's pet moods (pet name → mood), once assigned.
     public var moods: [String: String]
+    /// The pets' last few AI lines (to avoid repeating them).
+    public var recentLines: [String]
 
     public init(state: ContextState, appCategory: String?, date: Date, recentScenes: [String], windowTitle: String? = nil,
-                focusMinutes: Int? = nil, awayMinutes: Int? = nil, appearancesToday: Int = 0, moods: [String: String] = [:],
-                calendar: Calendar = .current) {
+                focusMinutes: Int? = nil, awayMinutes: Int? = nil, appearancesToday: Int = 0, recentLines: [String] = [],
+                moods: [String: String] = [:], calendar: Calendar = .current) {
         self.state = state.rawValue
         self.appCategory = appCategory
         let h = calendar.component(.hour, from: date)
@@ -29,6 +33,7 @@ public struct AIContextSummary: Codable, Sendable, Hashable {
         case 17..<22: "evening"
         default: "night"
         }
+        localTime = String(format: "%02d:%02d", h, calendar.component(.minute, from: date))
         let names = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
         weekday = names[(calendar.component(.weekday, from: date) - 1 + 7) % 7]
         self.recentScenes = recentScenes
@@ -37,6 +42,7 @@ public struct AIContextSummary: Codable, Sendable, Hashable {
         self.awayMinutes = awayMinutes
         self.appearancesToday = appearancesToday
         self.moods = moods
+        self.recentLines = recentLines
     }
 }
 
@@ -140,7 +146,8 @@ public struct AIChoice: Sendable, Hashable {
 /// Prompt, output schema and response validation for the opt-in AI chooser. The AI only ever picks from the
 /// already-filtered candidates (every gate has run before it is asked) and its answer is validated again here.
 public enum AIChooser {
-    public static let maxSpeechLength = 60
+    /// A bubble is read at a glance: about six words.
+    public static let maxSpeechLength = 40
 
     public static let system = """
     You direct short cameos of animated desktop pets that appear briefly on a user's Mac screen. Pick exactly one \
@@ -148,9 +155,13 @@ public enum AIChooser {
     the pets' personalities and moods. Candidate kinds: "scene" plays an authored scene; "interaction" is a shared \
     scene for several pets; "together" brings several pets at once; "routine" means you compose a new short routine \
     for that pet: then fill "routine" with 2 to 5 of that pet's block names in a fun order (otherwise leave it empty). \
-    Speech: optionally one short, friendly, in-character line (at most 60 characters, no emoji). You may refer to the \
-    general context (time of day, weekday, a long focus streak, being away, how many cameos today, the pet's mood) \
-    but never to specific apps, windows, names or content. Leave speech empty more often than not. If "moods" is \
+    Speech: write one very short, friendly, in-character line (at most 6 words and 40 characters, no emoji; it \
+    shows in a small speech bubble for a few seconds, so it must be readable at a glance) that reacts to the \
+    user's situation right now, so it feels aware of them: the local time or weekday (a late night, a Monday \
+    morning, Friday afternoon), what they're doing (state: working, reading, idle, and the app category), a long \
+    focus streak (nudge a stretch, water or a break), coming back after being away, how many cameos today, or the \
+    pet's mood. Speak as that pet. Don't repeat recentLines. Never mention specific apps, window titles, names or \
+    content. Leave speech empty only if nothing fits. If "moods" is \
     requested, give each listed pet a mood for today that suits its character, with some variety.
     """
 
@@ -298,7 +309,13 @@ public enum AIChooser {
         guard !t.isEmpty else { return nil }
         let lower = t.lowercased()
         if blocked.contains(where: { lower.contains($0) }) { return nil }
-        if t.count > maxSpeechLength { t = String(t.prefix(maxSpeechLength - 1)).trimmingCharacters(in: .whitespaces) + "…" }
-        return t
+        guard t.count > maxSpeechLength else { return t }
+        // Too long: the first sentence if it fits, else cut at a word boundary.
+        if let end = t.firstIndex(where: { ".!?".contains($0) }), t.distance(from: t.startIndex, to: end) < maxSpeechLength {
+            return String(t[...end])
+        }
+        let head = String(t.prefix(maxSpeechLength - 1))
+        let cut = head.lastIndex(of: " ").map { String(head[..<$0]) } ?? head
+        return cut.trimmingCharacters(in: .whitespaces.union(.punctuationCharacters)) + "…"
     }
 }

@@ -1,6 +1,6 @@
 {
   "id": "swing_across",
-  "name": "Swing Across",
+  "name": "Swing & Hang",
   "tier": "quick",
   "weight": 1.0,
   "tags": [
@@ -16,7 +16,7 @@
   "steps": [
     {
       "clip": "swing",
-      "duration": 1.6,
+      "duration": 1.7,
       "effects": [
         {
           "type": "tether_line"
@@ -24,69 +24,76 @@
       ],
       "motion": {
         "type": "swing",
-        "to": "opposite_offscreen",
-        "sweep": 80,
-        "curve": "easeInOut",
         "from": "side_offscreen",
+        "to": "opposite_offscreen",
+        "sweep": 70,
+        "curve": "easeInOut",
         "attach": "top"
+      }
+    },
+    {
+      "clip": "apex",
+      "duration": 0.5,
+      "motion": {
+        "type": "arc",
+        "advance": [
+          110,
+          0
+        ],
+        "height": 40,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "hang_in",
+      "duration": 1.0,
+      "effects": [
+        {
+          "type": "tether_line",
+          "shoot": 0.15
+        }
+      ],
+      "motion": {
+        "type": "moveTo",
+        "advance": [
+          0,
+          -24
+        ],
+        "curve": "easeOut"
+      }
+    },
+    {
+      "clip": "hang",
+      "duration": 2.4,
+      "effects": [
+        {
+          "type": "tether_line",
+          "shoot": 0
+        }
+      ],
+      "motion": {
+        "type": "hover",
+        "amplitude": 3,
+        "frequency": 0.5
       },
       "speech": {
-        "pool": "swing",
-        "chance": 0.15
-      },
-      "sound": "thwip"
-    },
-    {
-      "clip": "apex",
-      "duration": 0.45,
-      "motion": {
-        "type": "arc",
-        "advance": [
-          140,
-          0
-        ],
-        "height": 45,
-        "curve": "linear"
+        "pool": "hang",
+        "chance": 0.5
       }
     },
     {
-      "clip": "swing",
-      "duration": 1.6,
+      "clip": "hang",
+      "duration": 0.8,
       "effects": [
         {
-          "type": "tether_line"
+          "type": "tether_line",
+          "shoot": 0
         }
       ],
       "motion": {
-        "type": "swing",
-        "to": "opposite_offscreen",
-        "sweep": 80,
-        "curve": "easeInOut",
-        "attach": "top"
-      },
-      "sound": "whoosh"
-    },
-    {
-      "clip": "apex",
-      "duration": 0.45,
-      "motion": {
-        "type": "arc",
-        "advance": [
-          140,
-          0
-        ],
-        "height": 45,
-        "curve": "linear"
-      }
-    },
-    {
-      "clip": "apex",
-      "duration": 0.8,
-      "motion": {
-        "type": "arc",
-        "to": "opposite_offscreen",
-        "height": 60,
-        "curve": "linear"
+        "type": "exit",
+        "to": "top_offscreen",
+        "curve": "easeIn"
       }
     }
   ]

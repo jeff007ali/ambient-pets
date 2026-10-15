@@ -73,8 +73,9 @@ Check alignment and timing with `$P preview Pets/<id> walk --out walk.png` (fram
   "sounds": { "thud": "sounds/thud.wav" } }
 ```
 
-- `height`: standing height in sprite px. Every pet renders at the same on-screen height (120 pt at 100 %), so pets
-  from different games match. Give two pets from the same game the same value to keep their relative scale.
+- `height`: standing height in sprite px. Every pet renders at the same on-screen height (135 pt at 100 %), so pets
+  from different games match. Measure the idle pose, then adjust by eye next to the other pets (`summon together`):
+  a slim or crouching character may need a smaller value to *look* the same size as a bulky one.
 - Personality: `activity` scales frequency; the others weight scene tags (`friendliness` → `greeting`,
   `mischievousness` → `surprise`, `interaction` → `cursor`, `curiosity` → `explore` / `scan`).
 - Capabilities are free-form; scenes can require them (`"requires": { "capabilities": ["canSwing"] }`).
@@ -128,6 +129,10 @@ frequency), `hop` (height), `drop`, `arc` (height), `swing` (pendulum on a line;
 `scanline`, `zzz`, `speech_bubble`, `tether_line` (web / grapple line; to the screen top, to a swing's anchor, or a
 fixed `length` with `angle`), `projectile` (`clip`, `hit`, `speed`, `distance`, `rise`, `delay`), `overlay`
 (`clip` attached at a point, e.g. a beam from `muzzle`; `hold: false` hides it when done).
+
+**Speech**: `"speech": { "pool": "<lines.json pool>", "chance": 0.3 }` on a step. Pets talk only while standing,
+hovering or clinging in place: a line on a moving step waits for the next still step, and the pet stays there
+until the line has been read. Put speech on a still step.
 
 **Sounds**: `"sound": "<name>"` from `pet.json`. Off unless the user enables sounds; never while working, in
 meetings, or during quiet hours.

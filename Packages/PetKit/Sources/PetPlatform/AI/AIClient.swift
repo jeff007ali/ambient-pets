@@ -12,7 +12,15 @@ public enum AIKeychain {
          kSecAttrAccount as String: "\(provider.rawValue)-api-key"]
     }
 
-    public static func hasKey(_ provider: AIProvider) -> Bool { read(provider) != nil }
+    /// Whether a key is stored. Reads only the item's attributes, never the secret, so it can't trigger a
+    /// Keychain access prompt (the key itself is read only when a call is actually made).
+    public static func hasKey(_ provider: AIProvider) -> Bool {
+        var q = query(provider)
+        q[kSecReturnAttributes as String] = true
+        q[kSecMatchLimit as String] = kSecMatchLimitOne
+        var out: CFTypeRef?
+        return SecItemCopyMatching(q as CFDictionary, &out) == errSecSuccess
+    }
 
     static func read(_ provider: AIProvider) -> String? {
         var q = query(provider)
@@ -47,15 +55,29 @@ public enum AIClient {
         public var choice: AIChoice?
         public var latency: Double
         public var error: String?
+        /// Tokens the provider reports for the call (0 if it never answered).
+        public var inputTokens = 0
+        public var outputTokens = 0
+        /// A request was actually sent (false: no key, encoding failed).
+        public var sent = true
+    }
+
+    /// Token counts from a response body: OpenAI `usage.prompt_tokens / completion_tokens`, Anthropic
+    /// `usage.input_tokens / output_tokens`.
+    static func tokens(in data: Data) -> (input: Int, output: Int) {
+        guard case .object(let root)? = try? JSONDecoder().decode(JSONValue.self, from: data),
+              case .object(let u)? = root["usage"] else { return (0, 0) }
+        func int(_ k: String) -> Int { if case .number(let n)? = u[k] { return Int(n) }; return 0 }
+        return (int("prompt_tokens") + int("input_tokens"), int("completion_tokens") + int("output_tokens"))
     }
 
     public static func choose(provider: AIProvider, model: String, request r: AIRequest) async -> Outcome {
         let start = Date()
-        guard let key = AIKeychain.read(provider) else { return Outcome(choice: nil, latency: 0, error: "no \(provider.displayName) API key") }
+        guard let key = AIKeychain.read(provider) else { return Outcome(choice: nil, latency: 0, error: "no \(provider.displayName) API key", sent: false) }
         let json: JSONValue = provider == .openai ? AIChooser.openAIRequestBody(model: model, r) : AIChooser.requestBody(model: model, r)
         let candidates = r.candidates
         let blockNames = Set(r.blocks.keys), moodPets = r.moodPets
-        guard let body = try? JSONEncoder().encode(json) else { return Outcome(choice: nil, latency: 0, error: "encoding failed") }
+        guard let body = try? JSONEncoder().encode(json) else { return Outcome(choice: nil, latency: 0, error: "encoding failed", sent: false) }
         let endpoint = provider == .openai ? "https://api.openai.com/v1/chat/completions" : "https://api.anthropic.com/v1/messages"
         var request = URLRequest(url: URL(string: endpoint)!, timeoutInterval: timeout)
         request.httpMethod = "POST"
@@ -77,6 +99,7 @@ public enum AIClient {
                 do {
                     let (data, response) = try await URLSession.shared.data(for: finalRequest)
                     let status = (response as? HTTPURLResponse)?.statusCode ?? 0
+                    let used = tokens(in: data)
                     guard status == 200 else {
                         // Surface the API's own message (e.g. unknown model) for the Settings "Test" button.
                         let message = (try? JSONDecoder().decode(JSONValue.self, from: data)).flatMap { root -> String? in
@@ -88,7 +111,8 @@ public enum AIClient {
                     let choice = provider == .openai
                         ? AIChooser.parseOpenAIResponse(data, candidates: keys, blocks: blockNames, moodPets: moodPets)
                         : AIChooser.parseResponse(data, candidates: keys, blocks: blockNames, moodPets: moodPets)
-                    return Outcome(choice: choice, latency: 0, error: choice == nil ? "no valid choice (refusal or invalid answer)" : nil)
+                    return Outcome(choice: choice, latency: 0, error: choice == nil ? "no valid choice (refusal or invalid answer)" : nil,
+                                   inputTokens: used.input, outputTokens: used.output)
                 } catch {
                     return Outcome(choice: nil, latency: 0, error: (error as? URLError)?.code == .timedOut ? "timed out" : "network error")
                 }

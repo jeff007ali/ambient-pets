@@ -36,6 +36,10 @@ public final class ScreenManager {
 
     /// The display under the mouse pointer: a sensible default for on-demand summons.
     public var displayUnderMouse: DisplayGeometry? {
+        // Dev: `AMBIENT_PETS_DISPLAY=<index in NSScreen.screens>` pins summons to one display.
+        if let i = ProcessInfo.processInfo.environment["AMBIENT_PETS_DISPLAY"].flatMap(Int.init), displays.indices.contains(i) {
+            return displays[i]
+        }
         let p = NSEvent.mouseLocation
         return displays.first { $0.frame.contains(p) } ?? displays.first
     }

@@ -21,7 +21,14 @@ Turn on **Debug ▸ Outline Pet Window** to see the window's frame.
 - [ ] No jitter between poses (idle → walk → landing): feet stay planted.
 - [ ] Facing: the pet faces its direction of travel; repulsor and beam fire in the facing direction.
 - [ ] Thrusters come from the boots (hover: down; flight: backwards); dust puff + squash on landing.
-- [ ] Speech bubble sits above the head, inside the window, and disappears after ~2.6 s.
+- [ ] Speech bubble sits above the head, fully on screen, and moves with the pet.
+- [ ] Pets talk only while standing / hovering, and stay put until a long line has been read (3–6 s); a line is
+      never shown while the pet is off-screen, and the bubble leaves with the pet.
+- [ ] Spider-Man ▸ Swing & Hang: animated web swing, flip, web shot, hangs upside down, zips up; head never past
+      the top of the screen.
+- [ ] Summon Together: Iron Man, Spider-Man and Batman look the same size.
+- [ ] Edge Peek / Wall Cling on both screen edges: the whole bubble is on screen, its tail pointing at the head
+      (`AMBIENT_PETS_ALWAYS_SPEAK=1 AmbientPets --summon spiderman/edge_peek` makes every line play).
 - [ ] Feet land on the bottom of the visible frame (just above the Dock, or the screen bottom when the Dock hides).
 - [ ] After a scene ends: no pet window remains, and CPU returns to ~0 % (`top -pid $(pgrep -x AmbientPets)`).
 
@@ -65,7 +72,12 @@ Use **Debug ▸ Show Context Overlay** and `AmbientPets --context-probe` to see 
 - [ ] With no key, nothing changes. Settings ▸ AI: Provider OpenAI, paste the key, **Save to Keychain**, **Test**:
       a pick and a latency under 2 s (an "HTTP 404: model …" message means the model id needs changing).
 - [ ] Turn on "Let AI pick scenes": cameos still respect every pause, quiet hours and limits.
+- [ ] **Summon Now** with the AI on: the pet says a line about the situation (time, weekday, focus streak, being
+      away); Settings ▸ AI shows the pick. Summon again: "not asked: same situation" and a normal line; the AI is
+      asked again after the activity / part of day changes, every 45 min of focus, or after you come back. The first call after a rebuild may ask for Keychain access (Always Allow).
 - [ ] Turn off the network: cameos continue (Settings ▸ AI shows "fell back").
+- [ ] Settings ▸ AI ▸ Usage: Test adds one call (with tokens) and a Recent entry; a skipped cameo adds to
+      "skipped"; the menu's "AI: N calls today" matches; Reset Counts clears it.
 - [ ] **Test** sometimes returns `routine:<pet> [block, …]` and, the first time each day, moods; the menu then shows
       "Moods: …". Next day the moods are asked for again.
 - [ ] With 2+ pets out (Pets ▸ Mix, Together chance up): AI picks show `interaction:<id>` or `together` in
@@ -77,6 +89,9 @@ Use **Debug ▸ Show Context Overlay** and `AmbientPets --context-probe` to see 
 ## Multi-display (M4)
 
 - [ ] Over many cameos, pets appear on every connected display.
+- [ ] Monitor stacked above (or beside) the laptop: a pet entering or leaving through the shared edge never shows
+      on the other display (no web line or feet poking through), and stays crisp on the Retina screen.
+      `AMBIENT_PETS_DISPLAY=<n> AmbientPets --summon batman/grapple_drop` pins a summon to display n.
 - [ ] Unplugging the display a pet is on ends the scene cleanly.
 - [ ] **Summon ▸ Iron Man ▸ Cross-Monitor Flight** with two side-by-side displays: one continuous flight across both.
 - [ ] Displays with a gap / offset arrangement: the pet fades out at one edge and fades in on the other display.

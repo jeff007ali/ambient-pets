@@ -25,6 +25,69 @@ public final class PetEngine {
     public private(set) var contextReason: String?
     /// Last AI chooser call: latency and result, for Settings.
     public private(set) var lastAIResult: String?
+    /// How much the AI has been used (persisted): Settings ▸ AI and the menu show it.
+    public private(set) var aiUsage = UserDefaults.standard.data(forKey: "aiUsage.v1")
+        .flatMap { try? JSONDecoder().decode(AIUsage.self, from: $0) } ?? AIUsage()
+
+    /// Today's tally (rolled over if the day changed since the last call).
+    public var aiUsageToday: AIUsage.Tally {
+        var u = aiUsage
+        u.rollOver(to: clock.now)
+        return u.today
+    }
+
+    private func saveAIUsage() {
+        if let data = try? JSONEncoder().encode(aiUsage) { UserDefaults.standard.set(data, forKey: "aiUsage.v1") }
+    }
+
+    /// Counts one AI request (nothing is counted when none was sent, e.g. no key) and logs it at notice level, so
+    /// `log show` keeps a history.
+    private func recordAICall(_ o: AIClient.Outcome, source: String) {
+        let what: String
+        if let c = o.choice {
+            what = c.key + (c.routine.isEmpty ? "" : " [\(c.routine.joined(separator: ", "))]") + (c.speech.map { " — “\($0)”" } ?? "")
+        } else {
+            what = "fell back: \(o.error ?? "unknown")"
+        }
+        let summary = "\(source): \(what) (\(String(format: "%.1f", o.latency)) s, \(o.inputTokens + o.outputTokens) tokens)"
+        log.notice("AI call \(summary, privacy: .public)")
+        guard o.sent else { return }
+        aiUsage.recordCall(answered: o.choice != nil, inputTokens: o.inputTokens, outputTokens: o.outputTokens,
+                           summary: summary, at: clock.now)
+        saveAIUsage()
+    }
+
+    public func resetAIUsage() {
+        aiUsage = AIUsage()
+        saveAIUsage()
+    }
+
+    /// The situation the AI last reacted to. It's asked again only when that changes (see `shouldAskAI`).
+    @ObservationIgnored private var lastAISituation: String?
+    @ObservationIgnored private var wasAway = false
+    /// The user is back after 5+ minutes away (until the AI has reacted to it).
+    @ObservationIgnored private var cameBack = false
+
+    /// What the AI's line would be about: activity, part of the day, weekday, each 45 minutes of focus, coming back.
+    private func situation(state: ContextState) -> String {
+        let focus = state == .activeWork || state == .reading ? Int(clock.now.timeIntervalSince(focusStart) / 60) / 45 : -1
+        let s = AIContextSummary(state: state, appCategory: nil, date: clock.now, recentScenes: [])
+        return "\(state.rawValue)|\(s.timeOfDay)|\(s.weekday)|focus\(focus)\(cameBack ? "|back" : "")"
+    }
+
+    /// The AI is asked once per situation (and when today's moods are due); other cameos use the normal picker and
+    /// the pets' own lines, so it isn't called, or talking about the same thing, every time.
+    private func shouldAskAI(state: ContextState) -> Bool {
+        if settings.aiMoods, moodBook.needsMoods(on: clock.now, pets: activePacks.map(\.id)) { return true }
+        if situation(state: state) != lastAISituation { return true }
+        lastAIResult = "not asked: same situation as its last line (pets use their own lines until it changes)"
+        aiUsage.recordSkip(at: clock.now)
+        saveAIUsage()
+        return false
+    }
+
+    /// The AI's last few lines, so it doesn't repeat itself.
+    @ObservationIgnored private var recentAILines: [String] = []
     /// Today's AI-assigned moods (persisted for the day).
     public private(set) var moodBook = (UserDefaults.standard.data(forKey: "moods.v1")).flatMap { try? JSONDecoder().decode(MoodBook.self, from: $0) } ?? MoodBook()
     /// Debug overlay of context, obstacles and planner candidates (not persisted).
@@ -127,9 +190,22 @@ public final class PetEngine {
                          displayCount: screens.displays.count, now: clock.now)
     }
 
-    /// Plays a random scene by one active pet now, ignoring frequency gates and context.
+    /// Plays a random scene by one active pet now, ignoring frequency gates and context. With the AI on, it picks
+    /// (and speaks) as it would for a scheduled cameo.
     public func summonRandom() {
         let pool = activePacks.isEmpty ? packs : activePacks
+        let (state, policy) = currentPolicy()
+        if settings.aiEnabled, AIKeychain.hasKey(settings.aiProvider), !isPlaying, shouldAskAI(state: state) {
+            let ctx = SelectionContext(state: state == .idle || policy.paused ? .idle : state,
+                                       policy: policy.paused ? PolicyTable.defaultPolicy(for: .idle) : policy,
+                                       enabledTiers: settings.enabledTiers, displayCount: screens.displays.count, now: clock.now)
+            chooseWithAI(pool: pool, context: ctx, state: state, size: 1, manual: true)
+            return
+        }
+        summonByRules(pool)
+    }
+
+    private func summonByRules(_ pool: [LoadedPack]) {
         guard let pick = selector.select(pets: pool.map { self.selectable($0) }, context: anyContext, history: history, rng: rng)
             ?? firstScene(of: pool) else { return }
         play([pick], on: screens.displayUnderMouse, record: false)
@@ -260,7 +336,7 @@ public final class PetEngine {
             windowTitle: settings.aiShareWindowTitles ? AIClient.frontmostWindowTitle() : nil,
             focusMinutes: state == .activeWork || state == .reading ? Int(now.timeIntervalSince(focusStart) / 60) : nil,
             awayMinutes: state == .idle ? Int(idle / 60) : nil,
-            appearancesToday: appearancesToday,
+            appearancesToday: appearancesToday, recentLines: recentAILines,
             moods: Dictionary(todaysMoods.map { (names[$0.key] ?? $0.key, $0.value.rawValue) }, uniquingKeysWith: { a, _ in a }))
     }
 
@@ -303,9 +379,14 @@ public final class PetEngine {
 
     /// Opt-in AI appearance (every gate has passed): one call picks a scene, an interaction, a together appearance
     /// or composes a routine, and may set today's moods and a speech line. Any failure → the rule appearance.
-    private func chooseWithAI(pool: [LoadedPack], context: SelectionContext, state: ContextState, size: Int) {
+    /// `manual`: a menu summon (no gates, not counted, plays under the pointer).
+    private func chooseWithAI(pool: [LoadedPack], context: SelectionContext, state: ContextState, size: Int, manual: Bool = false) {
         let (request, singles, interactions) = aiRequest(pool: pool, context: context, state: state, size: size)
-        guard request.candidates.count >= 2 else { ruleAppearance(pool: pool, context: context, state: state, size: size); return }
+        let fallback = { [weak self] (size: Int) in
+            guard let self else { return }
+            if manual { self.summonByRules(pool) } else { self.ruleAppearance(pool: pool, context: context, state: state, size: size) }
+        }
+        guard request.candidates.count >= 2 else { fallback(size); return }
         let provider = settings.aiProvider, model = settings.aiModel
         Task { @MainActor [weak self] in
             let outcome = await AIClient.choose(provider: provider, model: model, request: request)
@@ -313,34 +394,45 @@ public final class PetEngine {
             self.lastAIResult = outcome.choice.map { c in
                 "picked \(c.key)\(c.routine.isEmpty ? "" : " [\(c.routine.joined(separator: ", "))]") in \(String(format: "%.2f", outcome.latency)) s"
             } ?? "fell back (\(outcome.error ?? "unknown")) after \(String(format: "%.2f", outcome.latency)) s"
-            log.info("AI chooser: \(self.lastAIResult ?? "", privacy: .public)")
+            self.recordAICall(outcome, source: manual ? "Summon Now" : "cameo")
             if let moods = outcome.choice?.moods { self.storeMoods(moods) }
+            if outcome.choice != nil {
+                // This situation has had its AI moment; generic lines until it changes.
+                self.lastAISituation = self.situation(state: state)
+                self.cameBack = false
+            }
+            if let line = outcome.choice?.speech { self.recentAILines = Array((self.recentAILines + [line]).suffix(6)) }
             // Things may have changed during the call: never play past a pause, lock or disable.
-            guard self.settings.enabled, !self.isPaused, !self.signals.isLocked, !self.isPlaying else { self.scheduleNext(); return }
-            guard let choice = outcome.choice else { self.ruleAppearance(pool: pool, context: context, state: state, size: size); return }
-            let display = self.screens.randomDisplay(self.rng)
+            if manual {
+                guard !self.isPlaying, !self.signals.isLocked else { return }
+            } else {
+                guard self.settings.enabled, !self.isPaused, !self.signals.isLocked, !self.isPlaying else { self.scheduleNext(); return }
+            }
+            guard let choice = outcome.choice else { fallback(size); return }
+            let display = manual ? self.screens.displayUnderMouse : self.screens.randomDisplay(self.rng)
             let speech = self.settings.aiSpeech ? choice.speech : nil
+            let record = !manual
             let obstacles = self.lastSnapshot?.obstacles
             if choice.key == "together" {
                 let picks = self.pickGroup(from: pool, count: size, context: context)
-                if picks.isEmpty { self.ruleAppearance(pool: pool, context: context, state: state, size: 1) }
-                else { self.play(picks, on: display, record: true, context: state, obstacles: obstacles) }
+                if picks.isEmpty { fallback(1) }
+                else { self.play(picks, on: display, record: record, context: state, obstacles: obstacles, speech: speech) }
             } else if let (e, assignments) = interactions[choice.key], let assignment = self.rng.element(of: assignments) {
-                self.playEnsemble(e, assignment: assignment, on: display, record: true, context: state)
+                self.playEnsemble(e, assignment: assignment, on: display, record: record, context: state)
             } else if choice.key.hasPrefix("routine:") {
                 let petID = String(choice.key.dropFirst("routine:".count))
                 guard let pack = pool.first(where: { $0.id == petID }), let lib = pack.data.routines,
                       let scene = RoutineComposer.compose(lib, petID: petID, blocks: choice.routine) else {
-                    self.ruleAppearance(pool: pool, context: context, state: state, size: 1)
+                    fallback(1)
                     return
                 }
-                self.play([SceneSelection(petID: petID, sceneID: scene.id, tier: scene.tier)], on: display, record: true,
+                self.play([SceneSelection(petID: petID, sceneID: scene.id, tier: scene.tier)], on: display, record: record,
                           context: state, obstacles: obstacles, speech: speech, custom: [petID: scene])
             } else if let c = singles.first(where: { $0.key == choice.key }) {
                 self.play([SceneSelection(petID: c.petID, sceneID: c.scene.id, tier: c.scene.tier)], on: display,
-                          record: true, context: state, obstacles: obstacles, speech: speech)
+                          record: record, context: state, obstacles: obstacles, speech: speech)
             } else {
-                self.ruleAppearance(pool: pool, context: context, state: state, size: size)
+                fallback(size)
             }
         }
     }
@@ -369,6 +461,7 @@ public final class PetEngine {
                                    enabledTiers: settings.enabledTiers, displayCount: screens.displays.count, now: clock.now)
         let (request, _, _) = aiRequest(pool: pool, context: ctx, state: state, size: 1)
         let o = await AIClient.choose(provider: settings.aiProvider, model: settings.aiModel, request: request)
+        recordAICall(o, source: "Test")
         let r = o.choice.map { c in
             var t = "✓ \(c.key)"
             if !c.routine.isEmpty { t += " [\(c.routine.joined(separator: ", "))]" }
@@ -427,8 +520,7 @@ public final class PetEngine {
         for role in e.roles {
             guard let petID = assignment[role.id], let pack = packs.first(where: { $0.id == petID }) else { return }
             let scene = e.scene(for: role)
-            boxes[role.id] = SceneDirector.box(for: scene, pack: pack, scale: pack.data.definition.renderScale(userScale: settings.petScale),
-                                               speech: settings.speechBubbles, display: display)
+            boxes[role.id] = SceneDirector.box(for: scene, pack: pack, scale: pack.data.definition.renderScale(userScale: settings.petScale), display: display)
             parts.append((role, pack, scene))
         }
         let places = EnsemblePlanner.place(e, display: display, boxes: boxes, rng: rng)
@@ -470,7 +562,13 @@ public final class PetEngine {
     private func takeSnapshot() -> ContextMonitor.Snapshot {
         let snap = context.snapshot(settings: settings, idleSeconds: signals.idleSeconds(), sinceKeystroke: signals.secondsSinceKeystroke(),
                                     locked: signals.isLocked, displays: screens.displays)
-        if snap.signals.idleSeconds >= 300 || snap.signals.isLocked { focusStart = clock.now }
+        if snap.signals.idleSeconds >= 300 || snap.signals.isLocked {
+            focusStart = clock.now
+            wasAway = true
+        } else if wasAway, snap.signals.idleSeconds < 60 {
+            wasAway = false
+            cameBack = true
+        }
         return snap
     }
 
@@ -554,7 +652,7 @@ public final class PetEngine {
                                        displayCount: screens.displays.count, now: now)
             let pool = activePacks
             let size = PetRoster.groupSize(available: pool.count, settings: settings, rng: rng)
-            if settings.aiEnabled, AIKeychain.hasKey(settings.aiProvider) {
+            if settings.aiEnabled, AIKeychain.hasKey(settings.aiProvider), shouldAskAI(state: state) {
                 chooseWithAI(pool: pool, context: ctx, state: state, size: size)
             } else {
                 ruleAppearance(pool: pool, context: ctx, state: state, size: size)
@@ -575,7 +673,6 @@ public final class PetEngine {
         options.reduceQuality = settings.reduceQuality
         options.outlineWindow = settings.debugOutlineWindow
         options.reactToCursor = settings.reactToCursor
-        options.speechOverride = speech
 
         let laneOrder = picks.count > 1 ? Array((0..<picks.count).shuffled()) : [0]
         scheduledAppearance = record
@@ -584,6 +681,8 @@ public final class PetEngine {
             guard let pack = packs.first(where: { $0.id == pick.petID }), let scene = custom[pick.petID] ?? pack.scene(pick.sceneID) else { continue }
             let lane = picks.count > 1 ? ScreenLane(index: laneOrder[i], count: picks.count) : nil
             let label = "\(pack.name): \(scene.name)"
+            // One pet says the AI line (the first one to start).
+            options.speechOverride = started == 0 ? speech : nil
             let d = SceneDirector(pack: pack, scene: scene, display: display, options: options, rng: rng, lane: lane,
                                   obstacles: obstacles, allDisplays: screens.displays) { [weak self] outcome in
                 self?.directorFinished(label: label, outcome: outcome)

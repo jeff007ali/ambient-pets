@@ -104,9 +104,51 @@ import Testing
         #expect(text.contains("focusMinutes") && text.contains("brooding"))
     }
 
+    @Test func summaryHasLocalTimeAndRecentLines() throws {
+        let s = AIContextSummary(state: .activeWork, appCategory: nil, date: date(2026, 10, 12, 23), recentScenes: [],
+                                 recentLines: ["Still up?"], calendar: newYork)
+        #expect(s.localTime == "23:00" && s.timeOfDay == "night")
+        let text = String(decoding: try JSONEncoder().encode(s), as: UTF8.self)
+        #expect(text.contains("Still up?"))
+    }
+
+    @Test func promptAsksForASituationalLine() {
+        #expect(AIChooser.system.contains("reacts to the user's situation"))
+        #expect(!AIChooser.system.contains("more often than not"))
+    }
+
     @Test func candidateKindsHaveStableKeys() {
         #expect(AICandidate.interaction(id: "greeting", name: "Greeting", pets: ["a", "b"], tier: .funny).key == "interaction:greeting")
         #expect(AICandidate.together(pets: ["a", "b"]).key == "together")
         #expect(AICandidate.routine(petID: "iron", petName: "Iron Man", personality: Personality()).key == "routine:iron")
+    }
+}
+
+struct AIUsageTests {
+    let cal = { var c = Calendar(identifier: .gregorian); c.timeZone = TimeZone(identifier: "UTC")!; return c }()
+
+    @Test func countsCallsTokensAndSkips() {
+        var u = AIUsage()
+        let t = Date(timeIntervalSince1970: 1_800_000_000)
+        u.recordCall(answered: true, inputTokens: 900, outputTokens: 40, summary: "a", at: t, calendar: cal)
+        u.recordCall(answered: false, inputTokens: 0, outputTokens: 0, summary: "b", at: t, calendar: cal)
+        u.recordSkip(at: t, calendar: cal)
+        #expect(u.today.calls == 2 && u.today.answered == 1 && u.today.failed == 1 && u.today.skipped == 1)
+        #expect(u.total.inputTokens == 900 && u.total.outputTokens == 40)
+        #expect(u.recent.map(\.summary) == ["b", "a"])
+    }
+
+    @Test func todayResetsOnANewDayButTotalKeeps() {
+        var u = AIUsage()
+        let t = Date(timeIntervalSince1970: 1_800_000_000)
+        u.recordCall(answered: true, inputTokens: 1, outputTokens: 1, summary: "a", at: t, calendar: cal)
+        u.recordCall(answered: true, inputTokens: 1, outputTokens: 1, summary: "b", at: t + 86_400, calendar: cal)
+        #expect(u.today.calls == 1 && u.total.calls == 2)
+    }
+
+    @Test func keepsOnlyTheLatestEntries() {
+        var u = AIUsage()
+        for i in 0..<30 { u.recordCall(answered: true, inputTokens: 0, outputTokens: 0, summary: "\(i)", at: Date(), calendar: cal) }
+        #expect(u.recent.count == AIUsage.recentLimit && u.recent.first?.summary == "29")
     }
 }

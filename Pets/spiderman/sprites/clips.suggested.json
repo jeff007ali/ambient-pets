@@ -197,6 +197,24 @@
       ],
       "loop" : true
     },
+    "hang_in" : {
+      "fps" : 12,
+      "frames" : [
+        "hang_in_0",
+        "hang_in_1",
+        "hang_in_2",
+        "hang_in_3",
+        "hang_in_4",
+        "hang_in_5",
+        "hang_in_6",
+        "hang_in_7",
+        "hang_in_8",
+        "hang_in_9",
+        "hang_in_10",
+        "hang_in_11"
+      ],
+      "loop" : true
+    },
     "hit" : {
       "fps" : 12,
       "frames" : [
@@ -402,7 +420,8 @@
     "swing" : {
       "fps" : 12,
       "frames" : [
-        "swing_0"
+        "swing_0",
+        "swing_1"
       ],
       "loop" : true
     },

@@ -63,7 +63,12 @@ AMBIENT_PETS_DEBUG=1 build/AmbientPets.app/Contents/MacOS/AmbientPets --summon a
   - give each pet a mood for the day (cheerful, playful, mischievous, focused, brooding, sleepy) that shifts its
     personality and how often it shows up (Menu shows today's moods).
 
-  Each of these has its own toggle in Settings ▸ AI. It sends only the activity, app category, time of day and weekday,
+  Saving a key turns the AI on; **Summon Now** also goes through it, so you can try it from the menu. The AI is
+  asked once per situation (activity, part of the day, each 45 minutes of focus, coming back after a break, or
+  today's moods); other cameos use the normal picker and the pets' own lines. When the AI writes a line (at most
+  about six words), the pet says it, pausing until it's been read. Settings ▸ AI ▸ Usage counts calls (today and
+  all time, answered / failed / skipped, tokens) and lists the last 20; the menu shows today's count. Each call is
+  also in the system log: `log show --last 1d --predicate 'subsystem == "dev.jefflabs.AmbientPets"' | grep "AI call"`. Each of these has its own toggle in Settings ▸ AI. It sends only the activity, app category, time of day and weekday,
   minutes focused or away, cameos today, recent scenes, moods and the candidate scenes and moves (window titles only
   if you allow it). Try a routine without a key: `AmbientPets --summon routine:ironman:repulsor_shot,celebrate`.
 
@@ -80,7 +85,9 @@ live in `ThirdParty/source-assets/` and the generated `sheet.png` files are giti
   (frame indices per clip, `flip` for mixed facings, `pivotByClip: torso` for a steady walk).
 
 Every `pet.json` sets `"height"`: the character's standing height in sprite px. The engine scales each pet so a
-standing pet is 120 pt tall at 100 % (96 pt at the default 80 %), so pets from different games match side by side.
+standing pet is 135 pt tall at 100 % (108 pt at the default 80 %), so pets from different games match side by side.
+The values are tuned by eye in a side-by-side render (Iron Man 82: his idle hovers on jets; Spider-Man 62: he
+crouches; Batman 78: his ears and cape add height but he's slim), so all three look the same size together.
 
 Then merge `sprites/clips.suggested.json` into `clips.json` (fps, loop, attachment points like `hand` / `web` /
 `thruster`), check with `petpack preview <pet> <clip> --out strip.png`, and `make validate-packs`.

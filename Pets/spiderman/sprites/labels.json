@@ -26,10 +26,14 @@
       "Land_*"
     ],
     "swing": [
-      "Webswing.png"
+      "Attackswinging_00.png",
+      "Attackswinging_01.png"
     ],
     "hang": [
       "Selectscreen_*"
+    ],
+    "hang_in": [
+      "Selectscreenstart_*"
     ],
     "sense": [
       "Idle_00.png+Spidersense_*"

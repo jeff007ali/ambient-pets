@@ -18,6 +18,10 @@ struct MenuBarContent: View {
         if engine.appearancesToday > 0 {
             Text("\(engine.appearancesToday) appearance\(engine.appearancesToday == 1 ? "" : "s") today")
         }
+        if engine.settings.aiEnabled {
+            let ai = engine.aiUsageToday
+            Text("AI: \(ai.calls) call\(ai.calls == 1 ? "" : "s") today" + (ai.skipped > 0 ? ", \(ai.skipped) skipped" : ""))
+        }
         Divider()
 
         Button("Summon Now") { engine.summonRandom() }

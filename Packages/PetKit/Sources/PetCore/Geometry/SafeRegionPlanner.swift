@@ -66,15 +66,15 @@ public enum SafeRegionPlanner {
 
     /// - Returns: the best plan, or nil when every candidate hits a blocking obstacle (skip this appearance).
     public static func plan(region: SceneRegion, display: DisplayGeometry, box: PetBox, rng: RandomSource,
-                            lane: ScreenLane? = nil, obstacles: [Obstacle], attempts: Int = 12) -> Result? {
+                            lane: ScreenLane? = nil, obstacles: [Obstacle], attempts: Int = 12, headroom: Double = 0) -> Result? {
         guard !obstacles.isEmpty else {
-            let p = ScenePlanner.plan(region: region, display: display, box: box, rng: rng, lane: lane)
+            let p = ScenePlanner.plan(region: region, display: display, box: box, rng: rng, lane: lane, headroom: headroom)
             return Result(plan: p, score: 0, candidates: [p.anchor])
         }
         var best: (ScenePlan, Double)?
         var tried: [CGPoint] = []
         for _ in 0..<max(attempts, 1) {
-            let p = ScenePlanner.plan(region: region, display: display, box: box, rng: rng, lane: lane)
+            let p = ScenePlanner.plan(region: region, display: display, box: box, rng: rng, lane: lane, headroom: headroom)
             tried.append(p.anchor)
             guard let s = score(restingRect(anchor: p.anchor, box: box), obstacles: obstacles) else { continue }
             if best == nil || s < best!.1 { best = (p, s) }

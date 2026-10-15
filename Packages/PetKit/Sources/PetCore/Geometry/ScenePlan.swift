@@ -33,8 +33,8 @@ public struct ScenePlan: Sendable, Hashable {
         self.side = side
     }
 
-    /// Resolves an `AnchorRef` name to a pivot position. Off-screen points keep the whole window (sprite and
-    /// effects) outside the display's full frame.
+    /// Resolves an `AnchorRef` name to a pivot position. Off-screen points keep the sprite (and nearby effects)
+    /// outside the display's full frame.
     public func resolve(_ ref: String, current: CGPoint) -> CGPoint? {
         let frame = display.frame, visible = display.visibleFrame
         switch ref {
@@ -43,8 +43,9 @@ public struct ScenePlan: Sendable, Hashable {
         case "ground": return CGPoint(x: current.x, y: visible.minY)
         case "center": return CGPoint(x: visible.midX, y: anchor.y)
         case "screen_center": return CGPoint(x: visible.midX, y: visible.midY)
-        case "top_offscreen": return CGPoint(x: anchor.x, y: frame.maxY + box.pivot.y)
-        case "bottom_offscreen": return CGPoint(x: anchor.x, y: frame.minY - (box.size.height - box.pivot.y))
+        // Straight up / down from where the pet is (on the first step, `current` is the anchor).
+        case "top_offscreen": return CGPoint(x: current.x, y: frame.maxY + box.pivot.y)
+        case "bottom_offscreen": return CGPoint(x: current.x, y: frame.minY - (box.size.height - box.pivot.y))
         case "left_offscreen": return offscreen(.left)
         case "right_offscreen": return offscreen(.right)
         case "side_offscreen": return offscreen(side)
@@ -59,11 +60,16 @@ public struct ScenePlan: Sendable, Hashable {
 
     var wallX: CGFloat { side == .left ? display.visibleFrame.minX : display.visibleFrame.maxX }
 
+    /// Just past a side edge: the sprite and the effects trailing close behind it (up to 120 pt, e.g. thrusters)
+    /// are out of view. Wider windows (swings, beams) needn't be fully outside: pet windows are clipped to their
+    /// display, so the pet comes into view as soon as it crosses the edge.
     private func offscreen(_ s: HorizontalSide) -> CGPoint {
         let frame = display.frame
+        let behindLeft = min(box.pivot.x - box.sprite.left, 120)
+        let behindRight = min(box.size.width - box.pivot.x - box.sprite.right, 120)
         switch s {
-        case .left: return CGPoint(x: frame.minX - (box.size.width - box.pivot.x), y: anchor.y)
-        case .right: return CGPoint(x: frame.maxX + box.pivot.x, y: anchor.y)
+        case .left: return CGPoint(x: frame.minX - box.sprite.right - max(behindRight, 0), y: anchor.y)
+        case .right: return CGPoint(x: frame.maxX + box.sprite.left + max(behindLeft, 0), y: anchor.y)
         }
     }
 }
@@ -93,8 +99,10 @@ public struct ScreenLane: Sendable, Hashable {
 
 /// v1 planner: picks an anchor for the scene's preferred region. The full obstacle-aware version comes in M5.
 public enum ScenePlanner {
+    /// - Parameter headroom: how far the scene rises above its anchor (arcs, hops, hovering), points; air and
+    ///   anywhere anchors stay low enough that the pet's head never leaves the top of the screen.
     public static func plan(region: SceneRegion, display: DisplayGeometry, box: PetBox, rng: RandomSource,
-                            lane: ScreenLane? = nil) -> ScenePlan {
+                            lane: ScreenLane? = nil, headroom: Double = 0) -> ScenePlan {
         var region = region
         // A middle lane touches no screen edge, so edge scenes play from the bottom instead.
         if region == .sideEdge, let lane, lane.count > 1, lane.edge == nil { region = .bottomEdge }
@@ -121,11 +129,11 @@ public enum ScenePlanner {
             side = lane?.edge ?? (anchor.x < v.midX ? .left : .right)
         case .air:
             anchor = CGPoint(x: rng.double(in: lane == nil ? range(v.minX + v.width * 0.2, v.maxX - v.width * 0.2) : xRange(margin)),
-                             y: rng.double(in: range(v.minY + v.height * 0.45, v.maxY - s.up - 20)))
+                             y: rng.double(in: range(v.minY + v.height * 0.45, v.maxY - s.up - 20 - headroom)))
             side = randomSide()
         case .anywhere:
             anchor = CGPoint(x: rng.double(in: xRange(margin)),
-                             y: rng.double(in: range(v.minY, v.maxY - s.up - 8)))
+                             y: rng.double(in: range(v.minY, v.maxY - s.up - 8 - headroom)))
             side = randomSide()
         default: // bottom_edge and unknown regions
             anchor = CGPoint(x: rng.double(in: xRange(margin)), y: v.minY)

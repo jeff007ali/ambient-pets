@@ -27,6 +27,10 @@ import Testing
 
     @Test func speechIsCappedSingleLineAndFiltered() {
         #expect(AIChooser.sanitize(String(repeating: "a", count: 200))!.count == AIChooser.maxSpeechLength)
+        #expect(AIChooser.sanitize("Late night again? Maybe get some sleep soon, okay friend?") == "Late night again?")
+        let cut = AIChooser.sanitize("Ninety minutes of focus deserves a little stretch break now")!
+        #expect(cut.count <= AIChooser.maxSpeechLength && cut.hasSuffix("…") && !cut.contains("  "))
+        #expect(cut.dropLast().last != " ")
         #expect(AIChooser.sanitize("line one\nline two") == "line one line two")
         #expect(AIChooser.sanitize("well shit") == nil)
         #expect(AIChooser.sanitize("Hi 👋") == "Hi")

@@ -117,20 +117,50 @@ var repoPets: URL? {
     @Test func windowGrowsForSwingsAndBeams() throws {
         let p = try pack()
         var plain = p.data.scenes[0]
-        let small = SceneDirector.box(for: plain, pack: p, scale: 4, speech: false, display: testDisplay)
+        let small = SceneDirector.box(for: plain, pack: p, scale: 4, display: testDisplay)
         var swing = StepDefinition(clip: "idle", motion: MotionSpec(type: .swing), duration: 3)
         swing.motion.attach = "top"
         plain.steps = [swing]
         plain.region = .air
-        let big = SceneDirector.box(for: plain, pack: p, scale: 4, speech: false, display: testDisplay)
+        let big = SceneDirector.box(for: plain, pack: p, scale: 4, display: testDisplay)
         #expect(big.size.height > small.size.height + 200) // the rope reaches the top of the screen
         plain.steps = [StepDefinition(clip: "idle", duration: 3, effects: [EffectSpec("beam", params: ["length": .number(150)])])]
-        let beam = SceneDirector.box(for: plain, pack: p, scale: 4, speech: false, display: testDisplay)
+        let beam = SceneDirector.box(for: plain, pack: p, scale: 4, display: testDisplay)
         #expect(beam.size.width >= 2 * 150 * 4 * 0.9)
     }
 
     @Test func petsWithAHeightGetTheSameOnScreenHeight() throws {
         let p = try pack() // height 12 px
-        #expect(abs(p.data.definition.renderScale(userScale: 0.8) * 12 - 96) < 1e-9)
+        #expect(abs(p.data.definition.renderScale(userScale: 0.8) * 12 - PetDefinition.standardHeight * 0.8) < 1e-9)
+    }
+}
+
+@MainActor
+struct SpeechBubbleTests {
+    let size = CGSize(width: 150, height: 40)
+    let screen = CGRect(x: 0, y: 0, width: 1500, height: 950)
+
+    @Test func centredOverTheHeadWhenThereIsRoom() {
+        let (r, tail) = SpeechBubble.layout(size: size, head: CGPoint(x: 700, y: 400), area: screen)
+        #expect(abs(r.midX - 700) <= 1 && r.minY > 400 && tail == 700)
+    }
+
+    /// Peeking from either edge: the head is at the screen edge, so the bubble slides inwards.
+    @Test(arguments: [CGPoint(x: 5, y: 300), CGPoint(x: 1495, y: 300)])
+    func staysOnScreenAtAnEdge(head: CGPoint) {
+        let (r, tail) = SpeechBubble.layout(size: size, head: head, area: screen)
+        #expect(screen.contains(r))
+        #expect(tail >= r.minX && tail <= r.maxX)
+    }
+
+    @Test func staysBelowTheTopOfTheScreen() {
+        let (r, _) = SpeechBubble.layout(size: size, head: CGPoint(x: 700, y: 940), area: screen)
+        #expect(r.maxY <= screen.maxY)
+    }
+
+    @Test func longerLinesStayUpLonger() {
+        #expect(SpeechBubble.readingTime("Hi.") == 2.8)
+        #expect(SpeechBubble.readingTime("Ninety minutes in. Stretch?") > 2.8)
+        #expect(SpeechBubble.readingTime(String(repeating: "a", count: 300)) == 6)
     }
 }

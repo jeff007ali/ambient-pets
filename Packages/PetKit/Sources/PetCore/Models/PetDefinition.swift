@@ -34,7 +34,7 @@ public struct PetDefinition: Codable, Sendable {
     public func has(_ capability: String) -> Bool { capabilities[capability] ?? false }
 
     /// On-screen height of a standing pet at 100 % size, points.
-    public static let standardHeight = 120.0
+    public static let standardHeight = 135.0
 
     /// Sprite px → points for a given user size (0.5…1.5).
     public func renderScale(userScale: Double) -> Double {
