@@ -1,0 +1,44 @@
+{
+  "id": "crown",
+  "name": "Goddess of Death",
+  "tier": "rare",
+  "weight": 1.0,
+  "tags": [
+    "flashy",
+    "surprise"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "appear",
+      "duration": 1.0,
+      "effects": [
+        {
+          "type": "fade",
+          "mode": "in",
+          "duration": 0.4
+        }
+      ],
+      "sound": "whoosh"
+    },
+    {
+      "clip": "crown",
+      "duration": 1.79,
+      "sound": "boom"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.4,
+      "speech": {
+        "pool": "crown",
+        "chance": 0.7
+      }
+    },
+    {
+      "clip": "vanish",
+      "duration": 1.83,
+      "sound": "whoosh"
+    }
+  ]
+}

@@ -23,6 +23,25 @@ Record of the sprite art used, or considered, for each pet. Update it whenever a
 - In use: `petpack frames Pets/ironman/sprites/labels.json`. He always flies in this game (idle hovers on jets; Sprint is
   real flight). "Special" is the Proton Cannon (shoulder cannon + beam); Selectscreen is a suit-up (helmet closes).
 
+### Black Panther, Captain America, Cosmic Ghost Rider, Hela, Thanos — Marvel Cosmic Invasion, via The Spriters Resource
+- Same game, format and scale as Spider-Man and Iron Man: one PNG per frame on a 256×256 canvas, centre point (128, 224).
+  Zips (in `ThirdParty/source-assets/OG/`): "Playable Characters - Black Panther / Captain America / Cosmic Ghost Rider"
+  and "Bosses - Hela / Thanos". Credits in each folder's `Tag.txt`.
+- Downloaded: ☑ 2026-10-16 → `ThirdParty/source-assets/cosmic-<id>/`:
+  - `cosmic-blackpanther/default` (Default suit, 331 frames) + `effects/` (vibranium kunai, kinetic burst, claw streaks).
+    Selectscreen = seated on the Wakandan throne.
+  - `cosmic-captainamerica/merged` (Default suit, body + shield already composited) + `default/` (body and shield as
+    separate layers; used for the thrown `Shield_*`, the Selectscreen salute and the shield-charge `Special`).
+  - `cosmic-ghostrider/default` (Default suit, 397 frames) + `effects/` (pistol bolt, grenade, blue ground blast,
+    flames). Special = rides his cosmic bike; Selectscreen = sitting on the bike.
+  - `cosmic-hela/default` (231 frames) + `effects/` (necroswords, Fenrir, thorns, judgement orb; sub-folder names are
+    prefixed, e.g. `Effects_FenrirActive_*`). No jump: she arrives and leaves as a cloud of crows (Dodge*).
+  - `cosmic-thanos/default` (252 frames) + `effects/` (`Projectile_*` energy beam, `Drone_*`, `Turret_*`). Includes
+    the finger snap, the Power Stone blast and the throne retreat.
+  Colour variants in the zips are unused.
+- In use: `petpack frames Pets/<id>/sprites/labels.json` with a fixed `"anchor": [128, 226]` (the game's own origin,
+  feet on the ground) so flipping and pose changes never shift the character.
+
 ### Batman — Batman Returns (SNES), via The Spriters Resource
 - "SNES - Batman Returns - Playable Characters - Batman" (sheet upgraded by DAD34853), `#A34D4D` background.
 - Downloaded: ☑ 2026-10-11 → `ThirdParty/source-assets/snes-batman/sheet.png` (900×1650).

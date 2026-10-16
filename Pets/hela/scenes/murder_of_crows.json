@@ -1,0 +1,25 @@
+{
+  "id": "murder_of_crows",
+  "name": "Murder of Crows",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "explore"
+  ],
+  "cooldownMinutes": 15,
+  "region": "air",
+  "steps": [
+    {
+      "clip": "crow",
+      "duration": 3.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "opposite_offscreen",
+        "speed": 200,
+        "curve": "linear"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

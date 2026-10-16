@@ -1,0 +1,65 @@
+{
+  "id": "necroswords",
+  "name": "Necroswords",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 15,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "appear",
+      "duration": 1.0,
+      "effects": [
+        {
+          "type": "fade",
+          "mode": "in",
+          "duration": 0.4
+        }
+      ],
+      "sound": "whoosh"
+    },
+    {
+      "clip": "blades",
+      "duration": 0.83,
+      "facing": "toward_center",
+      "effects": [
+        {
+          "type": "projectile",
+          "clip": "blade",
+          "hit": "blade_hit",
+          "at": "hand",
+          "speed": 640,
+          "distance": 300,
+          "delay": 0.3
+        },
+        {
+          "type": "projectile",
+          "clip": "blade",
+          "hit": "blade_hit",
+          "at": "hand",
+          "speed": 640,
+          "distance": 300,
+          "delay": 0.45,
+          "rise": 18
+        }
+      ],
+      "sound": "swish"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "blades",
+        "chance": 0.35
+      }
+    },
+    {
+      "clip": "vanish",
+      "duration": 1.83,
+      "sound": "whoosh"
+    }
+  ]
+}

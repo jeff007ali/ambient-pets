@@ -16,32 +16,32 @@
         "type": "moveTo",
         "from": "side_offscreen",
         "to": "anchor",
-        "curve": "linear"
+        "curve": "linear",
+        "speed": 85
       }
     },
     {
       "clip": "brood",
-      "duration": 1.0,
-      "facing": "toward_center"
+      "duration": 1.6,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "wings",
+        "chance": 0.4
+      }
     },
     {
       "clip": "capeopen",
-      "duration": 0.45,
-      "sound": "swish"
+      "duration": 0.38
     },
     {
       "clip": "wings",
-      "duration": 1.3,
+      "duration": 0.22,
       "effects": [
         {
           "type": "squash",
           "amount": 0.06
         }
-      ],
-      "speech": {
-        "pool": "wings",
-        "chance": 0.35
-      }
+      ]
     },
     {
       "clip": "glide2",
@@ -55,8 +55,7 @@
         ],
         "height": 90,
         "curve": "easeIn"
-      },
-      "sound": "swish"
+      }
     }
   ]
 }

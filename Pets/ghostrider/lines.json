@@ -1,0 +1,40 @@
+{
+  "wander": [
+    "Nice place.",
+    "Smells like sulfur.",
+    "Just passing through.",
+    "Don't mind me."
+  ],
+  "gun": [
+    "Bang.",
+    "Gotcha.",
+    "Cosmic justice."
+  ],
+  "ride": [
+    "Hold my chain.",
+    "Let's ride.",
+    "Vroom."
+  ],
+  "combo": [
+    "Burn!",
+    "Again.",
+    "Hot stuff."
+  ],
+  "charge": [
+    "Hold still…",
+    "Warming up…"
+  ],
+  "slam": [
+    "Boom.",
+    "Cosmic!"
+  ],
+  "cruiser": [
+    "Nice ride, huh?",
+    "Space is cold.",
+    "Need a lift?"
+  ],
+  "rainbow": [
+    "Nice entrance.",
+    "Ta-da."
+  ]
+}

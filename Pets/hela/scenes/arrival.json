@@ -1,0 +1,39 @@
+{
+  "id": "arrival",
+  "name": "Arrival",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "surprise"
+  ],
+  "cooldownMinutes": 10,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "appear",
+      "duration": 1.0,
+      "effects": [
+        {
+          "type": "fade",
+          "mode": "in",
+          "duration": 0.4
+        }
+      ],
+      "sound": "whoosh"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.6,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "arrive",
+        "chance": 0.45
+      }
+    },
+    {
+      "clip": "vanish",
+      "duration": 1.83,
+      "sound": "whoosh"
+    }
+  ]
+}

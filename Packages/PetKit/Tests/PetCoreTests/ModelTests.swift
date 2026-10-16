@@ -132,3 +132,25 @@ extension Result where Success == ResolvedClip, Failure == ClipResolutionError {
         }
     }
 }
+
+struct SpeechAndTimingRuleTests {
+    @Test func petsTalkOnlyWhenStill() {
+        #expect(StepDefinition(clip: "idle", duration: 1).isStill)
+        #expect(StepDefinition(clip: "idle", motion: MotionSpec(type: .hover), duration: 1).isStill)
+        #expect(StepDefinition(clip: "cling", motion: MotionSpec(type: .cling, to: "current"), duration: 1).isStill)
+        #expect(!StepDefinition(clip: "walk", motion: MotionSpec(type: .exit, to: "side_offscreen"), duration: 1).isStill)
+        let glide = SceneDefinition(id: "g", tier: .quick, steps: [StepDefinition(clip: "glide", motion: MotionSpec(type: .arc), duration: 4)])
+        #expect(!glide.canSpeak)
+    }
+
+    @Test func flagsAStepThatOutlastsItsAnimation() {
+        var punch = ClipDefinition(frames: ["a", "b", "c"], fps: 10, loop: false)
+        let lib = ClipLibrary(["punch": punch, "pose": ClipDefinition(frames: ["p"], fps: 1, loop: false)])
+        #expect(abs((PackValidator.frozenTail(StepDefinition(clip: "punch", duration: 0.45), clips: lib) ?? 0) - 0.15) < 1e-9)
+        #expect(PackValidator.frozenTail(StepDefinition(clip: "punch", duration: 0.3), clips: lib) == nil)
+        // A single-frame pose is meant to be held; so is a looping clip.
+        #expect(PackValidator.frozenTail(StepDefinition(clip: "pose", duration: 2), clips: lib) == nil)
+        punch.loop = true
+        #expect(PackValidator.frozenTail(StepDefinition(clip: "punch", duration: 2), clips: ClipLibrary(["punch": punch])) == nil)
+    }
+}

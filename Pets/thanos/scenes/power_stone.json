@@ -1,0 +1,65 @@
+{
+  "id": "power_stone",
+  "name": "Power Stone",
+  "tier": "elaborate",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 60,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 65,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "blast_charge",
+      "duration": 1.36,
+      "facing": "toward_center",
+      "sound": "zap"
+    },
+    {
+      "clip": "blast",
+      "duration": 1.6,
+      "effects": [
+        {
+          "type": "overlay",
+          "clip": "beam",
+          "at": "muzzle",
+          "hold": false
+        }
+      ],
+      "sound": "beam"
+    },
+    {
+      "clip": "blast_end",
+      "duration": 1.07
+    },
+    {
+      "clip": "idle",
+      "duration": 0.8,
+      "speech": {
+        "pool": "power",
+        "chance": 0.4
+      }
+    },
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 65,
+        "curve": "linear"
+      }
+    }
+  ]
+}

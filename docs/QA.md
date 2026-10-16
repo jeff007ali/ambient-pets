@@ -27,6 +27,16 @@ Turn on **Debug ▸ Outline Pet Window** to see the window's frame.
 - [ ] Spider-Man ▸ Swing & Hang: animated web swing, flip, web shot, hangs upside down, zips up; head never past
       the top of the screen.
 - [ ] Summon Together: Iron Man, Spider-Man and Batman look the same size.
+- [ ] Spider-Man (`--summon spiderman`): Air Shot swings with the reach-up / curled swing pose and flips off the web;
+      Edge Peek isn't cut; Dodge Roll zips up, swings and stays on screen (never below the ground); the Spider-Sense
+      bubble doesn't bob with the rays; Stroll / Web Shot leave pulled up by the web (arm up, legs tucked); Wall
+      Cling's sprint off stays on the ground.
+- [ ] Iron Man (`--summon ironman`): Emergency Landing falls with braking jets straight to his spot and settles into
+      the hover; Crash Landing tumbles, bounces (not cut off by the screen edge) and gets up; Rocket Punch dashes;
+      Energy Shield bursts.
+- [ ] Batman (`AmbientPets --summon batman` plays them all): Cape Glide never talks; Cape Spread / Night Patrol
+      open the cape and take off without a pause; Grapple Drop and Rope Kick hang from the raised fist with moving
+      legs; Training's moves run without freezes; walking has the same pace near or far from the edge.
 - [ ] Edge Peek / Wall Cling on both screen edges: the whole bubble is on screen, its tail pointing at the head
       (`AMBIENT_PETS_ALWAYS_SPEAK=1 AmbientPets --summon spiderman/edge_peek` makes every line play).
 - [ ] Feet land on the bottom of the visible frame (just above the Dock, or the screen bottom when the Dock hides).
@@ -78,8 +88,8 @@ Use **Debug ▸ Show Context Overlay** and `AmbientPets --context-probe` to see 
 - [ ] Turn off the network: cameos continue (Settings ▸ AI shows "fell back").
 - [ ] Settings ▸ AI ▸ Usage: Test adds one call (with tokens) and a Recent entry; a skipped cameo adds to
       "skipped"; the menu's "AI: N calls today" matches; Reset Counts clears it.
-- [ ] **Test** sometimes returns `routine:<pet> [block, …]` and, the first time each day, moods; the menu then shows
-      "Moods: …". Next day the moods are asked for again.
+- [ ] **Test** sometimes returns `routine:<pet> [block, …]` and, the first time each day, moods (not shown in the
+      menu). Next day the moods are asked for again.
 - [ ] With 2+ pets out (Pets ▸ Mix, Together chance up): AI picks show `interaction:<id>` or `together` in
       Settings ▸ AI's last result, and the scene plays normally.
 - [ ] `AmbientPets --summon routine:<pet>:<block>,<block>` for each pet: the routine enters, plays the blocks and

@@ -90,6 +90,11 @@ SOUNDS = {
     "ironman": {"whoosh": whoosh, "thud": thud, "zap": zap, "beam": beam, "blip": blip, "boom": boom},
     "spiderman": {"whoosh": whoosh, "thud": thud, "thwip": thwip},
     "batman": {"swish": swish, "thud": thud, "whoosh": whoosh},
+    "blackpanther": {"swish": swish, "thud": thud, "whoosh": whoosh, "zap": zap, "boom": boom},
+    "captainamerica": {"swish": swish, "thud": thud, "whoosh": whoosh, "blip": blip},
+    "ghostrider": {"whoosh": whoosh, "thud": thud, "zap": zap, "boom": boom, "swish": swish},
+    "hela": {"swish": swish, "whoosh": whoosh, "zap": zap, "boom": boom, "beam": beam},
+    "thanos": {"thud": thud, "boom": boom, "beam": beam, "zap": zap, "blip": blip},
 }
 
 if __name__ == "__main__":

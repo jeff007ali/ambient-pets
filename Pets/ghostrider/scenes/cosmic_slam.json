@@ -1,0 +1,65 @@
+{
+  "id": "cosmic_slam",
+  "name": "Cosmic Slam",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "surprise"
+  ],
+  "cooldownMinutes": 15,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "dive",
+      "duration": 0.9,
+      "motion": {
+        "type": "arc",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "height": 160,
+        "curve": "easeIn"
+      }
+    },
+    {
+      "clip": "dive_land",
+      "duration": 0.33,
+      "effects": [
+        "dust_puff",
+        "squash"
+      ],
+      "sound": "thud"
+    },
+    {
+      "clip": "rising",
+      "duration": 1.21,
+      "facing": "toward_center",
+      "effects": [
+        {
+          "type": "overlay",
+          "clip": "blue_blast",
+          "at": "feet",
+          "hold": false
+        }
+      ],
+      "sound": "boom"
+    },
+    {
+      "clip": "idle",
+      "duration": 0.9,
+      "speech": {
+        "pool": "slam",
+        "chance": 0.35
+      }
+    },
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 230,
+        "curve": "linear"
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "formatVersion": 1,
+  "id": "thanos",
+  "name": "Thanos",
+  "version": "0.1.0",
+  "renderer": "sprite",
+  "height": 92,
+  "personality": {
+    "activity": 0.6,
+    "friendliness": 0.3,
+    "mischievousness": 0.5,
+    "interaction": 0.3,
+    "curiosity": 0.3
+  },
+  "capabilities": {
+    "canWalk": true,
+    "cursorTracking": true,
+    "multiMonitor": true
+  },
+  "sounds": {
+    "beam": "sounds/beam.wav",
+    "blip": "sounds/blip.wav",
+    "boom": "sounds/boom.wav",
+    "thud": "sounds/thud.wav",
+    "zap": "sounds/zap.wav"
+  }
+}

@@ -1,0 +1,505 @@
+{
+  "clips" : {
+    "beam" : {
+      "fps" : 12,
+      "frames" : [
+        "beam_0",
+        "beam_1",
+        "beam_2",
+        "beam_3",
+        "beam_4",
+        "beam_5",
+        "beam_6",
+        "beam_7",
+        "beam_8",
+        "beam_9",
+        "beam_10",
+        "beam_11",
+        "beam_12",
+        "beam_13",
+        "beam_14",
+        "beam_15",
+        "beam_16",
+        "beam_17",
+        "beam_10",
+        "beam_11",
+        "beam_12",
+        "beam_13",
+        "beam_14",
+        "beam_15",
+        "beam_16",
+        "beam_10",
+        "beam_11",
+        "beam_12",
+        "beam_13",
+        "beam_14",
+        "beam_15",
+        "beam_16",
+        "beam_17",
+        "beam_10",
+        "beam_17",
+        "beam_11",
+        "beam_12",
+        "beam_13",
+        "beam_14",
+        "beam_15",
+        "beam_16",
+        "beam_17",
+        "beam_10",
+        "beam_11",
+        "beam_12",
+        "beam_13",
+        "beam_14",
+        "beam_15",
+        "beam_16",
+        "beam_17",
+        "beam_18",
+        "beam_19",
+        "beam_20",
+        "beam_21",
+        "beam_22",
+        "beam_23"
+      ],
+      "loop" : true
+    },
+    "blast" : {
+      "fps" : 12,
+      "frames" : [
+        "blast_0",
+        "blast_1",
+        "blast_2",
+        "blast_3",
+        "blast_4",
+        "blast_5",
+        "blast_6",
+        "blast_7",
+        "blast_8",
+        "blast_9",
+        "blast_10",
+        "blast_11",
+        "blast_12",
+        "blast_13",
+        "blast_14",
+        "blast_15",
+        "blast_16",
+        "blast_17",
+        "blast_18",
+        "blast_19",
+        "blast_20",
+        "blast_21"
+      ],
+      "loop" : true
+    },
+    "blast_charge" : {
+      "fps" : 12,
+      "frames" : [
+        "blast_charge_0",
+        "blast_charge_1",
+        "blast_charge_2",
+        "blast_charge_3",
+        "blast_charge_4",
+        "blast_charge_5",
+        "blast_charge_6",
+        "blast_charge_7",
+        "blast_charge_8",
+        "blast_charge_9",
+        "blast_charge_10",
+        "blast_charge_11",
+        "blast_charge_12",
+        "blast_charge_13",
+        "blast_charge_14",
+        "blast_charge_15",
+        "blast_charge_16",
+        "blast_charge_17",
+        "blast_charge_18"
+      ],
+      "loop" : true
+    },
+    "blast_end" : {
+      "fps" : 12,
+      "frames" : [
+        "blast_end_0",
+        "blast_end_1",
+        "blast_end_2",
+        "blast_end_3",
+        "blast_end_4",
+        "blast_end_5",
+        "blast_end_6",
+        "blast_end_7",
+        "blast_end_8",
+        "blast_end_9",
+        "blast_end_10",
+        "blast_end_11",
+        "blast_end_12",
+        "blast_end_13",
+        "blast_end_14"
+      ],
+      "loop" : true
+    },
+    "block" : {
+      "fps" : 12,
+      "frames" : [
+        "block_0"
+      ],
+      "loop" : true
+    },
+    "drone" : {
+      "fps" : 12,
+      "frames" : [
+        "drone_0",
+        "drone_1",
+        "drone_2",
+        "drone_3"
+      ],
+      "loop" : true
+    },
+    "drone_in" : {
+      "fps" : 12,
+      "frames" : [
+        "drone_in_0",
+        "drone_in_1",
+        "drone_in_2",
+        "drone_in_3",
+        "drone_in_4",
+        "drone_in_5",
+        "drone_in_6"
+      ],
+      "loop" : true
+    },
+    "drone_out" : {
+      "fps" : 12,
+      "frames" : [
+        "drone_out_0",
+        "drone_out_1",
+        "drone_out_2",
+        "drone_out_3",
+        "drone_out_4",
+        "drone_out_5"
+      ],
+      "loop" : true
+    },
+    "gauntlet" : {
+      "fps" : 12,
+      "frames" : [
+        "gauntlet_0",
+        "gauntlet_1",
+        "gauntlet_2",
+        "gauntlet_3",
+        "gauntlet_4",
+        "gauntlet_5",
+        "gauntlet_6",
+        "gauntlet_7",
+        "gauntlet_8",
+        "gauntlet_9",
+        "gauntlet_10",
+        "gauntlet_11",
+        "gauntlet_12",
+        "gauntlet_13",
+        "gauntlet_14",
+        "gauntlet_15",
+        "gauntlet_16",
+        "gauntlet_17",
+        "gauntlet_18",
+        "gauntlet_19",
+        "gauntlet_20",
+        "gauntlet_21",
+        "gauntlet_22",
+        "gauntlet_23",
+        "gauntlet_24",
+        "gauntlet_25",
+        "gauntlet_26"
+      ],
+      "loop" : true
+    },
+    "getup" : {
+      "fps" : 12,
+      "frames" : [
+        "getup_0",
+        "getup_1",
+        "getup_2",
+        "getup_3",
+        "getup_4"
+      ],
+      "loop" : true
+    },
+    "grab" : {
+      "fps" : 12,
+      "frames" : [
+        "grab_0",
+        "grab_1",
+        "grab_2",
+        "grab_3",
+        "grab_4",
+        "grab_5",
+        "grab_6",
+        "grab_7",
+        "grab_8"
+      ],
+      "loop" : true
+    },
+    "hit" : {
+      "fps" : 12,
+      "frames" : [
+        "hit_0",
+        "hit_1",
+        "hit_2",
+        "hit_3"
+      ],
+      "loop" : true
+    },
+    "idle" : {
+      "fps" : 12,
+      "frames" : [
+        "idle_0",
+        "idle_1",
+        "idle_2",
+        "idle_3",
+        "idle_4"
+      ],
+      "loop" : true
+    },
+    "jump" : {
+      "fps" : 12,
+      "frames" : [
+        "jump_0",
+        "jump_1",
+        "jump_2",
+        "jump_3"
+      ],
+      "loop" : true
+    },
+    "knockdown" : {
+      "fps" : 12,
+      "frames" : [
+        "knockdown_0",
+        "knockdown_1",
+        "knockdown_2",
+        "knockdown_3",
+        "knockdown_4",
+        "knockdown_5",
+        "knockdown_6",
+        "knockdown_7",
+        "knockdown_8",
+        "knockdown_9",
+        "knockdown_10",
+        "knockdown_11",
+        "knockdown_12",
+        "knockdown_13",
+        "knockdown_12",
+        "knockdown_13",
+        "knockdown_12",
+        "knockdown_13",
+        "knockdown_12",
+        "knockdown_13",
+        "knockdown_14",
+        "knockdown_15",
+        "knockdown_16"
+      ],
+      "loop" : true
+    },
+    "land" : {
+      "fps" : 12,
+      "frames" : [
+        "land_0",
+        "land_1",
+        "land_2",
+        "land_3"
+      ],
+      "loop" : true
+    },
+    "orb" : {
+      "fps" : 12,
+      "frames" : [
+        "orb_0",
+        "orb_1",
+        "orb_2",
+        "orb_3",
+        "orb_4",
+        "orb_5",
+        "orb_6",
+        "orb_7",
+        "orb_8",
+        "orb_9",
+        "orb_10",
+        "orb_11",
+        "orb_12",
+        "orb_13",
+        "orb_14",
+        "orb_15",
+        "orb_16",
+        "orb_17",
+        "orb_18",
+        "orb_19"
+      ],
+      "loop" : true
+    },
+    "orb_pop" : {
+      "fps" : 12,
+      "frames" : [
+        "orb_pop_0",
+        "orb_pop_1",
+        "orb_pop_2",
+        "orb_pop_3",
+        "orb_pop_4",
+        "orb_pop_5",
+        "orb_pop_6",
+        "orb_pop_7",
+        "orb_pop_8",
+        "orb_pop_9",
+        "orb_pop_10",
+        "orb_pop_11",
+        "orb_pop_12",
+        "orb_pop_13",
+        "orb_pop_14",
+        "orb_pop_15",
+        "orb_pop_16",
+        "orb_pop_17",
+        "orb_pop_18",
+        "orb_pop_19",
+        "orb_pop_20",
+        "orb_pop_21",
+        "orb_pop_22",
+        "orb_pop_23",
+        "orb_pop_24",
+        "orb_pop_25",
+        "orb_pop_26",
+        "orb_pop_27",
+        "orb_pop_28",
+        "orb_pop_29",
+        "orb_pop_30",
+        "orb_pop_31"
+      ],
+      "loop" : true
+    },
+    "pummel" : {
+      "fps" : 12,
+      "frames" : [
+        "pummel_0",
+        "pummel_1",
+        "pummel_2",
+        "pummel_3",
+        "pummel_4",
+        "pummel_5"
+      ],
+      "loop" : true
+    },
+    "retreat" : {
+      "fps" : 12,
+      "frames" : [
+        "retreat_0",
+        "retreat_1",
+        "retreat_2",
+        "retreat_3",
+        "retreat_4",
+        "retreat_5",
+        "retreat_6",
+        "retreat_7",
+        "retreat_8",
+        "retreat_9",
+        "retreat_10",
+        "retreat_11",
+        "retreat_12"
+      ],
+      "loop" : true
+    },
+    "retreat_fade" : {
+      "fps" : 12,
+      "frames" : [
+        "retreat_fade_0",
+        "retreat_fade_1",
+        "retreat_fade_2",
+        "retreat_fade_3",
+        "retreat_fade_4",
+        "retreat_fade_5",
+        "retreat_fade_6",
+        "retreat_fade_7",
+        "retreat_fade_8",
+        "retreat_fade_9",
+        "retreat_fade_10"
+      ],
+      "loop" : true
+    },
+    "roar" : {
+      "fps" : 12,
+      "frames" : [
+        "roar_0",
+        "roar_1",
+        "roar_2",
+        "roar_3",
+        "roar_4",
+        "roar_5",
+        "roar_5",
+        "roar_5",
+        "roar_5",
+        "roar_6",
+        "roar_7",
+        "roar_8"
+      ],
+      "loop" : true
+    },
+    "snap" : {
+      "fps" : 12,
+      "frames" : [
+        "snap_0",
+        "snap_1",
+        "snap_2",
+        "snap_3",
+        "snap_4",
+        "snap_5"
+      ],
+      "loop" : true
+    },
+    "summon" : {
+      "fps" : 12,
+      "frames" : [
+        "summon_0",
+        "summon_1",
+        "summon_2",
+        "summon_3",
+        "summon_4",
+        "summon_5",
+        "summon_6"
+      ],
+      "loop" : true
+    },
+    "tired" : {
+      "fps" : 12,
+      "frames" : [
+        "tired_0",
+        "tired_1",
+        "tired_2",
+        "tired_3",
+        "tired_4",
+        "tired_5",
+        "tired_6",
+        "tired_7",
+        "tired_8",
+        "tired_9"
+      ],
+      "loop" : true
+    },
+    "tired_end" : {
+      "fps" : 12,
+      "frames" : [
+        "tired_end_0",
+        "tired_end_1",
+        "tired_end_2"
+      ],
+      "loop" : true
+    },
+    "walk" : {
+      "fps" : 12,
+      "frames" : [
+        "walk_0",
+        "walk_1",
+        "walk_2",
+        "walk_3",
+        "walk_4",
+        "walk_5",
+        "walk_6",
+        "walk_7"
+      ],
+      "loop" : true
+    }
+  }
+}

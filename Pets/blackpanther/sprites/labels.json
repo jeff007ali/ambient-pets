@@ -1,0 +1,150 @@
+{
+  "source": "ThirdParty/source-assets/cosmic-blackpanther (Marvel Cosmic Invasion, Playable Characters - Black Panther, Default suit + effects)",
+  "dir": "ThirdParty/source-assets/cosmic-blackpanther/default",
+  "facing": "right",
+  "anchor": [
+    128,
+    226
+  ],
+  "canvas": [
+    256,
+    256
+  ],
+  "pivotByClip": {
+    "kunai": "center",
+    "kunai_hit": "center",
+    "kunai_boom": "center",
+    "claws": "center"
+  },
+  "clips": {
+    "idle": [
+      "Idle_*"
+    ],
+    "walk": [
+      "Walk_*"
+    ],
+    "sprint": [
+      "Sprint_*"
+    ],
+    "skid": [
+      "Sprintend_*"
+    ],
+    "jump": [
+      "Jump.png"
+    ],
+    "apex": [
+      "Jumpapex_*"
+    ],
+    "fall": [
+      "Jumpfall.png"
+    ],
+    "land": [
+      "Land_*"
+    ],
+    "dodge": [
+      "Dodge_*"
+    ],
+    "jab": [
+      "Attack1_*"
+    ],
+    "punch": [
+      "Attack2_*"
+    ],
+    "slash": [
+      "Attack3_*"
+    ],
+    "claw_combo": [
+      "Attack4_*"
+    ],
+    "flip_kick": [
+      "Attack5_*"
+    ],
+    "dive": [
+      "Attackairstart_*",
+      "Attackair_*"
+    ],
+    "dive_land": [
+      "Attackairland_*"
+    ],
+    "rising": [
+      "Attackrisingstart.png",
+      "Attackrising_*"
+    ],
+    "rising_fall": [
+      "Attackrisingfall_*"
+    ],
+    "rising_land": [
+      "Attackrisingland_*"
+    ],
+    "charge": [
+      "Attackchargedstart.png",
+      "Attackchargedheld_*"
+    ],
+    "charge_slash": [
+      "Attackcharged_*"
+    ],
+    "absorb": [
+      "Attackchargedcounter_*"
+    ],
+    "dash_slash": [
+      "Attacksprinting_*"
+    ],
+    "throw": [
+      "Power_*"
+    ],
+    "air_throw": [
+      "Powerair_*"
+    ],
+    "pounce_start": [
+      "Specialstart_*"
+    ],
+    "pounce": [
+      "Special_*"
+    ],
+    "pounce_turn": [
+      "Specialturn_*"
+    ],
+    "pounce_end": [
+      "Specialfinisher_*"
+    ],
+    "hit": [
+      "Hitstun_*"
+    ],
+    "knockdown": [
+      "Kd_*",
+      "Kdfall.png",
+      "Down.png",
+      "Downbounce_*"
+    ],
+    "getup": [
+      "Downgetup_*"
+    ],
+    "throne_in": [
+      "Selectscreenstart_*"
+    ],
+    "throne": [
+      "Selectscreen_*"
+    ],
+    "throne_out": [
+      "Selectscreenend.png"
+    ],
+    "rainbow_in": [
+      "Spawnrainbow_*"
+    ],
+    "rainbow_out": [
+      "Spawnrainbowend_*"
+    ],
+    "kunai": [
+      "../effects/Kunai_*"
+    ],
+    "kunai_hit": [
+      "../effects/Kunaiimpact_*"
+    ],
+    "kunai_boom": [
+      "../effects/Kunaiexplosion_*"
+    ],
+    "claws": [
+      "../effects/Specialclawstreaks_*"
+    ]
+  }
+}

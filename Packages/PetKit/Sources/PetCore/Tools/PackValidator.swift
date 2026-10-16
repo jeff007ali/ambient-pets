@@ -109,6 +109,9 @@ public enum PackValidator {
                 let p = "\(s) step \(i + 1)"
                 if step.duration <= 0 { issues.append(.error("\(p): duration must be > 0")) }
                 if case .failure(let e) = pack.clips.resolve(step.clip) { issues.append(.error("\(p): \(e)")) }
+                if let hold = Self.frozenTail(step, clips: pack.clips) {
+                    issues.append(.warning("\(p): '\(step.clip)' finishes \(String(format: "%.2f", hold)) s before the step ends, so the pet freezes on its last frame (shorten the step or lower the clip's fps)"))
+                }
                 let m = step.motion.type
                 if MotionType.planned.contains(m) {
                     issues.append(.warning("\(p): motion '\(m.rawValue)' is not implemented yet and plays as 'none'"))
@@ -166,5 +169,16 @@ public enum PackValidator {
             issues.append(.warning("sound '\(name)' file '\(path)' not found"))
         }
         return issues
+    }
+}
+
+extension PackValidator {
+    /// Seconds a standing step shows the frozen last frame of a non-looping animation (nil when under 0.12 s, or for
+    /// single-frame poses and moving steps, where a held pose is intended).
+    public static func frozenTail(_ step: StepDefinition, clips: ClipLibrary) -> Double? {
+        guard step.motion.type == .none, case .success(let c) = clips.resolve(step.clip), !c.definition.loop,
+              c.frames.count >= 2, c.definition.fps > 0 else { return nil }
+        let hold = step.duration - Double(c.frames.count) / c.definition.fps
+        return hold > 0.12 ? hold : nil
     }
 }

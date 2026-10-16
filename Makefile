@@ -43,6 +43,8 @@ PETPACK = $$(swift build --package-path $(PETKIT) --show-bin-path)/petpack
 IRONMAN_SRC  = ThirdParty/source-assets/cosmic-ironman/default
 SPIDEY_SRC   = ThirdParty/source-assets/cosmic-spiderman/default
 BATMAN_SRC   = ThirdParty/source-assets/snes-batman
+# Frame-per-file Marvel Cosmic Invasion pets: Pets/<id>/sprites/sheet.png from ThirdParty/source-assets/cosmic-<id>.
+COSMIC_PETS  = blackpanther captainamerica ghostrider hela thanos
 
 Pets/ironman/sprites/sheet.png: $(IRONMAN_SRC)/Idle_00.png Pets/ironman/sprites/labels.json
 	@$(MAKE) --no-print-directory petpack
@@ -62,7 +64,13 @@ Pets/spiderman/sprites/sheet.png: $(SPIDEY_SRC)/Idle_00.png Pets/spiderman/sprit
 	@$(MAKE) --no-print-directory petpack
 	$(PETPACK) frames Pets/spiderman/sprites/labels.json --out Pets/spiderman/sprites
 
-art: Pets/ironman/sprites/sheet.png Pets/spiderman/sprites/sheet.png Pets/batman/sprites/sheet.png
+$(foreach p,$(COSMIC_PETS),Pets/$(p)/sprites/sheet.png): Pets/%/sprites/sheet.png: Pets/%/sprites/labels.json
+	@test -d ThirdParty/source-assets/cosmic-$* || { echo "missing source art: ThirdParty/source-assets/cosmic-$* — download it first (docs/ART_SOURCES.md)"; exit 1; }
+	@$(MAKE) --no-print-directory petpack
+	$(PETPACK) frames $< --out Pets/$*/sprites
+
+art: Pets/ironman/sprites/sheet.png Pets/spiderman/sprites/sheet.png Pets/batman/sprites/sheet.png \
+     $(foreach p,$(COSMIC_PETS),Pets/$(p)/sprites/sheet.png)
 
 # Original placeholder art (no download needed), for testing the pipeline.
 placeholder-art: petpack

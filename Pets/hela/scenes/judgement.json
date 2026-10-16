@@ -1,0 +1,59 @@
+{
+  "id": "judgement",
+  "name": "Judgement",
+  "tier": "elaborate",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 60,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 65,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "walk_end",
+      "duration": 0.3
+    },
+    {
+      "clip": "punish",
+      "duration": 3.12,
+      "facing": "toward_center",
+      "effects": [
+        {
+          "type": "projectile",
+          "clip": "orb",
+          "hit": "orb_boom",
+          "at": "hand",
+          "speed": 300,
+          "distance": 160,
+          "delay": 1.0,
+          "rise": -110
+        }
+      ],
+      "sound": "zap"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "judge",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "vanish",
+      "duration": 1.83,
+      "sound": "whoosh"
+    }
+  ]
+}

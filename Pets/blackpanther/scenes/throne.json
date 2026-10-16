@@ -1,0 +1,44 @@
+{
+  "id": "throne",
+  "name": "Throne of Wakanda",
+  "tier": "rare",
+  "weight": 1.0,
+  "tags": [
+    "greeting",
+    "surprise"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "throne_in",
+      "duration": 0.75,
+      "effects": [
+        {
+          "type": "fade",
+          "mode": "in",
+          "duration": 0.4
+        }
+      ]
+    },
+    {
+      "clip": "throne",
+      "duration": 2.6,
+      "speech": {
+        "pool": "throne",
+        "chance": 0.7
+      }
+    },
+    {
+      "clip": "throne_out",
+      "duration": 0.5,
+      "effects": [
+        {
+          "type": "fade",
+          "mode": "out",
+          "duration": 0.5
+        }
+      ]
+    }
+  ]
+}

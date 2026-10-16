@@ -1,0 +1,70 @@
+{
+  "id": "drones",
+  "name": "Cosmic Drones",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 30,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 65,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "summon",
+      "duration": 0.7,
+      "facing": "toward_center",
+      "effects": [
+        {
+          "type": "projectile",
+          "clip": "drone",
+          "hit": "drone_out",
+          "at": "hand",
+          "speed": 220,
+          "distance": 260,
+          "delay": 0.2,
+          "rise": 40
+        },
+        {
+          "type": "projectile",
+          "clip": "drone",
+          "hit": "drone_out",
+          "at": "hand",
+          "speed": 200,
+          "distance": 200,
+          "delay": 0.4,
+          "rise": -20
+        }
+      ],
+      "sound": "blip"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.2,
+      "speech": {
+        "pool": "drones",
+        "chance": 0.4
+      }
+    },
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 65,
+        "curve": "linear"
+      }
+    }
+  ]
+}

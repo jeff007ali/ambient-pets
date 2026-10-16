@@ -201,6 +201,22 @@ public struct SpeechSpec: Codable, Sendable, Hashable {
     public var chance: Double?
 }
 
+extension StepDefinition {
+    /// Standing, hovering or clinging in place: the only moments a pet talks (a moving pet's bubble can't be read).
+    public var isStill: Bool {
+        switch motion.type {
+        case .none, .hover: true
+        case .cling: motion.to == "current"
+        default: false
+        }
+    }
+}
+
+extension SceneDefinition {
+    /// The scene has a still moment where a speech bubble can show.
+    public var canSpeak: Bool { steps.contains(where: \.isStill) }
+}
+
 public struct StepDefinition: Codable, Sendable, Hashable {
     public var clip: String
     public var motion: MotionSpec

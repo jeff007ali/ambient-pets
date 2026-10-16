@@ -1,0 +1,158 @@
+{
+  "enter": [
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 230,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "skid",
+      "duration": 0.25
+    }
+  ],
+  "exit": [
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 230,
+        "curve": "linear"
+      }
+    }
+  ],
+  "blocks": {
+    "kunai": {
+      "description": "throws a vibranium dagger",
+      "steps": [
+        {
+          "clip": "throw",
+          "duration": 0.79,
+          "facing": "toward_center",
+          "effects": [
+            {
+              "type": "projectile",
+              "clip": "kunai",
+              "hit": "kunai_hit",
+              "at": "hand",
+              "speed": 620,
+              "distance": 280,
+              "delay": 0.35
+            }
+          ],
+          "sound": "swish"
+        }
+      ]
+    },
+    "claw_combo": {
+      "description": "a fast claw combo",
+      "steps": [
+        {
+          "clip": "jab",
+          "duration": 0.38,
+          "facing": "toward_center"
+        },
+        {
+          "clip": "punch",
+          "duration": 0.44
+        },
+        {
+          "clip": "claw_combo",
+          "duration": 0.69,
+          "sound": "swish"
+        }
+      ]
+    },
+    "flip_kick": {
+      "description": "a spinning flip kick",
+      "steps": [
+        {
+          "clip": "flip_kick",
+          "duration": 0.88
+        }
+      ]
+    },
+    "pounce": {
+      "description": "pounces forward on all fours",
+      "steps": [
+        {
+          "clip": "pounce_start",
+          "duration": 0.33,
+          "facing": "toward_center"
+        },
+        {
+          "clip": "pounce",
+          "duration": 0.5,
+          "motion": {
+            "type": "walk",
+            "distance": 130,
+            "direction": "toward_center"
+          }
+        },
+        {
+          "clip": "pounce_end",
+          "duration": 1.07
+        }
+      ]
+    },
+    "kinetic_burst": {
+      "description": "releases stored kinetic energy in a green burst",
+      "steps": [
+        {
+          "clip": "charge",
+          "duration": 0.8,
+          "facing": "toward_center"
+        },
+        {
+          "clip": "absorb",
+          "duration": 1.72,
+          "sound": "zap"
+        }
+      ]
+    },
+    "prowl": {
+      "description": "prowls a few steps",
+      "steps": [
+        {
+          "clip": "walk",
+          "duration": 1.8,
+          "motion": {
+            "type": "walk",
+            "speed": 50,
+            "direction": "random"
+          }
+        }
+      ]
+    },
+    "dodge": {
+      "description": "rolls out of the way",
+      "steps": [
+        {
+          "clip": "dodge",
+          "duration": 0.62,
+          "motion": {
+            "type": "walk",
+            "distance": 90,
+            "direction": "random"
+          }
+        }
+      ]
+    },
+    "watch": {
+      "description": "stands still, watching",
+      "steps": [
+        {
+          "clip": "idle",
+          "duration": 1.6
+        }
+      ]
+    }
+  }
+}

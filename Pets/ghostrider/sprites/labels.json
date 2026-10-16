@@ -1,0 +1,175 @@
+{
+  "source": "ThirdParty/source-assets/cosmic-ghostrider (Marvel Cosmic Invasion, Playable Characters - Cosmic Ghost Rider, Default suit + effects)",
+  "dir": "ThirdParty/source-assets/cosmic-ghostrider/default",
+  "facing": "right",
+  "anchor": [
+    128,
+    226
+  ],
+  "canvas": [
+    256,
+    256
+  ],
+  "pivotByClip": {
+    "bullet": "left",
+    "bullet_hit": "center",
+    "grenade": "center",
+    "boom": "center",
+    "blue_blast": "center",
+    "flame": "center"
+  },
+  "clips": {
+    "idle": [
+      "Idle_*"
+    ],
+    "walk": [
+      "Walk_*"
+    ],
+    "sprint": [
+      "Sprintstart.png",
+      "Sprint_*"
+    ],
+    "skid": [
+      "Sprintend_*"
+    ],
+    "jump": [
+      "Jump_*"
+    ],
+    "apex": [
+      "Jumpapex_*"
+    ],
+    "fall": [
+      "Jumpfall_*"
+    ],
+    "land": [
+      "Land_*"
+    ],
+    "jab": [
+      "Attack1_*"
+    ],
+    "fire_punch": [
+      "Attack2_*"
+    ],
+    "chain_whip": [
+      "Attack3_*"
+    ],
+    "fire_combo": [
+      "Attack4_*"
+    ],
+    "dive": [
+      "Attackairstart_*",
+      "Attackair_*"
+    ],
+    "dive_land": [
+      "Attackairland_*"
+    ],
+    "charge": [
+      "Attackchargedstart_*",
+      "Attackchargedheld_*"
+    ],
+    "charge_shot": [
+      "Attackcharged_*"
+    ],
+    "flamethrower": [
+      "Attackchargedfollowup_*"
+    ],
+    "fire_dash": [
+      "Attacksprinting_*"
+    ],
+    "block": [
+      "Blockstart_*",
+      "Block_*"
+    ],
+    "block_end": [
+      "Blockend_*"
+    ],
+    "parry": [
+      "Parry_*"
+    ],
+    "draw": [
+      "Power_*"
+    ],
+    "shoot": [
+      "Powerhold_*"
+    ],
+    "holster": [
+      "Powerend_*"
+    ],
+    "rising": [
+      "Risingattackstart_*",
+      "Risingattackimpulse_*",
+      "Risingattack_*"
+    ],
+    "ignite": [
+      "Specialstart_*+Specialstartfx_*"
+    ],
+    "bike_launch": [
+      "Special_00-01.png",
+      "Special_02-03.png",
+      "Special_04-05.png",
+      "Special_06-07.png"
+    ],
+    "bike": [
+      "Special_08-09.png",
+      "Special_10-11.png",
+      "Special_12-13.png",
+      "Special_14-15.png",
+      "Special_16-17.png",
+      "Special_18.png",
+      "Special_19.png",
+      "Special_20.png",
+      "Special_21.png",
+      "Special_22.png",
+      "Special_23.png"
+    ],
+    "bike_out": [
+      "Specialend_*"
+    ],
+    "bike_idle_in": [
+      "Selectscreenstart_*"
+    ],
+    "bike_idle": [
+      "Selectscreen_*"
+    ],
+    "bike_idle_out": [
+      "Selectscreenend_*"
+    ],
+    "hit": [
+      "Hitstun_*"
+    ],
+    "knockdown": [
+      "Kd_*",
+      "Kdfall_*",
+      "Down.png",
+      "Downbounce_*"
+    ],
+    "getup": [
+      "Downgetup_*"
+    ],
+    "rainbow_in": [
+      "Spawnrainbow_*"
+    ],
+    "rainbow_out": [
+      "Spawnrainbowend_*"
+    ],
+    "bullet": [
+      "../effects/Gunprojectilefire_*"
+    ],
+    "bullet_hit": [
+      "../effects/Gunprojectilefireend_*"
+    ],
+    "grenade": [
+      "../effects/Grenade_*"
+    ],
+    "boom": [
+      "../effects/Grenadeexplosionground_*"
+    ],
+    "blue_blast": [
+      "../effects/Risingattackexplosionground_*"
+    ],
+    "flame": [
+      "../effects/SprintingAttackProjectileStart_*",
+      "../effects/SprintingAttackProjectileLoop_*"
+    ]
+  }
+}

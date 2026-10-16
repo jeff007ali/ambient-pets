@@ -1,0 +1,162 @@
+{
+  "source": "ThirdParty/source-assets/cosmic-thanos (Marvel Cosmic Invasion, Bosses - Thanos, + drone / projectile effects)",
+  "dir": "ThirdParty/source-assets/cosmic-thanos/default",
+  "facing": "right",
+  "anchor": [
+    128,
+    226
+  ],
+  "canvas": [
+    256,
+    256
+  ],
+  "pivotByClip": {
+    "beam": "left",
+    "drone_in": "center",
+    "drone": "center",
+    "drone_out": "center",
+    "orb": "center",
+    "orb_pop": "center"
+  },
+  "clips": {
+    "idle": [
+      "Idle_*"
+    ],
+    "walk": [
+      "Walk_*"
+    ],
+    "jump": [
+      "Jump_*"
+    ],
+    "land": [
+      "Land_*"
+    ],
+    "gauntlet": [
+      "Attack_*"
+    ],
+    "snap": [
+      "Fingersnapcutscene_*"
+    ],
+    "summon": [
+      "Dronesummon_*"
+    ],
+    "blast_charge": [
+      "Energyblast_00.png",
+      "Energyblast_01.png",
+      "Energyblast_02.png",
+      "Energyblast_03.png",
+      "Energyblast_04.png",
+      "Energyblast_05.png",
+      "Energyblast_06.png",
+      "Energyblast_07.png",
+      "Energyblast_08.png",
+      "Energyblast_09.png",
+      "Energyblast_10.png",
+      "Energyblast_11.png",
+      "Energyblast_12.png",
+      "Energyblast_13.png",
+      "Energyblast_14.png",
+      "Energyblast_15.png",
+      "Energyblast_16.png",
+      "Energyblast_17.png",
+      "Energyblast_18.png"
+    ],
+    "blast": [
+      "Energyblast_19.png",
+      "Energyblast_20.png",
+      "Energyblast_21.png",
+      "Energyblast_22_25.png",
+      "Energyblast_23_26.png",
+      "Energyblast_24_27.png",
+      "Energyblast_28_31_34_37_40_43_46_49.png",
+      "Energyblast_29_32_35_38_41_44_47_50.png",
+      "Energyblast_30_33_36_39_42_45_48_51.png",
+      "Energyblast_52_54.png",
+      "Energyblast_53_55.png",
+      "Energyblast_56_59.png",
+      "Energyblast_57_60.png",
+      "Energyblast_58_61.png",
+      "Energyblast_62_65.png",
+      "Energyblast_63_66.png",
+      "Energyblast_64_67.png",
+      "Energyblast_68_70.png",
+      "Energyblast_69_71.png",
+      "Energyblast_72_75.png",
+      "Energyblast_73_76.png",
+      "Energyblast_74_77.png"
+    ],
+    "blast_end": [
+      "Energyblast_78.png",
+      "Energyblast_79.png",
+      "Energyblast_80.png",
+      "Energyblast_81.png",
+      "Energyblast_82.png",
+      "Energyblast_83.png",
+      "Energyblast_84.png",
+      "Energyblast_85.png",
+      "Energyblast_86.png",
+      "Energyblast_87.png",
+      "Energyblast_88.png",
+      "Energyblast_89.png",
+      "Energyblast_90.png",
+      "Energyblast_91.png",
+      "Energyblast_92.png"
+    ],
+    "grab": [
+      "Grabstart_*",
+      "Grabwhiff_*"
+    ],
+    "roar": [
+      "Grabthrow_*"
+    ],
+    "pummel": [
+      "Grabpummel_*"
+    ],
+    "block": [
+      "Block.png"
+    ],
+    "tired": [
+      "Vulnerable_*"
+    ],
+    "tired_end": [
+      "Vulnerableend_*"
+    ],
+    "retreat": [
+      "Throneretreatstart_*",
+      "Throneretreat_*"
+    ],
+    "retreat_fade": [
+      "Throneretreatfade_*"
+    ],
+    "hit": [
+      "Hitstun_*"
+    ],
+    "knockdown": [
+      "Kd_*",
+      "Kdfall_*",
+      "Down_*",
+      "Downbounce_*"
+    ],
+    "getup": [
+      "Downgetup_*"
+    ],
+    "beam": [
+      "../effects/Projectile_Energyblastprojectile_*"
+    ],
+    "drone_in": [
+      "../effects/Drone_Cosmicdronestart_*"
+    ],
+    "drone": [
+      "../effects/Drone_Cosmicdroneattack_*"
+    ],
+    "drone_out": [
+      "../effects/Drone_Cosmicdroneend_*"
+    ],
+    "orb": [
+      "../effects/Turret_Projectile_Active_*"
+    ],
+    "orb_pop": [
+      "../effects/Turret_Projectile_Gunprojectileend_*"
+    ]
+  }
+}

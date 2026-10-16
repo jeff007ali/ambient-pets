@@ -1,0 +1,52 @@
+{
+  "id": "catch_breath",
+  "name": "Catch Breath",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "explore"
+  ],
+  "cooldownMinutes": 30,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 65,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "tired",
+      "duration": 2.0,
+      "speech": {
+        "pool": "tired",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "tired_end",
+      "duration": 0.38
+    },
+    {
+      "clip": "roar",
+      "duration": 1.2,
+      "facing": "toward_center",
+      "sound": "thud"
+    },
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 65,
+        "curve": "linear"
+      }
+    }
+  ]
+}

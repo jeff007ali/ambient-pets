@@ -1,0 +1,61 @@
+{
+  "id": "leap_in",
+  "name": "Leap In",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "surprise"
+  ],
+  "cooldownMinutes": 10,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "apex",
+      "duration": 1.0,
+      "motion": {
+        "type": "arc",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "height": 160,
+        "curve": "easeIn"
+      }
+    },
+    {
+      "clip": "land",
+      "duration": 0.29,
+      "effects": [
+        "dust_puff",
+        "squash"
+      ],
+      "sound": "thud"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "patrol",
+        "chance": 0.25
+      }
+    },
+    {
+      "clip": "rising",
+      "duration": 0.57,
+      "sound": "swish"
+    },
+    {
+      "clip": "rising_land",
+      "duration": 0.29
+    },
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 230,
+        "curve": "linear"
+      }
+    }
+  ]
+}

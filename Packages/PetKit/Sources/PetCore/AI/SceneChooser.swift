@@ -60,6 +60,8 @@ public struct AICandidate: Codable, Sendable, Hashable {
     public var tier: String?
     public var tags: [String]?
     public var personality: Personality?
+    /// The pet stops somewhere in this scene, so a line can be shown (nil: not applicable).
+    public var speaks: Bool?
 
     public init(_ c: SceneCandidate, petName: String, personality: Personality) {
         key = c.key
@@ -69,6 +71,7 @@ public struct AICandidate: Codable, Sendable, Hashable {
         tier = c.scene.tier.rawValue
         tags = c.scene.tags
         self.personality = personality
+        speaks = c.scene.canSpeak
     }
 
     public static func interaction(id: String, name: String, pets: [String], tier: SceneTier) -> AICandidate {
@@ -80,8 +83,10 @@ public struct AICandidate: Codable, Sendable, Hashable {
     }
 
     public static func routine(petID: String, petName: String, personality: Personality) -> AICandidate {
-        AICandidate(key: "routine:\(petID)", kind: "routine", pet: petName, scene: "compose a new routine from this pet's blocks",
-                    personality: personality)
+        var c = AICandidate(key: "routine:\(petID)", kind: "routine", pet: petName,
+                            scene: "compose a new routine from this pet's blocks", personality: personality)
+        c.speaks = true
+        return c
     }
 
     init(key: String, kind: String, pet: String? = nil, pets: [String]? = nil, scene: String? = nil, tier: String? = nil,
@@ -160,7 +165,8 @@ public enum AIChooser {
     user's situation right now, so it feels aware of them: the local time or weekday (a late night, a Monday \
     morning, Friday afternoon), what they're doing (state: working, reading, idle, and the app category), a long \
     focus streak (nudge a stretch, water or a break), coming back after being away, how many cameos today, or the \
-    pet's mood. Speak as that pet. Don't repeat recentLines. Never mention specific apps, window titles, names or \
+    pet's mood. Speak as that pet. Don't repeat recentLines. A line is only shown on a candidate with speaks=true \
+    (the pet stops there); when you write one, pick such a candidate. Never mention specific apps, window titles, names or \
     content. Leave speech empty only if nothing fits. If "moods" is \
     requested, give each listed pet a mood for today that suits its character, with some variety.
     """

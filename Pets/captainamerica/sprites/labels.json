@@ -1,0 +1,128 @@
+{
+  "source": "ThirdParty/source-assets/cosmic-captainamerica (Marvel Cosmic Invasion, Playable Characters - Captain America, Default suit; merged = body + shield layers)",
+  "dir": "ThirdParty/source-assets/cosmic-captainamerica/merged",
+  "facing": "right",
+  "anchor": [
+    128,
+    226
+  ],
+  "canvas": [
+    256,
+    256
+  ],
+  "pivotByClip": {
+    "shield": "center"
+  },
+  "clips": {
+    "idle": [
+      "Idle_*"
+    ],
+    "walk": [
+      "Walk_*"
+    ],
+    "sprint": [
+      "Sprint_*"
+    ],
+    "skid": [
+      "Sprintend_*"
+    ],
+    "jump": [
+      "Jump.png"
+    ],
+    "apex": [
+      "Jumpapex_*"
+    ],
+    "fall": [
+      "Jumpfall.png"
+    ],
+    "land": [
+      "Land_*"
+    ],
+    "jab": [
+      "Attack1_*"
+    ],
+    "punch": [
+      "Attack2_*"
+    ],
+    "shield_bash": [
+      "Attack3_*"
+    ],
+    "flip_kick": [
+      "Attack4_*"
+    ],
+    "dive": [
+      "Attackairstart_*",
+      "Attackair_*"
+    ],
+    "rising": [
+      "Attackrisingstart_*",
+      "Attackrising_*"
+    ],
+    "rising_land": [
+      "Attackrisingland_*"
+    ],
+    "charge": [
+      "Attackchargedstart_*",
+      "Attackchargedheld_*"
+    ],
+    "charge_bash": [
+      "Attackcharged_*"
+    ],
+    "dash_bash": [
+      "Attacksprinting_*"
+    ],
+    "block": [
+      "Blockstart_*",
+      "Block.png"
+    ],
+    "block_end": [
+      "Blockend.png"
+    ],
+    "parry": [
+      "Parry_*"
+    ],
+    "throw": [
+      "Power1_*"
+    ],
+    "catch": [
+      "Shieldcatch_*"
+    ],
+    "idle_bare": [
+      "../default/Idle_*"
+    ],
+    "charge_dash": [
+      "Specialstart_*",
+      "../default/Special.png"
+    ],
+    "hit": [
+      "Hitstun_*"
+    ],
+    "knockdown": [
+      "Kd_*",
+      "Kdfall.png",
+      "Down.png",
+      "Downbounce_*"
+    ],
+    "getup": [
+      "Downgetup_*"
+    ],
+    "salute": [
+      "../default/Selectscreenstart_*"
+    ],
+    "pose": [
+      "../default/Selectscreen_*"
+    ],
+    "pose_end": [
+      "../default/Selectscreenend_*"
+    ],
+    "rainbow_in": [
+      "Spawnrainbow_*"
+    ],
+    "rainbow_out": [
+      "Spawnrainbowend_*"
+    ],
+    "shield": [
+      "../default/Shield_*"
+    ]
+  }
+}

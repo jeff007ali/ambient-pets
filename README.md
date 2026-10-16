@@ -1,6 +1,7 @@
 # Ambient Desktop Pets
 
-A macOS menu-bar app that makes short, click-through cameos of pixel-art pets (Iron Man, Spider-Man, Batman) over
+A macOS menu-bar app that makes short, click-through cameos of pixel-art pets (Iron Man, Spider-Man, Batman,
+Captain America, Black Panther, Cosmic Ghost Rider, Hela, Thanos) over
 your desktop, without stealing focus. Pets stay away during meetings, presentations, full-screen apps and games, keep
 clear of your text cursor, can appear together and interact, and can optionally let an AI (OpenAI or Claude) pick
 what happens next.
@@ -28,7 +29,7 @@ change the signature, so macOS forgets Accessibility / Screen Recording grants o
 
 | | |
 |---|---|
-| Menu ▸ **Summon ▸ \<scene\>** | play any scene now, on the display under the mouse |
+| Menu ▸ **Summon ▸ \<pet\> ▸ \<scene\>** | play any scene now, on the display under the mouse |
 | Menu ▸ **Summon Together** | several enabled pets at once, each in its own part of the screen |
 | Menu ▸ **Pets** | Mix of enabled pets / Only one pet, per-pet toggles, how often they come together |
 | Menu ▸ **Summon Interaction ▸ \<scene\>** | a shared scene (Greeting, Race, Chase, Boo!, Dance-off) |
@@ -61,7 +62,7 @@ AMBIENT_PETS_DEBUG=1 build/AmbientPets.app/Contents/MacOS/AmbientPets --summon a
   - choose a shared scene or a together appearance when several pets come out;
   - invent a short routine from each pet's validated moves (`blocks.json`), so the same pet does new things;
   - give each pet a mood for the day (cheerful, playful, mischievous, focused, brooding, sleepy) that shifts its
-    personality and how often it shows up (Menu shows today's moods).
+    personality and how often it shows up.
 
   Saving a key turns the AI on; **Summon Now** also goes through it, so you can try it from the menu. The AI is
   asked once per situation (activity, part of the day, each 45 minutes of focus, coming back after a break, or
@@ -78,7 +79,8 @@ Sprites are ripped game art (personal use only) listed in [docs/ART_SOURCES.md](
 live in `ThirdParty/source-assets/` and the generated `sheet.png` files are gitignored; only frame picks
 (`Pets/*/sprites/labels.json`), atlases and behaviour are in the repo. `make art` (run by `make app`) rebuilds sheets:
 
-- **Iron Man** and **Spider-Man**: Marvel Cosmic Invasion per-frame PNGs → `petpack frames` with `labels.json`
+- **Iron Man**, **Spider-Man**, **Captain America**, **Black Panther**, **Cosmic Ghost Rider**, **Hela** and **Thanos**:
+  Marvel Cosmic Invasion per-frame PNGs → `petpack frames` with `labels.json`
   (`"idle": ["Idle_*"]`, overlays like `"Idle_00.png+Spidersense_*"`, effects from `../effects/…`), one shared canvas
   anchor as the pivot (`pivotByClip`: `center` for projectiles, `left` for beams).
 - **Batman**: SNES Batman Returns sheet → `petpack slice` (numbered candidates) → `petpack pack` with `labels.json`
@@ -87,7 +89,8 @@ live in `ThirdParty/source-assets/` and the generated `sheet.png` files are giti
 Every `pet.json` sets `"height"`: the character's standing height in sprite px. The engine scales each pet so a
 standing pet is 135 pt tall at 100 % (108 pt at the default 80 %), so pets from different games match side by side.
 The values are tuned by eye in a side-by-side render (Iron Man 82: his idle hovers on jets; Spider-Man 62: he
-crouches; Batman 78: his ears and cape add height but he's slim), so all three look the same size together.
+crouches; Batman 78: his ears and cape add height but he's slim), so all three look the same size together. The two bosses are
+set a little short on purpose (Hela 94, Thanos 92) so they stand taller than the heroes.
 
 Then merge `sprites/clips.suggested.json` into `clips.json` (fps, loop, attachment points like `hand` / `web` /
 `thruster`), check with `petpack preview <pet> <clip> --out strip.png`, and `make validate-packs`.

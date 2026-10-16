@@ -1,0 +1,61 @@
+{
+  "id": "energy_shield",
+  "name": "Energy Shield",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "fall",
+      "duration": 1.2,
+      "effects": [
+        {
+          "type": "thruster"
+        }
+      ],
+      "motion": {
+        "type": "enter",
+        "from": "top_offscreen",
+        "to": "anchor",
+        "curve": "easeOut"
+      }
+    },
+    {
+      "clip": "land",
+      "duration": 0.57,
+      "effects": [
+        "dust_puff"
+      ]
+    },
+    {
+      "clip": "block",
+      "duration": 0.33,
+      "facing": "toward_center"
+    },
+    {
+      "clip": "parry",
+      "duration": 1.0
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "scan",
+        "chance": 0.4
+      }
+    },
+    {
+      "clip": "rise",
+      "duration": 1.3,
+      "motion": {
+        "type": "exit",
+        "to": "top_offscreen",
+        "curve": "easeIn"
+      }
+    }
+  ]
+}

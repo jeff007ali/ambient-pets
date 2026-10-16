@@ -1,0 +1,69 @@
+{
+  "id": "claw_combo",
+  "name": "Claw Combo",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 230,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "skid",
+      "duration": 0.25
+    },
+    {
+      "clip": "jab",
+      "duration": 0.38,
+      "facing": "toward_center"
+    },
+    {
+      "clip": "punch",
+      "duration": 0.44
+    },
+    {
+      "clip": "slash",
+      "duration": 0.44,
+      "sound": "swish"
+    },
+    {
+      "clip": "claw_combo",
+      "duration": 0.69,
+      "sound": "swish"
+    },
+    {
+      "clip": "flip_kick",
+      "duration": 0.88
+    },
+    {
+      "clip": "idle",
+      "duration": 1.1,
+      "speech": {
+        "pool": "combo",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 230,
+        "curve": "linear"
+      }
+    }
+  ]
+}

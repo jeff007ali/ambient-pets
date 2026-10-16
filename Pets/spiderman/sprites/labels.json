@@ -3,6 +3,10 @@
   "dir": "ThirdParty/source-assets/cosmic-spiderman/default",
   "facing": "right",
   "anchorFrom": "Idle_00.png",
+  "canvas": [
+    256,
+    256
+  ],
   "clips": {
     "idle": [
       "Idle_*"
@@ -28,6 +32,9 @@
     "swing": [
       "Attackswinging_00.png",
       "Attackswinging_01.png"
+    ],
+    "webswing": [
+      "Webswing.png"
     ],
     "hang": [
       "Selectscreen_*"

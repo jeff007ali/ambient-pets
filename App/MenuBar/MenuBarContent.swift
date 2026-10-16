@@ -3,7 +3,7 @@ import PetCore
 import PetPlatform
 import SwiftUI
 
-/// Summon now · Summon ▸ · Pause · Settings · Debug ▸ · Quit
+/// Summon now · Summon ▸ <pet> ▸ <scene> · Pause · Settings · Debug ▸ · Quit
 struct MenuBarContent: View {
     let engine: PetEngine
     @Environment(\.openSettings) private var openSettings
@@ -12,9 +12,6 @@ struct MenuBarContent: View {
         @Bindable var store = engine.settingsStore
 
         Text(status)
-        if !engine.todaysMoods.isEmpty {
-            Text("Moods: " + engine.packs.compactMap { p in engine.todaysMoods[p.id].map { "\(p.name) \($0.label)" } }.joined(separator: " · "))
-        }
         if engine.appearancesToday > 0 {
             Text("\(engine.appearancesToday) appearance\(engine.appearancesToday == 1 ? "" : "s") today")
         }
@@ -30,7 +27,7 @@ struct MenuBarContent: View {
             .disabled(engine.enabledPacks.count < 2 || engine.isPlaying)
         Menu("Summon") {
             ForEach(engine.packs) { pack in
-                Section(pack.name) {
+                Menu(pack.name) {
                     ForEach(pack.data.scenes) { scene in
                         Button("\(scene.name)  ·  \(scene.tier.rawValue)") {
                             engine.summon(petID: pack.id, sceneID: scene.id)

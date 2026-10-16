@@ -1,0 +1,61 @@
+{
+  "id": "kinetic_burst",
+  "name": "Kinetic Burst",
+  "tier": "elaborate",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 60,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "dive",
+      "duration": 0.9,
+      "motion": {
+        "type": "arc",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "height": 150,
+        "curve": "easeIn"
+      }
+    },
+    {
+      "clip": "dive_land",
+      "duration": 0.33,
+      "effects": [
+        "dust_puff",
+        "squash"
+      ],
+      "sound": "thud"
+    },
+    {
+      "clip": "charge",
+      "duration": 1.0,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "charge",
+        "chance": 0.4
+      }
+    },
+    {
+      "clip": "absorb",
+      "duration": 1.72,
+      "sound": "zap"
+    },
+    {
+      "clip": "idle",
+      "duration": 0.8
+    },
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 230,
+        "curve": "linear"
+      }
+    }
+  ]
+}

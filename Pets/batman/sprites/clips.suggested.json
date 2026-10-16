@@ -188,6 +188,18 @@
       ],
       "loop" : true
     },
+    "ropehang" : {
+      "fps" : 8,
+      "frames" : [
+        "ropehang_0",
+        "ropehang_1",
+        "ropehang_2",
+        "ropehang_3",
+        "ropehang_4",
+        "ropehang_5"
+      ],
+      "loop" : true
+    },
     "ropekick" : {
       "fps" : 8,
       "frames" : [

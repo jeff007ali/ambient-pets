@@ -1,0 +1,52 @@
+{
+  "id": "on_guard",
+  "name": "On Guard",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "cursor"
+  ],
+  "cooldownMinutes": 15,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 80,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "block",
+      "duration": 1.4,
+      "facing": "cursor",
+      "speech": {
+        "pool": "guard",
+        "chance": 0.35
+      }
+    },
+    {
+      "clip": "block_end",
+      "duration": 0.17
+    },
+    {
+      "clip": "parry",
+      "duration": 0.33,
+      "sound": "blip"
+    },
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 80,
+        "curve": "linear"
+      }
+    }
+  ]
+}

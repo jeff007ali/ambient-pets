@@ -1,0 +1,56 @@
+{
+  "id": "cosmic_cruiser",
+  "name": "Cosmic Cruiser",
+  "tier": "rare",
+  "weight": 1.0,
+  "tags": [
+    "greeting",
+    "flashy"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "bike_idle_in",
+      "duration": 0.67,
+      "effects": [
+        {
+          "type": "fade",
+          "mode": "in",
+          "duration": 0.4
+        }
+      ]
+    },
+    {
+      "clip": "bike_idle",
+      "duration": 2.0,
+      "speech": {
+        "pool": "cruiser",
+        "chance": 0.7
+      }
+    },
+    {
+      "clip": "bike_idle_out",
+      "duration": 0.5
+    },
+    {
+      "clip": "ignite",
+      "duration": 0.86,
+      "sound": "whoosh"
+    },
+    {
+      "clip": "bike_launch",
+      "duration": 0.29
+    },
+    {
+      "clip": "bike",
+      "duration": 1.6,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 420,
+        "curve": "easeIn"
+      }
+    }
+  ]
+}

@@ -63,7 +63,7 @@
       }
     },
     {
-      "clip": "jump",
+      "clip": "swing",
       "duration": 0.9,
       "effects": [
         {
@@ -76,7 +76,8 @@
         "to": "top_offscreen",
         "curve": "easeIn"
       },
-      "sound": "thwip"
+      "sound": "thwip",
+      "facing": "keep"
     }
   ]
 }

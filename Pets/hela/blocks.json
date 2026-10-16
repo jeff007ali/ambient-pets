@@ -1,0 +1,131 @@
+{
+  "enter": [
+    {
+      "clip": "appear",
+      "duration": 1.0,
+      "effects": [
+        {
+          "type": "fade",
+          "mode": "in",
+          "duration": 0.4
+        }
+      ],
+      "sound": "whoosh"
+    }
+  ],
+  "exit": [
+    {
+      "clip": "vanish",
+      "duration": 1.83,
+      "sound": "whoosh"
+    }
+  ],
+  "blocks": {
+    "blades": {
+      "description": "hurls two necroswords",
+      "steps": [
+        {
+          "clip": "blades",
+          "duration": 0.83,
+          "facing": "toward_center",
+          "effects": [
+            {
+              "type": "projectile",
+              "clip": "blade",
+              "hit": "blade_hit",
+              "at": "hand",
+              "speed": 640,
+              "distance": 300,
+              "delay": 0.3
+            },
+            {
+              "type": "projectile",
+              "clip": "blade",
+              "hit": "blade_hit",
+              "at": "hand",
+              "speed": 640,
+              "distance": 300,
+              "delay": 0.45,
+              "rise": 18
+            }
+          ]
+        }
+      ]
+    },
+    "fenrir": {
+      "description": "summons her giant wolf Fenrir to charge",
+      "steps": [
+        {
+          "clip": "fenrir",
+          "duration": 0.8,
+          "facing": "toward_center",
+          "effects": [
+            {
+              "type": "projectile",
+              "clip": "wolf",
+              "hit": "wolf_end",
+              "at": "hand",
+              "speed": 380,
+              "distance": 320,
+              "delay": 0.3
+            }
+          ]
+        }
+      ]
+    },
+    "thorns": {
+      "description": "casts a line of green thorns",
+      "steps": [
+        {
+          "clip": "spikes_cast",
+          "duration": 0.92,
+          "facing": "toward_center",
+          "effects": [
+            {
+              "type": "overlay",
+              "clip": "spikes_start",
+              "at": "hand",
+              "hold": false
+            }
+          ]
+        }
+      ]
+    },
+    "crown": {
+      "description": "flares her horned crown in a burst of blades",
+      "steps": [
+        {
+          "clip": "crown",
+          "duration": 1.79
+        }
+      ]
+    },
+    "glide": {
+      "description": "glides a few steps",
+      "steps": [
+        {
+          "clip": "walk",
+          "duration": 1.8,
+          "motion": {
+            "type": "walk",
+            "speed": 38,
+            "direction": "random"
+          }
+        },
+        {
+          "clip": "walk_end",
+          "duration": 0.3
+        }
+      ]
+    },
+    "loom": {
+      "description": "stands still, looming",
+      "steps": [
+        {
+          "clip": "idle",
+          "duration": 1.8
+        }
+      ]
+    }
+  }
+}

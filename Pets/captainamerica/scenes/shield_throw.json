@@ -1,0 +1,67 @@
+{
+  "id": "shield_throw",
+  "name": "Shield Throw",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 80,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "throw",
+      "duration": 0.57,
+      "facing": "toward_center",
+      "effects": [
+        {
+          "type": "projectile",
+          "clip": "shield",
+          "at": "hand",
+          "speed": 520,
+          "distance": 300,
+          "delay": 0.15
+        }
+      ],
+      "sound": "swish"
+    },
+    {
+      "clip": "idle_bare",
+      "duration": 0.4
+    },
+    {
+      "clip": "catch",
+      "duration": 0.4,
+      "sound": "blip"
+    },
+    {
+      "clip": "idle",
+      "duration": 0.9,
+      "speech": {
+        "pool": "shield",
+        "chance": 0.4
+      }
+    },
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 80,
+        "curve": "linear"
+      }
+    }
+  ]
+}

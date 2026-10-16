@@ -101,6 +101,21 @@
         ]
       }
     },
+    "swingcurl": {
+      "frames": [
+        "swing_0",
+        "swing_1",
+        "webswing_0"
+      ],
+      "fps": 6,
+      "loop": false,
+      "points": {
+        "web": [
+          -24,
+          79
+        ]
+      }
+    },
     "hang": {
       "frames": [
         "hang_0",
@@ -353,7 +368,7 @@
         "webshot_6",
         "webshot_7"
       ],
-      "fps": 14,
+      "fps": 7,
       "loop": false,
       "points": {
         "hand": [
@@ -372,7 +387,7 @@
         "webshot2_4",
         "webshot2_5"
       ],
-      "fps": 14,
+      "fps": 5.4,
       "loop": false,
       "points": {
         "hand": [
@@ -393,7 +408,7 @@
         "airshot_6",
         "airshot_7"
       ],
-      "fps": 14,
+      "fps": 10,
       "loop": false,
       "points": {
         "hand": [
@@ -417,7 +432,7 @@
         "special_10",
         "special_11"
       ],
-      "fps": 14,
+      "fps": 12,
       "loop": false
     },
     "rainbow_in": {

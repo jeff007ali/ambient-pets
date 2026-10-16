@@ -7,7 +7,8 @@
         "type": "moveTo",
         "from": "side_offscreen",
         "to": "anchor",
-        "curve": "linear"
+        "curve": "linear",
+        "speed": 85
       }
     }
   ],
@@ -79,12 +80,12 @@
       "steps": [
         {
           "clip": "punch",
-          "duration": 0.45,
+          "duration": 0.38,
           "facing": "toward_center"
         },
         {
           "clip": "kick",
-          "duration": 0.45
+          "duration": 0.34
         }
       ]
     },
@@ -93,7 +94,7 @@
       "steps": [
         {
           "clip": "jumpkick",
-          "duration": 0.7,
+          "duration": 0.67,
           "motion": {
             "type": "hop",
             "height": 26
@@ -106,7 +107,7 @@
       "steps": [
         {
           "clip": "twirl",
-          "duration": 0.6,
+          "duration": 0.5,
           "sound": "swish"
         }
       ]
@@ -116,12 +117,12 @@
       "steps": [
         {
           "clip": "capeopen",
-          "duration": 0.45,
+          "duration": 0.38,
           "sound": "swish"
         },
         {
           "clip": "wings",
-          "duration": 1.0,
+          "duration": 0.25,
           "effects": [
             {
               "type": "squash",
@@ -150,7 +151,7 @@
       "steps": [
         {
           "clip": "pellet",
-          "duration": 0.8,
+          "duration": 0.45,
           "effects": [
             "dust_puff"
           ]
@@ -162,7 +163,7 @@
       "steps": [
         {
           "clip": "cape",
-          "duration": 0.7
+          "duration": 0.5
         }
       ]
     }

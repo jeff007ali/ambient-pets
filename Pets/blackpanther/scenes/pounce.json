@@ -1,0 +1,61 @@
+{
+  "id": "pounce",
+  "name": "Pounce",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "surprise"
+  ],
+  "cooldownMinutes": 25,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 80,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "pounce_start",
+      "duration": 0.33,
+      "facing": "toward_center"
+    },
+    {
+      "clip": "pounce",
+      "duration": 0.6,
+      "motion": {
+        "type": "walk",
+        "distance": 160,
+        "direction": "toward_center"
+      },
+      "sound": "swish"
+    },
+    {
+      "clip": "pounce_end",
+      "duration": 1.07
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "pounce",
+        "chance": 0.4
+      }
+    },
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 230,
+        "curve": "linear"
+      }
+    }
+  ]
+}

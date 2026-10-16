@@ -21,8 +21,7 @@
           120
         ],
         "curve": "easeOut"
-      },
-      "sound": "swish"
+      }
     },
     {
       "clip": "drop",
@@ -37,8 +36,7 @@
       "effects": [
         "dust_puff",
         "squash"
-      ],
-      "sound": "thud"
+      ]
     },
     {
       "clip": "brood",
@@ -46,20 +44,21 @@
       "facing": "toward_center",
       "speech": {
         "pool": "brood",
-        "chance": 0.4
+        "chance": 0.3
       }
     },
     {
       "clip": "cape",
-      "duration": 0.6
+      "duration": 0.5
     },
     {
       "clip": "walk",
       "duration": 2.2,
       "motion": {
         "type": "exit",
-        "to": "opposite_offscreen",
-        "curve": "linear"
+        "to": "side_offscreen",
+        "curve": "linear",
+        "speed": 85
       }
     }
   ]

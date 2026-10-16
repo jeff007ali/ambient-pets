@@ -1,0 +1,59 @@
+{
+  "id": "fenrir",
+  "name": "Fenrir",
+  "tier": "elaborate",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 60,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "appear",
+      "duration": 1.0,
+      "effects": [
+        {
+          "type": "fade",
+          "mode": "in",
+          "duration": 0.4
+        }
+      ],
+      "sound": "whoosh"
+    },
+    {
+      "clip": "idle",
+      "duration": 0.6,
+      "facing": "toward_center"
+    },
+    {
+      "clip": "fenrir",
+      "duration": 0.8,
+      "effects": [
+        {
+          "type": "projectile",
+          "clip": "wolf",
+          "hit": "wolf_end",
+          "at": "hand",
+          "speed": 380,
+          "distance": 320,
+          "delay": 0.3
+        }
+      ],
+      "sound": "boom"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.2,
+      "speech": {
+        "pool": "fenrir",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "vanish",
+      "duration": 1.83,
+      "sound": "whoosh"
+    }
+  ]
+}

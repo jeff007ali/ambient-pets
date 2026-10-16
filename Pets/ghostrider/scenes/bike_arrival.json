@@ -1,0 +1,49 @@
+{
+  "id": "bike_arrival",
+  "name": "Bike Arrival",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "surprise",
+    "flashy"
+  ],
+  "cooldownMinutes": 25,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "bike",
+      "duration": 1.6,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 380,
+        "curve": "easeOut"
+      },
+      "sound": "whoosh"
+    },
+    {
+      "clip": "bike_out",
+      "duration": 0.93
+    },
+    {
+      "clip": "idle",
+      "duration": 1.2,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "wander",
+        "chance": 0.4
+      }
+    },
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 80,
+        "curve": "linear"
+      }
+    }
+  ]
+}

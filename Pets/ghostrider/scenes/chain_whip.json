@@ -1,0 +1,65 @@
+{
+  "id": "chain_whip",
+  "name": "Chain Whip",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 230,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "skid",
+      "duration": 0.33
+    },
+    {
+      "clip": "jab",
+      "duration": 0.43,
+      "facing": "toward_center"
+    },
+    {
+      "clip": "fire_punch",
+      "duration": 0.64
+    },
+    {
+      "clip": "chain_whip",
+      "duration": 0.79,
+      "sound": "swish"
+    },
+    {
+      "clip": "fire_combo",
+      "duration": 1.25,
+      "sound": "whoosh"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "combo",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 230,
+        "curve": "linear"
+      }
+    }
+  ]
+}

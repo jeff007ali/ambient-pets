@@ -1,0 +1,72 @@
+{
+  "id": "rooftop_drop",
+  "name": "Rooftop Drop",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "surprise"
+  ],
+  "cooldownMinutes": 10,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "fall",
+      "duration": 0.9,
+      "motion": {
+        "type": "enter",
+        "from": "top_offscreen",
+        "to": "anchor",
+        "curve": "easeIn"
+      }
+    },
+    {
+      "clip": "land",
+      "duration": 0.29,
+      "effects": [
+        "dust_puff",
+        "squash"
+      ],
+      "sound": "thud"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "prowl",
+        "chance": 0.25
+      }
+    },
+    {
+      "clip": "air_throw",
+      "duration": 0.5,
+      "motion": {
+        "type": "hop",
+        "height": 40
+      },
+      "effects": [
+        {
+          "type": "projectile",
+          "clip": "kunai",
+          "hit": "kunai_hit",
+          "at": "hand",
+          "speed": 620,
+          "distance": 280,
+          "delay": 0.25,
+          "rise": -40
+        }
+      ],
+      "sound": "swish"
+    },
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 230,
+        "curve": "linear"
+      }
+    }
+  ]
+}

@@ -10,7 +10,7 @@
   "region": "air",
   "steps": [
     {
-      "clip": "swing",
+      "clip": "swingcurl",
       "duration": 1.6,
       "effects": [
         {
@@ -26,6 +26,19 @@
         "attach": "top"
       },
       "sound": "thwip"
+    },
+    {
+      "clip": "apex",
+      "duration": 0.45,
+      "motion": {
+        "type": "arc",
+        "advance": [
+          100,
+          0
+        ],
+        "height": 40,
+        "curve": "linear"
+      }
     },
     {
       "clip": "airshot",

@@ -1,0 +1,47 @@
+{
+  "id": "salute",
+  "name": "Salute",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "greeting"
+  ],
+  "cooldownMinutes": 30,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 80,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "salute",
+      "duration": 2.61,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "greet",
+        "chance": 0.6
+      }
+    },
+    {
+      "clip": "pose",
+      "duration": 1.2
+    },
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 80,
+        "curve": "linear"
+      }
+    }
+  ]
+}

@@ -260,3 +260,30 @@ let gapped = DisplayGeometry(id: 4, frame: CGRect(x: 1700, y: 400, width: 800, h
         #expect(down.preferredFacing == .left) // right wall, going down
     }
 }
+
+@Suite struct SwingAndExitTests {
+    let box = PetBox.make(extents: SpriteExtents(left: 30, right: 30, up: 100, down: 0), scale: 1,
+                          padding: .init(side: 20, top: 20, bottom: 40))
+
+    @Test func sideExitsLeaveAtTheCurrentHeight() {
+        let p = ScenePlan(display: primary, box: box, anchor: CGPoint(x: 1400, y: 500), side: .right)
+        let here = CGPoint(x: 700, y: primary.visibleFrame.minY)
+        #expect(p.resolve("opposite_offscreen", current: here)?.y == here.y)
+        #expect(p.resolve("side_offscreen", current: here)?.y == here.y)
+    }
+
+    @Test func aSwingFromTheGroundStaysAboveItAndOnScreen() {
+        let v = primary.visibleFrame
+        let start = CGPoint(x: 1000, y: v.minY + 60)
+        let p = ScenePlan(display: primary, box: box, anchor: start, side: .right)
+        var spec = MotionSpec(type: .swing, to: "left_offscreen")
+        spec.sweep = 80
+        spec.attach = "top"
+        let t = MotionTrack.make(spec: spec, duration: 1.6, current: start, plan: p, scale: 1, rng: SeededRandom(seed: 1))
+        for i in 0...40 {
+            let q = t.position(at: 1.6 * Double(i) / 40)
+            #expect(q.y >= v.minY - 0.5, "dips below the ground at \(i)")
+            #expect(q.x >= v.minX && q.x <= v.maxX, "leaves the screen at \(i)")
+        }
+    }
+}

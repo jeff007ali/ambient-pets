@@ -396,8 +396,9 @@ public final class PetEngine {
             } ?? "fell back (\(outcome.error ?? "unknown")) after \(String(format: "%.2f", outcome.latency)) s"
             self.recordAICall(outcome, source: manual ? "Summon Now" : "cameo")
             if let moods = outcome.choice?.moods { self.storeMoods(moods) }
-            if outcome.choice != nil {
-                // This situation has had its AI moment; generic lines until it changes.
+            if let c = outcome.choice, c.speech == nil || c.key == "together" || c.key.hasPrefix("routine:")
+                || singles.first(where: { $0.key == c.key })?.scene.canSpeak == true {
+                // This situation has had its AI moment (its line can be shown); generic lines until it changes.
                 self.lastAISituation = self.situation(state: state)
                 self.cameBack = false
             }

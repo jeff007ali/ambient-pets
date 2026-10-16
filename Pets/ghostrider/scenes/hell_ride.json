@@ -1,0 +1,53 @@
+{
+  "id": "hell_ride",
+  "name": "Hell Ride",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 25,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 80,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "idle",
+      "duration": 0.8,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "ride",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "ignite",
+      "duration": 0.86,
+      "sound": "whoosh"
+    },
+    {
+      "clip": "bike_launch",
+      "duration": 0.29
+    },
+    {
+      "clip": "bike",
+      "duration": 1.6,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 420,
+        "curve": "easeIn"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

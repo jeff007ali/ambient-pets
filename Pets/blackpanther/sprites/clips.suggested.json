@@ -1,0 +1,633 @@
+{
+  "clips" : {
+    "absorb" : {
+      "fps" : 12,
+      "frames" : [
+        "absorb_0",
+        "absorb_1",
+        "absorb_2",
+        "absorb_3",
+        "absorb_4",
+        "absorb_5",
+        "absorb_6",
+        "absorb_7",
+        "absorb_8",
+        "absorb_9",
+        "absorb_10",
+        "absorb_11",
+        "absorb_12",
+        "absorb_13",
+        "absorb_14",
+        "absorb_15",
+        "absorb_16",
+        "absorb_17",
+        "absorb_18",
+        "absorb_19",
+        "absorb_20",
+        "absorb_21",
+        "absorb_22",
+        "absorb_23",
+        "absorb_24",
+        "absorb_25",
+        "absorb_26",
+        "absorb_27",
+        "absorb_28",
+        "absorb_28",
+        "absorb_29"
+      ],
+      "loop" : true
+    },
+    "air_throw" : {
+      "fps" : 12,
+      "frames" : [
+        "air_throw_0",
+        "air_throw_1",
+        "air_throw_2",
+        "air_throw_3",
+        "air_throw_4",
+        "air_throw_5",
+        "air_throw_6"
+      ],
+      "loop" : true
+    },
+    "apex" : {
+      "fps" : 12,
+      "frames" : [
+        "apex_0",
+        "apex_1",
+        "apex_2",
+        "apex_3",
+        "apex_4"
+      ],
+      "loop" : true
+    },
+    "charge" : {
+      "fps" : 12,
+      "frames" : [
+        "charge_0",
+        "charge_1",
+        "charge_2"
+      ],
+      "loop" : true
+    },
+    "charge_slash" : {
+      "fps" : 12,
+      "frames" : [
+        "charge_slash_0",
+        "charge_slash_1",
+        "charge_slash_2",
+        "charge_slash_3",
+        "charge_slash_4",
+        "charge_slash_5",
+        "charge_slash_6",
+        "charge_slash_7"
+      ],
+      "loop" : true
+    },
+    "claw_combo" : {
+      "fps" : 12,
+      "frames" : [
+        "claw_combo_0",
+        "claw_combo_1",
+        "claw_combo_2",
+        "claw_combo_3",
+        "claw_combo_4",
+        "claw_combo_5",
+        "claw_combo_6",
+        "claw_combo_7",
+        "claw_combo_8",
+        "claw_combo_9",
+        "claw_combo_10"
+      ],
+      "loop" : true
+    },
+    "claws" : {
+      "fps" : 12,
+      "frames" : [
+        "claws_0",
+        "claws_1",
+        "claws_2",
+        "claws_3"
+      ],
+      "loop" : true
+    },
+    "dash_slash" : {
+      "fps" : 12,
+      "frames" : [
+        "dash_slash_0",
+        "dash_slash_1",
+        "dash_slash_2",
+        "dash_slash_3",
+        "dash_slash_4",
+        "dash_slash_5",
+        "dash_slash_6",
+        "dash_slash_7",
+        "dash_slash_8",
+        "dash_slash_9",
+        "dash_slash_10",
+        "dash_slash_11",
+        "dash_slash_12",
+        "dash_slash_13"
+      ],
+      "loop" : true
+    },
+    "dive" : {
+      "fps" : 12,
+      "frames" : [
+        "dive_0",
+        "dive_1",
+        "dive_2",
+        "dive_3",
+        "dive_4"
+      ],
+      "loop" : true
+    },
+    "dive_land" : {
+      "fps" : 12,
+      "frames" : [
+        "dive_land_0",
+        "dive_land_1",
+        "dive_land_2",
+        "dive_land_3"
+      ],
+      "loop" : true
+    },
+    "dodge" : {
+      "fps" : 12,
+      "frames" : [
+        "dodge_0",
+        "dodge_1",
+        "dodge_2",
+        "dodge_3",
+        "dodge_4",
+        "dodge_5",
+        "dodge_6",
+        "dodge_7",
+        "dodge_8",
+        "dodge_9"
+      ],
+      "loop" : true
+    },
+    "fall" : {
+      "fps" : 12,
+      "frames" : [
+        "fall_0"
+      ],
+      "loop" : true
+    },
+    "flip_kick" : {
+      "fps" : 12,
+      "frames" : [
+        "flip_kick_0",
+        "flip_kick_1",
+        "flip_kick_2",
+        "flip_kick_3",
+        "flip_kick_4",
+        "flip_kick_5",
+        "flip_kick_6",
+        "flip_kick_7",
+        "flip_kick_8",
+        "flip_kick_9",
+        "flip_kick_10",
+        "flip_kick_11",
+        "flip_kick_12",
+        "flip_kick_13"
+      ],
+      "loop" : true
+    },
+    "getup" : {
+      "fps" : 12,
+      "frames" : [
+        "getup_0",
+        "getup_1",
+        "getup_2",
+        "getup_3"
+      ],
+      "loop" : true
+    },
+    "hit" : {
+      "fps" : 12,
+      "frames" : [
+        "hit_0",
+        "hit_1"
+      ],
+      "loop" : true
+    },
+    "idle" : {
+      "fps" : 12,
+      "frames" : [
+        "idle_0",
+        "idle_1",
+        "idle_2",
+        "idle_3",
+        "idle_4",
+        "idle_5",
+        "idle_6",
+        "idle_7",
+        "idle_8",
+        "idle_9"
+      ],
+      "loop" : true
+    },
+    "jab" : {
+      "fps" : 12,
+      "frames" : [
+        "jab_0",
+        "jab_1",
+        "jab_2",
+        "jab_3",
+        "jab_4",
+        "jab_5"
+      ],
+      "loop" : true
+    },
+    "jump" : {
+      "fps" : 12,
+      "frames" : [
+        "jump_0"
+      ],
+      "loop" : true
+    },
+    "knockdown" : {
+      "fps" : 12,
+      "frames" : [
+        "knockdown_0",
+        "knockdown_1",
+        "knockdown_2",
+        "knockdown_3",
+        "knockdown_4",
+        "knockdown_5",
+        "knockdown_6",
+        "knockdown_7",
+        "knockdown_8",
+        "knockdown_9",
+        "knockdown_10",
+        "knockdown_11",
+        "knockdown_12",
+        "knockdown_13",
+        "knockdown_14"
+      ],
+      "loop" : true
+    },
+    "kunai" : {
+      "fps" : 12,
+      "frames" : [
+        "kunai_0",
+        "kunai_1",
+        "kunai_2",
+        "kunai_3",
+        "kunai_4",
+        "kunai_5"
+      ],
+      "loop" : true
+    },
+    "kunai_boom" : {
+      "fps" : 12,
+      "frames" : [
+        "kunai_boom_0",
+        "kunai_boom_1",
+        "kunai_boom_2",
+        "kunai_boom_3",
+        "kunai_boom_4",
+        "kunai_boom_5",
+        "kunai_boom_6",
+        "kunai_boom_7",
+        "kunai_boom_8",
+        "kunai_boom_9",
+        "kunai_boom_10",
+        "kunai_boom_11",
+        "kunai_boom_12",
+        "kunai_boom_13",
+        "kunai_boom_14",
+        "kunai_boom_15",
+        "kunai_boom_16",
+        "kunai_boom_17",
+        "kunai_boom_18",
+        "kunai_boom_19",
+        "kunai_boom_20",
+        "kunai_boom_21",
+        "kunai_boom_22",
+        "kunai_boom_23",
+        "kunai_boom_24",
+        "kunai_boom_25",
+        "kunai_boom_26"
+      ],
+      "loop" : true
+    },
+    "kunai_hit" : {
+      "fps" : 12,
+      "frames" : [
+        "kunai_hit_0",
+        "kunai_hit_1",
+        "kunai_hit_0",
+        "kunai_hit_1",
+        "kunai_hit_2"
+      ],
+      "loop" : true
+    },
+    "land" : {
+      "fps" : 12,
+      "frames" : [
+        "land_0",
+        "land_1",
+        "land_2",
+        "land_3"
+      ],
+      "loop" : true
+    },
+    "pounce" : {
+      "fps" : 12,
+      "frames" : [
+        "pounce_0",
+        "pounce_1",
+        "pounce_2",
+        "pounce_3",
+        "pounce_4",
+        "pounce_5"
+      ],
+      "loop" : true
+    },
+    "pounce_end" : {
+      "fps" : 12,
+      "frames" : [
+        "pounce_end_0",
+        "pounce_end_1",
+        "pounce_end_2",
+        "pounce_end_3",
+        "pounce_end_4",
+        "pounce_end_5",
+        "pounce_end_6",
+        "pounce_end_7",
+        "pounce_end_6",
+        "pounce_end_7",
+        "pounce_end_6",
+        "pounce_end_7",
+        "pounce_end_6",
+        "pounce_end_8",
+        "pounce_end_9"
+      ],
+      "loop" : true
+    },
+    "pounce_start" : {
+      "fps" : 12,
+      "frames" : [
+        "pounce_start_0",
+        "pounce_start_1",
+        "pounce_start_2",
+        "pounce_start_3"
+      ],
+      "loop" : true
+    },
+    "pounce_turn" : {
+      "fps" : 12,
+      "frames" : [
+        "pounce_turn_0",
+        "pounce_turn_1",
+        "pounce_turn_2"
+      ],
+      "loop" : true
+    },
+    "punch" : {
+      "fps" : 12,
+      "frames" : [
+        "punch_0",
+        "punch_1",
+        "punch_2",
+        "punch_3",
+        "punch_4",
+        "punch_5",
+        "punch_6"
+      ],
+      "loop" : true
+    },
+    "rainbow_in" : {
+      "fps" : 12,
+      "frames" : [
+        "rainbow_in_0",
+        "rainbow_in_1",
+        "rainbow_in_2",
+        "rainbow_in_3",
+        "rainbow_in_4",
+        "rainbow_in_5",
+        "rainbow_in_6",
+        "rainbow_in_7",
+        "rainbow_in_8",
+        "rainbow_in_9",
+        "rainbow_in_10",
+        "rainbow_in_11",
+        "rainbow_in_12",
+        "rainbow_in_13",
+        "rainbow_in_14",
+        "rainbow_in_15",
+        "rainbow_in_16",
+        "rainbow_in_17",
+        "rainbow_in_18",
+        "rainbow_in_19",
+        "rainbow_in_20",
+        "rainbow_in_21",
+        "rainbow_in_22",
+        "rainbow_in_23",
+        "rainbow_in_24",
+        "rainbow_in_25",
+        "rainbow_in_26",
+        "rainbow_in_27",
+        "rainbow_in_28",
+        "rainbow_in_29",
+        "rainbow_in_30",
+        "rainbow_in_31",
+        "rainbow_in_32",
+        "rainbow_in_33",
+        "rainbow_in_34",
+        "rainbow_in_35"
+      ],
+      "loop" : true
+    },
+    "rainbow_out" : {
+      "fps" : 12,
+      "frames" : [
+        "rainbow_out_0",
+        "rainbow_out_1",
+        "rainbow_out_2",
+        "rainbow_out_3",
+        "rainbow_out_4",
+        "rainbow_out_5",
+        "rainbow_out_6",
+        "rainbow_out_7",
+        "rainbow_out_8",
+        "rainbow_out_9",
+        "rainbow_out_10",
+        "rainbow_out_11",
+        "rainbow_out_12",
+        "rainbow_out_13",
+        "rainbow_out_14",
+        "rainbow_out_15",
+        "rainbow_out_16",
+        "rainbow_out_17",
+        "rainbow_out_18",
+        "rainbow_out_19",
+        "rainbow_out_20",
+        "rainbow_out_21",
+        "rainbow_out_22",
+        "rainbow_out_23",
+        "rainbow_out_24",
+        "rainbow_out_25",
+        "rainbow_out_26",
+        "rainbow_out_27",
+        "rainbow_out_28",
+        "rainbow_out_29",
+        "rainbow_out_30",
+        "rainbow_out_31",
+        "rainbow_out_32",
+        "rainbow_out_33",
+        "rainbow_out_34",
+        "rainbow_out_35"
+      ],
+      "loop" : true
+    },
+    "rising" : {
+      "fps" : 12,
+      "frames" : [
+        "rising_0",
+        "rising_1",
+        "rising_2",
+        "rising_3",
+        "rising_4",
+        "rising_5"
+      ],
+      "loop" : true
+    },
+    "rising_fall" : {
+      "fps" : 12,
+      "frames" : [
+        "rising_fall_0",
+        "rising_fall_1",
+        "rising_fall_2"
+      ],
+      "loop" : true
+    },
+    "rising_land" : {
+      "fps" : 12,
+      "frames" : [
+        "rising_land_0",
+        "rising_land_1",
+        "rising_land_2",
+        "rising_land_3"
+      ],
+      "loop" : true
+    },
+    "skid" : {
+      "fps" : 12,
+      "frames" : [
+        "skid_0",
+        "skid_1",
+        "skid_2"
+      ],
+      "loop" : true
+    },
+    "slash" : {
+      "fps" : 12,
+      "frames" : [
+        "slash_0",
+        "slash_1",
+        "slash_2",
+        "slash_3",
+        "slash_4",
+        "slash_5",
+        "slash_6"
+      ],
+      "loop" : true
+    },
+    "sprint" : {
+      "fps" : 12,
+      "frames" : [
+        "sprint_0",
+        "sprint_1",
+        "sprint_2",
+        "sprint_3",
+        "sprint_4",
+        "sprint_5",
+        "sprint_6",
+        "sprint_7"
+      ],
+      "loop" : true
+    },
+    "throne" : {
+      "fps" : 12,
+      "frames" : [
+        "throne_0",
+        "throne_1",
+        "throne_2",
+        "throne_3",
+        "throne_4",
+        "throne_5",
+        "throne_6",
+        "throne_7",
+        "throne_8",
+        "throne_9",
+        "throne_10",
+        "throne_11",
+        "throne_12",
+        "throne_13",
+        "throne_14",
+        "throne_15",
+        "throne_16",
+        "throne_17"
+      ],
+      "loop" : true
+    },
+    "throne_in" : {
+      "fps" : 12,
+      "frames" : [
+        "throne_in_0",
+        "throne_in_1",
+        "throne_in_2",
+        "throne_in_3",
+        "throne_in_4",
+        "throne_in_3",
+        "throne_in_2",
+        "throne_in_1",
+        "throne_in_0"
+      ],
+      "loop" : true
+    },
+    "throne_out" : {
+      "fps" : 12,
+      "frames" : [
+        "throne_out_0"
+      ],
+      "loop" : true
+    },
+    "throw" : {
+      "fps" : 12,
+      "frames" : [
+        "throw_0",
+        "throw_1",
+        "throw_2",
+        "throw_3",
+        "throw_4",
+        "throw_5",
+        "throw_6",
+        "throw_7",
+        "throw_8",
+        "throw_9",
+        "throw_10"
+      ],
+      "loop" : true
+    },
+    "walk" : {
+      "fps" : 12,
+      "frames" : [
+        "walk_0",
+        "walk_1",
+        "walk_2",
+        "walk_3",
+        "walk_4",
+        "walk_5",
+        "walk_6",
+        "walk_7",
+        "walk_8"
+      ],
+      "loop" : true
+    }
+  }
+}

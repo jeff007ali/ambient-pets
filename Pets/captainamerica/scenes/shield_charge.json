@@ -1,0 +1,57 @@
+{
+  "id": "shield_charge",
+  "name": "Shield Charge",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 25,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 230,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "skid",
+      "duration": 0.33
+    },
+    {
+      "clip": "charge_dash",
+      "duration": 0.5,
+      "facing": "toward_center",
+      "motion": {
+        "type": "walk",
+        "distance": 140,
+        "direction": "toward_center"
+      },
+      "sound": "whoosh"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "charge",
+        "chance": 0.4
+      }
+    },
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 230,
+        "curve": "linear"
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "gunslinger",
+  "name": "Gunslinger",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 15,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 80,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "draw",
+      "duration": 0.57,
+      "facing": "toward_center"
+    },
+    {
+      "clip": "shoot",
+      "duration": 0.6,
+      "effects": [
+        {
+          "type": "projectile",
+          "clip": "bullet",
+          "hit": "bullet_hit",
+          "at": "hand",
+          "speed": 700,
+          "distance": 300,
+          "delay": 0.05
+        }
+      ],
+      "sound": "zap"
+    },
+    {
+      "clip": "shoot",
+      "duration": 0.6,
+      "effects": [
+        {
+          "type": "projectile",
+          "clip": "bullet",
+          "hit": "bullet_hit",
+          "at": "hand",
+          "speed": 700,
+          "distance": 300,
+          "delay": 0.05
+        }
+      ],
+      "sound": "zap"
+    },
+    {
+      "clip": "holster",
+      "duration": 0.4,
+      "speech": {
+        "pool": "gun",
+        "chance": 0.35
+      }
+    },
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 80,
+        "curve": "linear"
+      }
+    }
+  ]
+}

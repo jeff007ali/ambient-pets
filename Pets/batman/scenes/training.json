@@ -14,21 +14,22 @@
         "type": "moveTo",
         "from": "side_offscreen",
         "to": "anchor",
-        "curve": "linear"
+        "curve": "linear",
+        "speed": 85
       }
     },
     {
       "clip": "punch",
-      "duration": 0.45,
+      "duration": 0.38,
       "facing": "toward_center"
     },
     {
       "clip": "kick",
-      "duration": 0.45
+      "duration": 0.34
     },
     {
       "clip": "jumpkick",
-      "duration": 0.7,
+      "duration": 0.67,
       "motion": {
         "type": "hop",
         "height": 26
@@ -36,8 +37,7 @@
     },
     {
       "clip": "twirl",
-      "duration": 0.6,
-      "sound": "swish"
+      "duration": 0.5
     },
     {
       "clip": "idle",
@@ -52,8 +52,9 @@
       "duration": 2.2,
       "motion": {
         "type": "exit",
-        "to": "opposite_offscreen",
-        "curve": "linear"
+        "to": "side_offscreen",
+        "curve": "linear",
+        "speed": 85
       }
     }
   ]

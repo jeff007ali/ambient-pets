@@ -16,7 +16,8 @@
         "type": "moveTo",
         "from": "side_offscreen",
         "to": "anchor",
-        "curve": "linear"
+        "curve": "linear",
+        "speed": 85
       }
     },
     {
@@ -38,13 +39,12 @@
       ],
       "speech": {
         "pool": "throw",
-        "chance": 0.25
-      },
-      "sound": "swish"
+        "chance": 0.4
+      }
     },
     {
       "clip": "idle",
-      "duration": 1.0
+      "duration": 0.8
     },
     {
       "clip": "grapple",

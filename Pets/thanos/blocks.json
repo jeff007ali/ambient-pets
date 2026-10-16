@@ -1,0 +1,130 @@
+{
+  "enter": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 65,
+        "curve": "linear"
+      }
+    }
+  ],
+  "exit": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 65,
+        "curve": "linear"
+      }
+    }
+  ],
+  "blocks": {
+    "gauntlet": {
+      "description": "swings the Infinity Gauntlet",
+      "steps": [
+        {
+          "clip": "gauntlet",
+          "duration": 1.5,
+          "facing": "toward_center",
+          "sound": "boom"
+        }
+      ]
+    },
+    "power_stone": {
+      "description": "fires a Power Stone beam",
+      "steps": [
+        {
+          "clip": "blast_charge",
+          "duration": 1.36,
+          "facing": "toward_center"
+        },
+        {
+          "clip": "blast",
+          "duration": 1.4,
+          "effects": [
+            {
+              "type": "overlay",
+              "clip": "beam",
+              "at": "muzzle",
+              "hold": false
+            }
+          ]
+        },
+        {
+          "clip": "blast_end",
+          "duration": 1.07
+        }
+      ]
+    },
+    "drones": {
+      "description": "summons cosmic drones",
+      "steps": [
+        {
+          "clip": "summon",
+          "duration": 0.7,
+          "facing": "toward_center",
+          "effects": [
+            {
+              "type": "projectile",
+              "clip": "drone",
+              "hit": "drone_out",
+              "at": "hand",
+              "speed": 220,
+              "distance": 240,
+              "delay": 0.2,
+              "rise": 40
+            }
+          ]
+        }
+      ]
+    },
+    "roar": {
+      "description": "raises his fists and roars",
+      "steps": [
+        {
+          "clip": "roar",
+          "duration": 1.2
+        }
+      ]
+    },
+    "grab": {
+      "description": "lunges to grab something",
+      "steps": [
+        {
+          "clip": "grab",
+          "duration": 0.75,
+          "facing": "toward_center"
+        }
+      ]
+    },
+    "stride": {
+      "description": "takes a few heavy steps",
+      "steps": [
+        {
+          "clip": "walk",
+          "duration": 1.8,
+          "motion": {
+            "type": "walk",
+            "speed": 40,
+            "direction": "random"
+          }
+        }
+      ]
+    },
+    "brood": {
+      "description": "stands still, brooding",
+      "steps": [
+        {
+          "clip": "idle",
+          "duration": 1.8
+        }
+      ]
+    }
+  }
+}

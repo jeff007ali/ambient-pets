@@ -7,7 +7,7 @@ import PetImaging
 ///
 /// labels.json:
 /// ```
-/// { "dir": "…/default", "facing": "right", "anchorFrom": "Idle_00.png",
+/// { "dir": "…/default", "facing": "right", "anchorFrom": "Idle_00.png", "canvas": [256, 256],
 ///   "clips": { "idle": ["Idle_*"], "sense": ["Idle_00.png+Spidersense_*"], "land": ["Land_00.png", "Land_01.png"] } }
 /// ```
 /// - `Name_*` expands to every `Name_<n>.png`, ordered by frame number. File names may encode repeats:
@@ -19,6 +19,9 @@ struct FrameLabels: Codable {
     /// Canvas point used as the pivot for every frame. Defaults to the feet of `anchorFrom`.
     var anchor: [Int]?
     var anchorFrom: String?
+    /// The rip's base canvas size (e.g. `[256, 256]`). Rips centre bigger frames on it (a 512×256 attack has 128 px
+    /// extra on each side), so with this set the anchor moves by half the extra size on those frames.
+    var canvas: [Int]?
     var clips: [String: [String]]
     /// Per-clip pivot: "center" pivots each frame on its own centre (projectiles, effects); "left" on its left edge
     /// (beams that grow out of a muzzle).
@@ -115,10 +118,14 @@ enum FrameImport {
                     let name = "\(clip)_\(seen.count)"
                     seen[key] = name
                     names.append(name)
+                    var frameAnchor = anchor
+                    if let base = labels.canvas, base.count == 2 {
+                        frameAnchor = [anchor[0] + (canvas.width - base[0]) / 2, anchor[1] + (canvas.height - base[1]) / 2]
+                    }
                     let pivot: [Int] = switch labels.pivotByClip?[clip] {
                     case "center": [bbox.width / 2, bbox.height / 2]
                     case "left": [0, bbox.height / 2] // beams: anchored at the muzzle end
-                    default: [anchor[0] - bbox.x, anchor[1] - bbox.y]
+                    default: [frameAnchor[0] - bbox.x, frameAnchor[1] - bbox.y]
                     }
                     items.append(SheetPacker.Item(name: name, image: canvas.cropped(bbox), pivot: pivot))
                 }

@@ -1,0 +1,53 @@
+{
+  "id": "snap",
+  "name": "The Snap",
+  "tier": "rare",
+  "weight": 1.0,
+  "tags": [
+    "surprise",
+    "flashy"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 65,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "facing": "toward_center",
+      "speech": {
+        "text": "I am inevitable."
+      }
+    },
+    {
+      "clip": "snap",
+      "duration": 1.2,
+      "sound": "blip"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "effects": [
+        {
+          "type": "fade",
+          "mode": "out",
+          "duration": 1.0
+        }
+      ],
+      "speech": {
+        "pool": "snap",
+        "chance": 0.6
+      }
+    }
+  ]
+}

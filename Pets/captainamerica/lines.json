@@ -1,0 +1,37 @@
+{
+  "patrol": [
+    "On your left.",
+    "All clear.",
+    "Keep it up, soldier.",
+    "Good work today."
+  ],
+  "greet": [
+    "At ease.",
+    "Morning, soldier.",
+    "Proud of you."
+  ],
+  "shield": [
+    "Still got it.",
+    "Catch!",
+    "Never gets old."
+  ],
+  "charge": [
+    "Avengers…",
+    "Coming through!",
+    "Hold the line."
+  ],
+  "drill": [
+    "Again.",
+    "I can do this all day.",
+    "Warm-up done."
+  ],
+  "guard": [
+    "Steady.",
+    "Watch it.",
+    "Not today."
+  ],
+  "rainbow": [
+    "Nice entrance.",
+    "Ta-da!"
+  ]
+}

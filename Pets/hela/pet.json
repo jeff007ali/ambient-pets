@@ -1,0 +1,28 @@
+{
+  "formatVersion": 1,
+  "id": "hela",
+  "name": "Hela",
+  "version": "0.1.0",
+  "renderer": "sprite",
+  "height": 94,
+  "personality": {
+    "activity": 0.7,
+    "friendliness": 0.2,
+    "mischievousness": 0.8,
+    "interaction": 0.4,
+    "curiosity": 0.4
+  },
+  "capabilities": {
+    "canWalk": true,
+    "canTeleport": true,
+    "cursorTracking": true,
+    "multiMonitor": true
+  },
+  "sounds": {
+    "beam": "sounds/beam.wav",
+    "boom": "sounds/boom.wav",
+    "swish": "sounds/swish.wav",
+    "whoosh": "sounds/whoosh.wav",
+    "zap": "sounds/zap.wav"
+  }
+}

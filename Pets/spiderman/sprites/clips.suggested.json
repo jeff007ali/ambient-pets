@@ -527,6 +527,13 @@
         "websplat_8"
       ],
       "loop" : true
+    },
+    "webswing" : {
+      "fps" : 12,
+      "frames" : [
+        "webswing_0"
+      ],
+      "loop" : true
     }
   }
 }

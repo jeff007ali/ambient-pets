@@ -13,36 +13,33 @@
     {
       "clip": "fall",
       "duration": 1.2,
+      "effects": [
+        {
+          "type": "thruster"
+        }
+      ],
       "motion": {
         "type": "enter",
         "from": "top_offscreen",
         "to": "anchor",
-        "offset": [
-          0,
-          90
-        ],
         "curve": "easeOut"
       }
     },
     {
       "clip": "land",
-      "duration": 0.6,
+      "duration": 0.57,
       "effects": [
         "dust_puff",
         "squash"
-      ],
-      "motion": {
-        "type": "drop"
-      },
-      "sound": "thud"
+      ]
     },
     {
       "clip": "idle",
       "duration": 1.2,
       "facing": "toward_center",
       "speech": {
-        "pool": "praise",
-        "chance": 0.35
+        "pool": "slam",
+        "chance": 0.4
       }
     },
     {
@@ -58,8 +55,7 @@
           "distance": 240,
           "delay": 0.3
         }
-      ],
-      "sound": "zap"
+      ]
     },
     {
       "clip": "idle",

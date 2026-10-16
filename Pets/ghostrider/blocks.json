@@ -1,0 +1,163 @@
+{
+  "enter": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 80,
+        "curve": "linear"
+      }
+    }
+  ],
+  "exit": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 80,
+        "curve": "linear"
+      }
+    }
+  ],
+  "blocks": {
+    "shoot": {
+      "description": "fires his cosmic pistol twice",
+      "steps": [
+        {
+          "clip": "draw",
+          "duration": 0.57,
+          "facing": "toward_center"
+        },
+        {
+          "clip": "shoot",
+          "duration": 0.6,
+          "effects": [
+            {
+              "type": "projectile",
+              "clip": "bullet",
+              "hit": "bullet_hit",
+              "at": "hand",
+              "speed": 700,
+              "distance": 300,
+              "delay": 0.05
+            }
+          ],
+          "sound": "zap"
+        },
+        {
+          "clip": "shoot",
+          "duration": 0.6,
+          "effects": [
+            {
+              "type": "projectile",
+              "clip": "bullet",
+              "hit": "bullet_hit",
+              "at": "hand",
+              "speed": 700,
+              "distance": 300,
+              "delay": 0.05
+            }
+          ],
+          "sound": "zap"
+        },
+        {
+          "clip": "holster",
+          "duration": 0.4
+        }
+      ]
+    },
+    "chain_whip": {
+      "description": "lashes a burning chain",
+      "steps": [
+        {
+          "clip": "chain_whip",
+          "duration": 0.79,
+          "facing": "toward_center",
+          "sound": "swish"
+        }
+      ]
+    },
+    "fire_combo": {
+      "description": "a blazing punch combo",
+      "steps": [
+        {
+          "clip": "jab",
+          "duration": 0.43,
+          "facing": "toward_center"
+        },
+        {
+          "clip": "fire_punch",
+          "duration": 0.64
+        },
+        {
+          "clip": "fire_combo",
+          "duration": 1.25
+        }
+      ]
+    },
+    "hellfire": {
+      "description": "charges up and breathes fire from his gun",
+      "steps": [
+        {
+          "clip": "charge",
+          "duration": 0.8,
+          "facing": "toward_center"
+        },
+        {
+          "clip": "charge_shot",
+          "duration": 0.42
+        },
+        {
+          "clip": "flamethrower",
+          "duration": 1.0
+        }
+      ]
+    },
+    "cosmic_slam": {
+      "description": "a jumping slam with a blue shockwave",
+      "steps": [
+        {
+          "clip": "rising",
+          "duration": 1.21,
+          "effects": [
+            {
+              "type": "overlay",
+              "clip": "blue_blast",
+              "at": "feet",
+              "hold": false
+            }
+          ],
+          "sound": "boom"
+        }
+      ]
+    },
+    "wander": {
+      "description": "wanders a few steps",
+      "steps": [
+        {
+          "clip": "walk",
+          "duration": 1.8,
+          "motion": {
+            "type": "walk",
+            "speed": 45,
+            "direction": "random"
+          }
+        }
+      ]
+    },
+    "burn": {
+      "description": "stands still, skull ablaze",
+      "steps": [
+        {
+          "clip": "idle",
+          "duration": 1.6
+        }
+      ]
+    }
+  }
+}

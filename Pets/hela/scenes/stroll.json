@@ -1,0 +1,51 @@
+{
+  "id": "stroll",
+  "name": "Stroll",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "explore"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "appear",
+      "duration": 1.0,
+      "effects": [
+        {
+          "type": "fade",
+          "mode": "in",
+          "duration": 0.4
+        }
+      ],
+      "sound": "whoosh"
+    },
+    {
+      "clip": "walk",
+      "duration": 2.6,
+      "motion": {
+        "type": "walk",
+        "speed": 40,
+        "direction": "toward_center"
+      }
+    },
+    {
+      "clip": "walk_end",
+      "duration": 0.3
+    },
+    {
+      "clip": "idle",
+      "duration": 1.4,
+      "speech": {
+        "pool": "arrive",
+        "chance": 0.3
+      }
+    },
+    {
+      "clip": "vanish",
+      "duration": 1.83,
+      "sound": "whoosh"
+    }
+  ]
+}

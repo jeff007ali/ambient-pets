@@ -146,11 +146,24 @@ public struct MotionTrack: Sendable, Hashable {
             // Direction: towards `to` if given, else the current heading.
             var dir = heading.sign
             if let to = spec.to, let t = plan.resolve(to, current: current), abs(t.x - start.x) > 1 { dir = t.x > start.x ? 1 : -1 }
-            let half = (spec.sweep ?? 100) / 2 * .pi / 180
+            var half = (spec.sweep ?? 100) / 2 * .pi / 180
             var r = (spec.radius ?? 220) * scale
             if spec.attach == "top" {
-                // Anchor on the screen's top edge: centre.y = start.y + r·cos(half).
-                r = max((plan.display.frame.maxY - start.y) / cos(half), 40 * scale)
+                // Anchor on the screen's top edge: centre.y = start.y + r·cos(half). A long line swings deep and
+                // wide, so narrow the sweep until the lowest point stays above the ground and the swing spans at
+                // most 60 % of the screen: lowest = start.y − (top − start.y)·(sec(half) − 1).
+                let v = plan.display.visibleFrame
+                let drop = max(plan.display.frame.maxY - start.y, 1)
+                let room = max(start.y - v.minY - 8, 0)
+                half = min(half, acos(1 / (1 + room / drop)))
+                half = min(half, atan(v.width * 0.6 / 2 / drop))
+                // Starting on screen, end on screen too (what comes next, e.g. a release flip, should be seen).
+                if v.insetBy(dx: 1, dy: 0).contains(CGPoint(x: start.x, y: v.midY)) {
+                    let ahead = (dir > 0 ? v.maxX - start.x : start.x - v.minX) - 60
+                    if ahead > 80 { half = min(half, atan(ahead / 2 / drop)) }
+                }
+                half = max(half, 6 * .pi / 180)
+                r = max(drop / cos(half), 40 * scale)
             }
             let a0 = -dir * half, a1 = dir * half
             let center = CGPoint(x: start.x - r * sin(a0), y: start.y + r * cos(a0))

@@ -1,0 +1,52 @@
+{
+  "id": "spikes",
+  "name": "Thorns",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 25,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "appear",
+      "duration": 1.0,
+      "effects": [
+        {
+          "type": "fade",
+          "mode": "in",
+          "duration": 0.4
+        }
+      ],
+      "sound": "whoosh"
+    },
+    {
+      "clip": "spikes_cast",
+      "duration": 0.92,
+      "facing": "toward_center",
+      "effects": [
+        {
+          "type": "overlay",
+          "clip": "spikes_start",
+          "at": "hand",
+          "hold": false
+        }
+      ],
+      "sound": "beam"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "blades",
+        "chance": 0.3
+      }
+    },
+    {
+      "clip": "vanish",
+      "duration": 1.83,
+      "sound": "whoosh"
+    }
+  ]
+}

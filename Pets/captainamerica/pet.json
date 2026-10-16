@@ -1,0 +1,27 @@
+{
+  "formatVersion": 1,
+  "id": "captainamerica",
+  "name": "Captain America",
+  "version": "0.1.0",
+  "renderer": "sprite",
+  "height": 84,
+  "personality": {
+    "activity": 0.9,
+    "friendliness": 0.9,
+    "mischievousness": 0.2,
+    "interaction": 0.6,
+    "curiosity": 0.5
+  },
+  "capabilities": {
+    "canWalk": true,
+    "canThrowShield": true,
+    "cursorTracking": true,
+    "multiMonitor": true
+  },
+  "sounds": {
+    "blip": "sounds/blip.wav",
+    "swish": "sounds/swish.wav",
+    "thud": "sounds/thud.wav",
+    "whoosh": "sounds/whoosh.wav"
+  }
+}

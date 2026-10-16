@@ -47,15 +47,26 @@
       ]
     },
     {
-      "clip": "apex",
-      "duration": 0.5,
+      "clip": "swing",
+      "duration": 0.6,
+      "facing": "keep",
+      "effects": [
+        {
+          "type": "tether_line",
+          "shoot": 0.12
+        }
+      ],
       "motion": {
-        "type": "hop",
-        "height": 24
+        "type": "moveTo",
+        "advance": [
+          40,
+          220
+        ],
+        "curve": "easeOut"
       }
     },
     {
-      "clip": "swing",
+      "clip": "swingcurl",
       "duration": 1.6,
       "effects": [
         {

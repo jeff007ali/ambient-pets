@@ -1,0 +1,69 @@
+{
+  "id": "crash_landing",
+  "name": "Crash Landing",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "surprise"
+  ],
+  "cooldownMinutes": 30,
+  "region": "air",
+  "steps": [
+    {
+      "clip": "fly",
+      "duration": 1.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "hit",
+      "duration": 0.2
+    },
+    {
+      "clip": "tumble",
+      "duration": 0.78,
+      "motion": {
+        "type": "drop",
+        "to": "ground",
+        "offset": [
+          0,
+          12
+        ]
+      }
+    },
+    {
+      "clip": "bounce",
+      "duration": 0.58,
+      "effects": [
+        "dust_puff",
+        "squash"
+      ]
+    },
+    {
+      "clip": "getup",
+      "duration": 0.83
+    },
+    {
+      "clip": "idle",
+      "duration": 1.2,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "oops",
+        "chance": 0.6
+      }
+    },
+    {
+      "clip": "rise",
+      "duration": 1.3,
+      "motion": {
+        "type": "exit",
+        "to": "top_offscreen",
+        "curve": "easeIn"
+      }
+    }
+  ]
+}

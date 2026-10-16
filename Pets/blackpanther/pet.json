@@ -1,0 +1,28 @@
+{
+  "formatVersion": 1,
+  "id": "blackpanther",
+  "name": "Black Panther",
+  "version": "0.1.0",
+  "renderer": "sprite",
+  "height": 72,
+  "personality": {
+    "activity": 1.0,
+    "friendliness": 0.4,
+    "mischievousness": 0.6,
+    "interaction": 0.5,
+    "curiosity": 0.7
+  },
+  "capabilities": {
+    "canWalk": true,
+    "canPounce": true,
+    "cursorTracking": true,
+    "multiMonitor": true
+  },
+  "sounds": {
+    "boom": "sounds/boom.wav",
+    "swish": "sounds/swish.wav",
+    "thud": "sounds/thud.wav",
+    "whoosh": "sounds/whoosh.wav",
+    "zap": "sounds/zap.wav"
+  }
+}

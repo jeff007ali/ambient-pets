@@ -1,0 +1,66 @@
+{
+  "id": "rocket_punch",
+  "name": "Rocket Punch",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 30,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "glide",
+      "duration": 1.6,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "curve": "easeOut"
+      }
+    },
+    {
+      "clip": "idle",
+      "duration": 0.6,
+      "facing": "toward_center"
+    },
+    {
+      "clip": "dash_punch",
+      "duration": 1.07,
+      "facing": "keep",
+      "motion": {
+        "type": "moveTo",
+        "advance": [
+          200,
+          0
+        ],
+        "curve": "easeOut"
+      }
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "praise",
+        "chance": 0.4
+      }
+    },
+    {
+      "clip": "fly_start",
+      "duration": 0.25
+    },
+    {
+      "clip": "fly",
+      "duration": 1.5,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "offset": [
+          0,
+          60
+        ],
+        "curve": "easeIn"
+      }
+    }
+  ]
+}

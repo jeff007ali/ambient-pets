@@ -204,6 +204,38 @@
           ]
         }
       ]
+    },
+    "rocket_punch": {
+      "description": "rocket-dashes forward with a flying punch",
+      "steps": [
+        {
+          "clip": "dash_punch",
+          "duration": 1.07,
+          "facing": "keep",
+          "motion": {
+            "type": "moveTo",
+            "advance": [
+              200,
+              0
+            ],
+            "curve": "easeOut"
+          }
+        }
+      ]
+    },
+    "energy_shield": {
+      "description": "raises an energy shield that bursts outward",
+      "steps": [
+        {
+          "clip": "block",
+          "duration": 0.33,
+          "facing": "toward_center"
+        },
+        {
+          "clip": "parry",
+          "duration": 1.0
+        }
+      ]
     }
   }
 }

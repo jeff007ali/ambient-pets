@@ -1,0 +1,111 @@
+{
+  "source": "ThirdParty/source-assets/cosmic-hela (Marvel Cosmic Invasion, Bosses - Hela, + effects)",
+  "dir": "ThirdParty/source-assets/cosmic-hela/default",
+  "facing": "right",
+  "anchor": [
+    128,
+    226
+  ],
+  "canvas": [
+    256,
+    256
+  ],
+  "pivotByClip": {
+    "blade": "center",
+    "blade_hit": "center",
+    "blade_rise": "center",
+    "wolf": "center",
+    "wolf_end": "center",
+    "orb": "center",
+    "orb_boom": "center",
+    "spikes_start": "left",
+    "spikes": "left",
+    "spikes_end": "left"
+  },
+  "clips": {
+    "idle": [
+      "Idle_*"
+    ],
+    "walk": [
+      "Walk_*"
+    ],
+    "walk_end": [
+      "Walkend_*"
+    ],
+    "blades": [
+      "Attackblades_*"
+    ],
+    "fenrir": [
+      "Attackfenrir_*"
+    ],
+    "punish": [
+      "Attackgodnesspunishment_*"
+    ],
+    "spikes_cast": [
+      "Attackspikes_*"
+    ],
+    "crown": [
+      "Attackaoe_*"
+    ],
+    "vanish": [
+      "Dodgestart_*"
+    ],
+    "crow": [
+      "Dodge_07.png",
+      "Dodge_08.png",
+      "Dodge_09.png",
+      "Dodge_10.png",
+      "Dodge_11.png",
+      "Dodge_12.png",
+      "Dodge_13.png",
+      "Dodge_14.png",
+      "Dodge_15.png",
+      "Dodge_16.png"
+    ],
+    "appear": [
+      "Dodgeend_*"
+    ],
+    "hit": [
+      "Hitstun_*"
+    ],
+    "knockdown": [
+      "Kd_*",
+      "Kdfall_*",
+      "Down_*",
+      "Downbounce_*"
+    ],
+    "getup": [
+      "Downgetup_*"
+    ],
+    "blade": [
+      "../effects/Effects_BladesActive_*"
+    ],
+    "blade_hit": [
+      "../effects/Effects_BladesDeath_*"
+    ],
+    "blade_rise": [
+      "../effects/Effects_BladesIdle_*"
+    ],
+    "wolf": [
+      "../effects/Effects_FenrirActive_*"
+    ],
+    "wolf_end": [
+      "../effects/Effects_FenrirEnd_*"
+    ],
+    "orb": [
+      "../effects/Effects_GodnessPunishmentActive_*"
+    ],
+    "orb_boom": [
+      "../effects/Effects_GodnessPunishmentEnd_*"
+    ],
+    "spikes_start": [
+      "../effects/Effects_SpikesStart_*"
+    ],
+    "spikes": [
+      "../effects/Effects_SpikesActive_*"
+    ],
+    "spikes_end": [
+      "../effects/Effects_SpikesDeath_*"
+    ]
+  }
+}

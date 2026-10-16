@@ -80,15 +80,8 @@ public final class SceneDirector: NSObject {
     private var pendingLine: String?
     /// Extra time the current step lasts so its line can be read.
     private var speechHold = 0.0
-
-    /// Standing, hovering or clinging in place: a moment the pet can talk.
-    static func isStill(_ step: StepDefinition) -> Bool {
-        switch step.motion.type {
-        case .none, .hover: return true
-        case .cling: return step.motion.to == "current"
-        default: return false
-        }
-    }
+    /// The current step's length: its `duration`, or distance / `motion.speed` for a walk at a set pace.
+    private var stepDuration = 0.0
     /// The step that shows `Options.speechOverride`.
     private let aiSpeechStep: Int
     private var lastTimestamp: CFTimeInterval = 0
@@ -97,11 +90,11 @@ public final class SceneDirector: NSObject {
     private var tickCount = 0
     private var startTime: CFTimeInterval = 0
     private static let debugStats = ProcessInfo.processInfo.environment["AMBIENT_PETS_DEBUG"] != nil
-    /// Debug: render the layer tree to `<dir>/<scene>_<step>.png` shortly after each step starts.
     /// Dev: `AMBIENT_PETS_TRACE=1` logs the pet's position (every 3rd frame) and each line it says to stderr.
     private static let trace = ProcessInfo.processInfo.environment["AMBIENT_PETS_TRACE"] != nil
     /// Dev: `AMBIENT_PETS_ALWAYS_SPEAK=1` makes every speech line play (QA for bubbles).
     private static let alwaysSpeak = ProcessInfo.processInfo.environment["AMBIENT_PETS_ALWAYS_SPEAK"] != nil
+    /// Debug: render the layer tree to `<dir>/<scene>_<step>.png` shortly after each step starts.
     private static let snapshotDir = ProcessInfo.processInfo.environment["AMBIENT_PETS_SNAPSHOT_DIR"].map(URL.init(fileURLWithPath:))
     private var snapshotPending = false
     /// Debug: with `AMBIENT_PETS_SNAPSHOT_EVERY=<seconds>`, also snapshot on that interval (frame sequences).
@@ -124,9 +117,9 @@ public final class SceneDirector: NSObject {
         self.onFinish = onFinish
         scale = pack.data.definition.renderScale(userScale: options.userScale)
         let box = Self.box(for: scene, pack: pack, scale: scale, display: display)
-        // The AI's line goes on the first standing / hovering step after the entrance.
-        aiSpeechStep = scene.steps.indices.first { i in Self.isStill(scene.steps[i]) && (i > 0 || scene.steps.count == 1) }
-            ?? (scene.steps.count > 1 ? 1 : 0)
+        // The AI's line goes on the first standing / hovering step (none: the scene can't talk).
+        aiSpeechStep = scene.steps.indices.first { i in scene.steps[i].isStill && (i > 0 || scene.steps.count == 1) }
+            ?? scene.steps.indices.first { scene.steps[$0].isStill } ?? -1
         if let placement {
             plan = ScenePlan(display: display, box: box, anchor: placement.anchor, side: placement.side)
             planCandidates = [placement.anchor]
@@ -166,6 +159,7 @@ public final class SceneDirector: NSObject {
         let reach = extents.mirrorSafe.scaled(scale).right
         var side = 24.0
         var top = 0.0
+        var bottom: Double = (has(.thruster) || has(.dustPuff)) ? 56 * scale + 8 : 12
         if let beam = effects.first(where: { $0.type == .beam }) {
             side = max(side, (beam.double("length") ?? 150) * scale - reach + 24)
         }
@@ -193,13 +187,19 @@ public final class SceneDirector: NSObject {
             side = max(side, r * sin(half) - reach + 16)
             top = max(top, r + 16)
         }
+        // Clinging to a wall the body is turned 90°: its height lies sideways and its width runs up and down.
+        if scene.steps.contains(where: { $0.motion.type == .cling }) {
+            let e = extents.mirrorSafe.scaled(scale)
+            side = max(side, max(e.up, e.down) - reach + 16)
+            top = max(top, max(e.left, e.right) - e.up + 16)
+            bottom = max(bottom, max(e.left, e.right) - e.down + 8)
+        }
         // Projectiles fly forward from the pet; the window must contain the whole flight (both facings).
         for fx in effects where fx.type == .projectile {
             let hitSize = fx.string("hit").flatMap { pack.data.clips.resolveOrDefault($0)?.frames }
                 .flatMap { $0.compactMap { pack.geometry[$0]?.rect.width }.max() } ?? 0
             side = max(side, ((fx.double("distance") ?? 240) + hitSize / 2 + 16) * scale - reach + 8)
         }
-        let bottom: Double = (has(.thruster) || has(.dustPuff)) ? 56 * scale + 8 : 12
         top = max(top, 12 + (has(.zzz) ? 36 : 0))
         // An unbounded web line must reach past the top of the screen from anywhere on it.
         // (In a swing step the line runs to the swing's anchor instead, covered above.)
@@ -227,6 +227,15 @@ public final class SceneDirector: NSObject {
         self.window = window
         self.renderer = renderer
 
+        // Guaranteed teardown even if the display link stalls (e.g. the display sleeps). Ensembles may wait on a
+        // partner, so they get extra slack.
+        let slack = scene.steps.contains { $0.waitFor != nil } ? 20.0 : 5.0
+        let watchdog = Timer(timeInterval: scene.totalDuration + slack, repeats: false) { [weak self] _ in
+            MainActor.assumeIsolated { self?.finish(.aborted("watchdog")) }
+        }
+        RunLoop.main.add(watchdog, forMode: .common)
+        self.watchdog = watchdog
+
         beginStep(0)
         window.updateContentsScale()
         place()
@@ -245,16 +254,6 @@ public final class SceneDirector: NSObject {
         self.link = link
         lastTimestamp = CACurrentMediaTime()
         startTime = lastTimestamp
-
-        // Guaranteed teardown even if the display link stalls (e.g. the display sleeps). Ensembles may wait on a
-        // partner, so they get extra slack.
-        // Speech holds add up to a few seconds.
-        let slack = (scene.steps.contains { $0.waitFor != nil } ? 20.0 : 5.0) + 8
-        let watchdog = Timer(timeInterval: scene.totalDuration + slack, repeats: false) { [weak self] _ in
-            MainActor.assumeIsolated { self?.finish(.aborted("watchdog")) }
-        }
-        RunLoop.main.add(watchdog, forMode: .common)
-        self.watchdog = watchdog
     }
 
     /// Ends the scene early with a quick fade (display unplugged, screen locked, user paused).
@@ -309,8 +308,8 @@ public final class SceneDirector: NSObject {
         }
 
         stepElapsed += dt
-        while stepElapsed >= scene.steps[stepIndex].duration + speechHold {
-            stepElapsed -= scene.steps[stepIndex].duration + speechHold
+        while stepElapsed >= stepDuration + speechHold {
+            stepElapsed -= stepDuration + speechHold
             position = track.position(at: track.duration)
             endStep()
             guard stepIndex + 1 < scene.steps.count else {
@@ -371,7 +370,16 @@ public final class SceneDirector: NSObject {
         // An explicit facing rule decides the heading used by `advance` and `swing`; "auto" keeps the current one.
         let still = MotionTrack(type: .none, start: position, end: position, duration: 0, curve: .linear)
         let heading = step.facing.map { _ in MotionTrack.facing(rule: step.facing, track: still, current: renderer.facing, plan: plan) } ?? renderer.facing
-        track = MotionTrack.make(spec: step.motion, duration: step.duration, current: position, plan: plan, scale: scale,
+        stepDuration = step.duration
+        if let speed = step.motion.speed, speed > 0, [.moveTo, .enter, .exit].contains(step.motion.type) {
+            // A set pace (native px/s): the step lasts as long as the distance takes, so legs match the ground
+            // whether the edge is near or far.
+            let probe = MotionTrack.make(spec: step.motion, duration: 1, current: position, plan: plan, scale: scale,
+                                         rng: rng, heading: heading)
+            stepDuration = max(0.3, hypot(probe.end.x - probe.start.x, probe.end.y - probe.start.y) / (speed * scale))
+            extendWatchdog(by: stepDuration - step.duration)
+        }
+        track = MotionTrack.make(spec: step.motion, duration: stepDuration, current: position, plan: plan, scale: scale,
                                  rng: rng, heading: heading)
         position = track.position(at: 0)
         renderer.facing = MotionTrack.facing(rule: step.facing, track: track, current: renderer.facing, plan: plan)
@@ -396,7 +404,7 @@ public final class SceneDirector: NSObject {
         guard let renderer else { return }
         if let sound = step.sound { playSound?(pack, sound) }
 
-        var ctx = EffectContext(renderer: renderer, stepDuration: step.duration, reduceQuality: options.reduceQuality,
+        var ctx = EffectContext(renderer: renderer, stepDuration: stepDuration, reduceQuality: options.reduceQuality,
                                 windowTopAbovePivot: plan.box.size.height - plan.box.pivot.y)
         ctx.swingRadius = track.pendulum?.radius
         effects = step.effects.compactMap { EffectFactory.make($0, ctx) }
@@ -458,24 +466,59 @@ public final class SceneDirector: NSObject {
     /// The point above the head a bubble points at (overlay space). Clinging to a wall, the body lies sideways.
     private func bubbleHead(_ renderer: SpriteRenderer) -> CGPoint {
         let e = renderer.currentExtents
-        guard let r = track.fixedRotation else { return CGPoint(x: 0, y: e.up) }
+        let up = headHeight(renderer) ?? e.up
+        guard let r = track.fixedRotation else { return CGPoint(x: 0, y: up) }
         // Rotate the head (straight up) by the body's rotation; the sideways body's top is its front/back edge.
-        return CGPoint(x: -e.up * sin(r), y: max(e.left, e.right))
+        return CGPoint(x: -up * sin(r), y: max(e.left, e.right))
+    }
+
+    /// A steady height for the bubble over the whole clip (points above the pivot): the clip's `head` point if it
+    /// has one, else its tallest frame. Using the current frame would bob with effects drawn into the art (the
+    /// Spider-Sense rays) and with every pose change.
+    private var headHeights: [String: Double] = [:]
+    private func headHeight(_ renderer: SpriteRenderer) -> Double? {
+        guard let clip = renderer.clip else { return nil }
+        if let h = headHeights[clip.sourceID] { return h }
+        let h: Double
+        if let p = clip.definition.points?["head"], p.count == 2 {
+            h = (p[1] + 8) * scale
+        } else {
+            h = clip.frames.compactMap { pack.geometry[$0]?.extents.up }.max().map { $0 * scale } ?? renderer.currentExtents.up
+        }
+        headHeights[clip.sourceID] = h
+        return h
+    }
+
+    /// Pushes the teardown watchdog back when a step runs longer than written (set pace, speech hold).
+    private func extendWatchdog(by seconds: Double) {
+        guard seconds > 0, let old = watchdog, old.isValid else { return }
+        let fire = old.fireDate.addingTimeInterval(seconds)
+        old.invalidate()
+        let t = Timer(fire: fire, interval: 0, repeats: false) { [weak self] _ in
+            MainActor.assumeIsolated { self?.finish(.aborted("watchdog")) }
+        }
+        RunLoop.main.add(t, forMode: .common)
+        watchdog = t
     }
 
     /// Shows the pending line once the head is well inside the screen, so the bubble points at the pet.
     private func speakIfVisible() {
         guard let line = pendingLine, let renderer else { return }
         let step = scene.steps[stepIndex]
-        let still = Self.isStill(step)
-        // Moving: wait for a still moment later in the scene (if there is none, say it on the move).
-        if !still, scene.steps[stepIndex...].contains(where: Self.isStill) { return }
+        let still = step.isStill
+        // Only while standing / hovering: a moving pet's bubble can't be read. Without a still moment left, the
+        // line is dropped.
+        guard still else {
+            if !scene.steps[stepIndex...].contains(where: \.isStill) { pendingLine = nil }
+            return
+        }
         let head = globalHead(renderer)
         guard display.visibleFrame.insetBy(dx: 4, dy: 0).contains(CGPoint(x: head.x, y: min(head.y, display.visibleFrame.maxY - 1))) else { return }
         pendingLine = nil
         if still {
             // Stay put until the line has been read.
-            speechHold = max(0, SpeechBubble.readingTime(line) - (step.duration - stepElapsed))
+            speechHold = max(0, SpeechBubble.readingTime(line) - (stepDuration - stepElapsed))
+            extendWatchdog(by: speechHold)
         }
         if Self.trace {
             FileHandle.standardError.write(Data(String(format: "speak step=%d t=%.2f head=%.0f,%.0f \"%@\"\n", stepIndex, stepElapsed, head.x, head.y, line).utf8))

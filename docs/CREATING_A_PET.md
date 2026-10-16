@@ -57,6 +57,9 @@ $P frames Pets/<id>/sprites/labels.json --out Pets/<id>/sprites
 
 `Name_*` expands in frame order (`_02-03` and `_04_08_12` style repeats are honoured); `A+B` composites B over A;
 empty frames are kept as pauses. Every frame keeps the canvas anchor as its pivot, so poses never jitter.
+Rips that centre oversized frames on a base canvas (Cosmic Invasion: a 512×256 attack has 128 px extra each side) need
+`"anchor": [128, 226], "canvas": [256, 256]`: frames bigger than `canvas` get their anchor moved by half the extra
+size, so wide attacks, tall rainbow entrances and 512×512 boss moves stay on the feet.
 
 Pivot modes: `feet` (default: bottom-centre of the feet), `torso` (chest centre, feet height: steadier walks),
 `center` (projectiles, effects), `left` (beams anchored at the muzzle). Override single frames with `"pivots"`.
@@ -131,8 +134,15 @@ fixed `length` with `angle`), `projectile` (`clip`, `hit`, `speed`, `distance`, 
 (`clip` attached at a point, e.g. a beam from `muzzle`; `hold: false` hides it when done).
 
 **Speech**: `"speech": { "pool": "<lines.json pool>", "chance": 0.3 }` on a step. Pets talk only while standing,
-hovering or clinging in place: a line on a moving step waits for the next still step, and the pet stays there
-until the line has been read. Put speech on a still step.
+hovering or clinging in place: a line on a moving step waits for the next still step (and is dropped if the pet
+never stops, e.g. a glide across the screen), and the pet stays there until the line has been read. Put speech on a
+still step.
+
+**Smooth timing**: a non-looping clip lasts `frames / fps` seconds. If a standing step is longer, the pet freezes
+on the last frame, which reads as a pause; `petpack validate` warns about it. Match the step to the clip, or lower
+the clip's `fps`. For walking in or out, give the move a pace instead of a fixed time:
+`"motion": { "type": "exit", "to": "side_offscreen", "speed": 85 }` (native px/s); the step then lasts as long as
+the distance takes, so the legs match the ground however far the edge is.
 
 **Sounds**: `"sound": "<name>"` from `pet.json`. Off unless the user enables sounds; never while working, in
 meetings, or during quiet hours.

@@ -1,0 +1,146 @@
+{
+  "enter": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 80,
+        "curve": "linear"
+      }
+    }
+  ],
+  "exit": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 80,
+        "curve": "linear"
+      }
+    }
+  ],
+  "blocks": {
+    "shield_throw": {
+      "description": "throws his shield and catches it",
+      "steps": [
+        {
+          "clip": "throw",
+          "duration": 0.57,
+          "facing": "toward_center",
+          "effects": [
+            {
+              "type": "projectile",
+              "clip": "shield",
+              "at": "hand",
+              "speed": 520,
+              "distance": 300,
+              "delay": 0.15
+            }
+          ],
+          "sound": "swish"
+        },
+        {
+          "clip": "idle_bare",
+          "duration": 0.4
+        },
+        {
+          "clip": "catch",
+          "duration": 0.4
+        }
+      ]
+    },
+    "salute": {
+      "description": "a proud salute",
+      "steps": [
+        {
+          "clip": "salute",
+          "duration": 2.61
+        }
+      ]
+    },
+    "combo": {
+      "description": "jab, punch and shield bash",
+      "steps": [
+        {
+          "clip": "jab",
+          "duration": 0.29,
+          "facing": "toward_center"
+        },
+        {
+          "clip": "punch",
+          "duration": 0.36
+        },
+        {
+          "clip": "shield_bash",
+          "duration": 0.43
+        }
+      ]
+    },
+    "flip_kick": {
+      "description": "a flying flip kick",
+      "steps": [
+        {
+          "clip": "flip_kick",
+          "duration": 0.81
+        }
+      ]
+    },
+    "guard": {
+      "description": "raises his shield on guard",
+      "steps": [
+        {
+          "clip": "block",
+          "duration": 1.2,
+          "facing": "cursor"
+        },
+        {
+          "clip": "block_end",
+          "duration": 0.17
+        }
+      ]
+    },
+    "shield_charge": {
+      "description": "charges forward behind his shield",
+      "steps": [
+        {
+          "clip": "charge_dash",
+          "duration": 0.5,
+          "facing": "toward_center",
+          "motion": {
+            "type": "walk",
+            "distance": 120,
+            "direction": "toward_center"
+          }
+        }
+      ]
+    },
+    "march": {
+      "description": "marches a few steps",
+      "steps": [
+        {
+          "clip": "walk",
+          "duration": 1.8,
+          "motion": {
+            "type": "walk",
+            "speed": 50,
+            "direction": "random"
+          }
+        }
+      ]
+    },
+    "stand_tall": {
+      "description": "stands tall, shield ready",
+      "steps": [
+        {
+          "clip": "pose",
+          "duration": 1.6
+        }
+      ]
+    }
+  }
+}

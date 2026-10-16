@@ -94,6 +94,19 @@
       ],
       "loop" : true
     },
+    "bounce" : {
+      "fps" : 12,
+      "frames" : [
+        "bounce_0",
+        "bounce_1",
+        "bounce_2",
+        "bounce_3",
+        "bounce_4",
+        "bounce_5",
+        "bounce_6"
+      ],
+      "loop" : true
+    },
     "charge" : {
       "fps" : 12,
       "frames" : [
@@ -803,6 +816,19 @@
         "suit_up_51",
         "suit_up_52",
         "suit_up_53"
+      ],
+      "loop" : true
+    },
+    "tumble" : {
+      "fps" : 12,
+      "frames" : [
+        "tumble_0",
+        "tumble_1",
+        "tumble_2",
+        "tumble_3",
+        "tumble_4",
+        "tumble_5",
+        "tumble_6"
       ],
       "loop" : true
     },

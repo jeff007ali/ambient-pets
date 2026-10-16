@@ -46,10 +46,11 @@ public struct ScenePlan: Sendable, Hashable {
         // Straight up / down from where the pet is (on the first step, `current` is the anchor).
         case "top_offscreen": return CGPoint(x: current.x, y: frame.maxY + box.pivot.y)
         case "bottom_offscreen": return CGPoint(x: current.x, y: frame.minY - (box.size.height - box.pivot.y))
-        case "left_offscreen": return offscreen(.left)
-        case "right_offscreen": return offscreen(.right)
-        case "side_offscreen": return offscreen(side)
-        case "opposite_offscreen": return offscreen(side.opposite)
+        // Level with where the pet is (on the first step, `current` is the anchor): leaving runs straight off.
+        case "left_offscreen": return offscreen(.left, y: current.y)
+        case "right_offscreen": return offscreen(.right, y: current.y)
+        case "side_offscreen": return offscreen(side, y: current.y)
+        case "opposite_offscreen": return offscreen(side.opposite, y: current.y)
         // Wall points: the pivot (feet) on the `side` edge of the visible frame.
         case "wall": return CGPoint(x: wallX, y: anchor.y)
         case "wall_below": return CGPoint(x: wallX, y: frame.minY - box.size.height)
@@ -63,13 +64,13 @@ public struct ScenePlan: Sendable, Hashable {
     /// Just past a side edge: the sprite and the effects trailing close behind it (up to 120 pt, e.g. thrusters)
     /// are out of view. Wider windows (swings, beams) needn't be fully outside: pet windows are clipped to their
     /// display, so the pet comes into view as soon as it crosses the edge.
-    private func offscreen(_ s: HorizontalSide) -> CGPoint {
+    private func offscreen(_ s: HorizontalSide, y: CGFloat) -> CGPoint {
         let frame = display.frame
         let behindLeft = min(box.pivot.x - box.sprite.left, 120)
         let behindRight = min(box.size.width - box.pivot.x - box.sprite.right, 120)
         switch s {
-        case .left: return CGPoint(x: frame.minX - box.sprite.right - max(behindRight, 0), y: anchor.y)
-        case .right: return CGPoint(x: frame.maxX + box.sprite.left + max(behindLeft, 0), y: anchor.y)
+        case .left: return CGPoint(x: frame.minX - box.sprite.right - max(behindRight, 0), y: y)
+        case .right: return CGPoint(x: frame.maxX + box.sprite.left + max(behindLeft, 0), y: y)
         }
     }
 }
