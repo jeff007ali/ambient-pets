@@ -1,0 +1,49 @@
+{
+  "id": "phasing",
+  "name": "Phasing",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "surprise"
+  ],
+  "cooldownMinutes": 25,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "s_zip",
+      "duration": 0.17,
+      "effects": [
+        {
+          "type": "fade",
+          "mode": "in",
+          "duration": 0.4
+        }
+      ],
+      "sound": "zap"
+    },
+    {
+      "clip": "s_vibrate",
+      "duration": 1.4,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "phase",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "s_idle",
+      "duration": 0.8
+    },
+    {
+      "clip": "s_speed",
+      "duration": 1.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 1400,
+        "curve": "easeIn"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

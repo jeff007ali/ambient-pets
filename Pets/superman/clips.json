@@ -1,0 +1,546 @@
+{
+  "formatVersion": 1,
+  "clips": {
+    "idle": {
+      "frames": [
+        "idle_0",
+        "idle_1",
+        "idle_2",
+        "idle_1"
+      ],
+      "fps": 6,
+      "loop": true,
+      "points": {
+        "head": [
+          4,
+          82
+        ]
+      }
+    },
+    "crouch": {
+      "frames": [
+        "crouch_0",
+        "crouch_1"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "jump": {
+      "frames": [
+        "jump_0",
+        "jump_1",
+        "jump_2",
+        "jump_3"
+      ],
+      "fps": 10,
+      "loop": false
+    },
+    "cape_up": {
+      "frames": [
+        "cape_up_0"
+      ],
+      "fps": 2,
+      "loop": false
+    },
+    "hover": {
+      "frames": [
+        "hover_0",
+        "hover_1"
+      ],
+      "fps": 4,
+      "loop": true
+    },
+    "fly": {
+      "frames": [
+        "fly_0"
+      ],
+      "fps": 4,
+      "loop": true
+    },
+    "dive_kick": {
+      "frames": [
+        "dive_kick_0"
+      ],
+      "fps": 4,
+      "loop": true
+    },
+    "dive_down": {
+      "frames": [
+        "dive_down_0"
+      ],
+      "fps": 4,
+      "loop": true
+    },
+    "land": {
+      "frames": [
+        "land_0",
+        "land_1"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "jab": {
+      "frames": [
+        "jab_0",
+        "jab_1"
+      ],
+      "fps": 10,
+      "loop": false
+    },
+    "punch": {
+      "frames": [
+        "punch_0",
+        "punch_1",
+        "punch_2"
+      ],
+      "fps": 10,
+      "loop": false
+    },
+    "uppercut": {
+      "frames": [
+        "uppercut_0",
+        "uppercut_1",
+        "uppercut_2",
+        "uppercut_3"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "power_up": {
+      "frames": [
+        "power_up_0",
+        "power_up_1"
+      ],
+      "fps": 4,
+      "loop": false
+    },
+    "liftoff": {
+      "frames": [
+        "liftoff_0"
+      ],
+      "fps": 4,
+      "loop": true
+    },
+    "heat_stance": {
+      "frames": [
+        "heat_stance_0",
+        "heat_stance_1"
+      ],
+      "fps": 2,
+      "loop": true,
+      "points": {
+        "muzzle": [
+          12,
+          74
+        ]
+      }
+    },
+    "freeze_stance": {
+      "frames": [
+        "freeze_stance_0",
+        "freeze_stance_1"
+      ],
+      "fps": 2,
+      "loop": true,
+      "points": {
+        "muzzle": [
+          12,
+          68
+        ]
+      }
+    },
+    "fire_punch": {
+      "frames": [
+        "fire_punch_0",
+        "fire_punch_1",
+        "fire_punch_2",
+        "fire_punch_3"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "fly_punch": {
+      "frames": [
+        "fly_punch_0",
+        "fly_punch_1"
+      ],
+      "fps": 8,
+      "loop": true
+    },
+    "recover": {
+      "frames": [
+        "recover_0"
+      ],
+      "fps": 4,
+      "loop": false
+    },
+    "hit": {
+      "frames": [
+        "hit_0",
+        "hit_1",
+        "hit_2"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "knockdown": {
+      "frames": [
+        "knockdown_0",
+        "knockdown_1",
+        "knockdown_2",
+        "knockdown_3"
+      ],
+      "fps": 6,
+      "loop": false
+    },
+    "getup": {
+      "frames": [
+        "getup_0",
+        "getup_1",
+        "getup_2",
+        "getup_3",
+        "getup_4"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "cape_flourish": {
+      "frames": [
+        "cape_flourish_0",
+        "cape_flourish_1",
+        "cape_flourish_2",
+        "cape_flourish_3",
+        "cape_flourish_2",
+        "cape_flourish_1"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "proud": {
+      "frames": [
+        "proud_0",
+        "proud_1",
+        "proud_2",
+        "proud_1"
+      ],
+      "fps": 4,
+      "loop": true
+    },
+    "heat": {
+      "frames": [
+        "heat_0",
+        "heat_1",
+        "heat_2",
+        "heat_3"
+      ],
+      "fps": 16,
+      "loop": false
+    },
+    "heat_hit": {
+      "frames": [
+        "heat_hit_0",
+        "heat_hit_1",
+        "heat_hit_2"
+      ],
+      "fps": 12,
+      "loop": false
+    },
+    "breath": {
+      "frames": [
+        "breath_0",
+        "breath_1",
+        "breath_2",
+        "breath_3",
+        "breath_4",
+        "breath_5"
+      ],
+      "fps": 12,
+      "loop": false
+    },
+    "a_clark_walk": {
+      "frames": [
+        "a_clark_walk_0",
+        "a_clark_walk_1",
+        "a_clark_walk_2",
+        "a_clark_walk_3",
+        "a_clark_walk_4",
+        "a_clark_walk_5",
+        "a_clark_walk_6",
+        "a_clark_walk_7",
+        "a_clark_walk_8",
+        "a_clark_walk_9",
+        "a_clark_walk_10",
+        "a_clark_walk_11",
+        "a_clark_walk_12",
+        "a_clark_walk_13",
+        "a_clark_walk_14",
+        "a_clark_walk_15",
+        "a_clark_walk_16",
+        "a_clark_walk_17",
+        "a_clark_walk_18",
+        "a_clark_walk_19",
+        "a_clark_walk_20"
+      ],
+      "fps": 10,
+      "loop": true
+    },
+    "a_change": {
+      "frames": [
+        "a_change_0",
+        "a_change_1",
+        "a_change_2",
+        "a_change_3",
+        "a_change_4",
+        "a_change_5",
+        "a_change_6",
+        "a_change_7",
+        "a_change_8",
+        "a_change_9",
+        "a_change_10",
+        "a_change_11",
+        "a_change_12",
+        "a_change_13",
+        "a_change_14"
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "a_leap": {
+      "frames": [
+        "a_leap_0"
+      ],
+      "fps": 2,
+      "loop": false
+    },
+    "a_idle": {
+      "frames": [
+        "a_idle_0",
+        "a_idle_1"
+      ],
+      "fps": 3,
+      "loop": true,
+      "points": {
+        "head": [
+          2,
+          78
+        ]
+      }
+    },
+    "a_walk": {
+      "frames": [
+        "a_walk_0",
+        "a_walk_1",
+        "a_walk_2",
+        "a_walk_3",
+        "a_walk_4",
+        "a_walk_5",
+        "a_walk_6"
+      ],
+      "fps": 10,
+      "loop": true
+    },
+    "a_punch": {
+      "frames": [
+        "a_punch_0",
+        "a_punch_1",
+        "a_punch_2",
+        "a_punch_3",
+        "a_punch_4"
+      ],
+      "fps": 10,
+      "loop": false
+    },
+    "a_kick": {
+      "frames": [
+        "a_kick_0",
+        "a_kick_1",
+        "a_kick_2",
+        "a_kick_3",
+        "a_kick_4"
+      ],
+      "fps": 10,
+      "loop": false
+    },
+    "a_crouch": {
+      "frames": [
+        "a_crouch_0",
+        "a_crouch_1"
+      ],
+      "fps": 6,
+      "loop": false
+    },
+    "a_charge": {
+      "frames": [
+        "a_charge_0",
+        "a_charge_1",
+        "a_charge_2",
+        "a_charge_3",
+        "a_charge_4",
+        "a_charge_5",
+        "a_charge_6",
+        "a_charge_7",
+        "a_charge_8",
+        "a_charge_9",
+        "a_charge_10"
+      ],
+      "fps": 10,
+      "loop": false
+    },
+    "a_blast": {
+      "frames": [
+        "a_blast_0",
+        "a_blast_1",
+        "a_blast_2",
+        "a_blast_3",
+        "a_blast_4"
+      ],
+      "fps": 10,
+      "loop": false,
+      "points": {
+        "hand": [
+          42,
+          55
+        ]
+      }
+    },
+    "a_up": {
+      "frames": [
+        "a_up_0",
+        "a_up_1"
+      ],
+      "fps": 6,
+      "loop": true
+    },
+    "a_fist_up": {
+      "frames": [
+        "a_fist_up_0"
+      ],
+      "fps": 4,
+      "loop": true
+    },
+    "a_fly": {
+      "frames": [
+        "a_fly_0",
+        "a_fly_1",
+        "a_fly_2",
+        "a_fly_3",
+        "a_fly_4",
+        "a_fly_5",
+        "a_fly_6",
+        "a_fly_7",
+        "a_fly_8",
+        "a_fly_9",
+        "a_fly_10",
+        "a_fly_11",
+        "a_fly_12"
+      ],
+      "fps": 12,
+      "loop": true
+    },
+    "a_fly_idle": {
+      "frames": [
+        "a_fly_idle_0",
+        "a_fly_idle_1",
+        "a_fly_idle_2",
+        "a_fly_idle_3"
+      ],
+      "fps": 8,
+      "loop": true
+    },
+    "a_fly_blast": {
+      "frames": [
+        "a_fly_blast_0",
+        "a_fly_blast_1",
+        "a_fly_blast_2"
+      ],
+      "fps": 8,
+      "loop": false,
+      "points": {
+        "hand": [
+          46,
+          20
+        ]
+      }
+    },
+    "a_glow": {
+      "frames": [
+        "a_glow_0",
+        "a_glow_1",
+        "a_glow_2"
+      ],
+      "fps": 6,
+      "loop": false
+    },
+    "a_dissolve": {
+      "frames": [
+        "a_dissolve_0",
+        "a_dissolve_1",
+        "a_dissolve_2",
+        "a_dissolve_3",
+        "a_dissolve_4",
+        "a_dissolve_5",
+        "a_dissolve_6",
+        "a_dissolve_7",
+        "a_dissolve_8",
+        "a_dissolve_9",
+        "a_dissolve_10",
+        "a_dissolve_11"
+      ],
+      "fps": 12,
+      "loop": false
+    },
+    "a_bolt": {
+      "frames": [
+        "a_bolt_0",
+        "a_bolt_1",
+        "a_bolt_2",
+        "a_bolt_3"
+      ],
+      "fps": 14,
+      "loop": true
+    },
+    "a_ring": {
+      "frames": [
+        "a_ring_0",
+        "a_ring_1",
+        "a_ring_2",
+        "a_ring_3",
+        "a_ring_4",
+        "a_ring_5",
+        "a_ring_6"
+      ],
+      "fps": 14,
+      "loop": false
+    },
+    "look": {
+      "fallback": "idle"
+    },
+    "sleep": {
+      "fallback": "proud"
+    },
+    "walk": {
+      "fallback": "hover"
+    },
+    "run": {
+      "fallback": "fly_punch"
+    },
+    "sprint": {
+      "fallback": "fly_punch"
+    },
+    "celebrate": {
+      "fallback": "power_up"
+    },
+    "surprised": {
+      "fallback": "hit"
+    },
+    "attack": {
+      "fallback": "punch"
+    },
+    "fall": {
+      "fallback": "dive_down"
+    },
+    "apex": {
+      "fallback": "hover"
+    }
+  }
+}

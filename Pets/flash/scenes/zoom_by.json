@@ -1,0 +1,25 @@
+{
+  "id": "zoom_by",
+  "name": "Zoom By",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 8,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "dash",
+      "duration": 3.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "opposite_offscreen",
+        "speed": 1400,
+        "curve": "linear"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

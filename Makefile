@@ -44,7 +44,10 @@ IRONMAN_SRC  = ThirdParty/source-assets/cosmic-ironman/default
 SPIDEY_SRC   = ThirdParty/source-assets/cosmic-spiderman/default
 BATMAN_SRC   = ThirdParty/source-assets/snes-batman
 # Frame-per-file Marvel Cosmic Invasion pets: Pets/<id>/sprites/sheet.png from ThirdParty/source-assets/cosmic-<id>.
-COSMIC_PETS  = blackpanther captainamerica ghostrider hela thanos
+COSMIC_PETS  = blackpanther captainamerica ghostrider hela thanos venom wolverine
+# Sliced-sheet pets with a second sheet packed in via labels.json "extra" (Flash: Genesis + SNES, Superman: SNES + Arcade).
+JLTF_PETS    = flash superman
+SA           = ThirdParty/source-assets
 
 Pets/ironman/sprites/sheet.png: $(IRONMAN_SRC)/Idle_00.png Pets/ironman/sprites/labels.json
 	@$(MAKE) --no-print-directory petpack
@@ -69,8 +72,32 @@ $(foreach p,$(COSMIC_PETS),Pets/$(p)/sprites/sheet.png): Pets/%/sprites/sheet.pn
 	@$(MAKE) --no-print-directory petpack
 	$(PETPACK) frames $< --out Pets/$*/sprites
 
+$(SA)/genesis-flash/work/candidates.json: $(SA)/genesis-flash/sheet.png
+	@$(MAKE) --no-print-directory petpack
+	$(PETPACK) slice $< --out $(@D) --bg '#008080' --merge 1 --min-pixels 40
+
+$(SA)/snes-flash/work/candidates.json: $(SA)/snes-flash/sheet.png
+	@$(MAKE) --no-print-directory petpack
+	$(PETPACK) slice $< --out $(@D) --merge 1 --min-pixels 40
+
+$(SA)/snes-superman/work/candidates.json: $(SA)/snes-superman/sheet.png
+	@$(MAKE) --no-print-directory petpack
+	$(PETPACK) slice $< --out $(@D) --merge 0 --min-pixels 40
+
+$(SA)/arcade-superman/work/candidates.json: $(SA)/arcade-superman/sheet.png
+	@$(MAKE) --no-print-directory petpack
+	$(PETPACK) slice $< --out $(@D) --bg '#6292B1' --merge 1 --min-pixels 30
+
+Pets/flash/sprites/sheet.png: $(SA)/genesis-flash/work/candidates.json $(SA)/snes-flash/work/candidates.json Pets/flash/sprites/labels.json
+	@$(MAKE) --no-print-directory petpack
+	$(PETPACK) pack $< Pets/flash/sprites/labels.json --out Pets/flash/sprites --facing right
+
+Pets/superman/sprites/sheet.png: $(SA)/snes-superman/work/candidates.json $(SA)/arcade-superman/work/candidates.json Pets/superman/sprites/labels.json
+	@$(MAKE) --no-print-directory petpack
+	$(PETPACK) pack $< Pets/superman/sprites/labels.json --out Pets/superman/sprites --facing right
+
 art: Pets/ironman/sprites/sheet.png Pets/spiderman/sprites/sheet.png Pets/batman/sprites/sheet.png \
-     $(foreach p,$(COSMIC_PETS),Pets/$(p)/sprites/sheet.png)
+     $(foreach p,$(COSMIC_PETS) $(JLTF_PETS),Pets/$(p)/sprites/sheet.png)
 
 # Original placeholder art (no download needed), for testing the pipeline.
 placeholder-art: petpack

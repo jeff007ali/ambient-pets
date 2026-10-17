@@ -1,0 +1,119 @@
+{
+  "enter": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 80,
+        "curve": "linear"
+      }
+    }
+  ],
+  "exit": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 80,
+        "curve": "linear"
+      }
+    }
+  ],
+  "blocks": {
+    "chomp": {
+      "description": "opens a huge fanged maw and chomps",
+      "steps": [
+        {
+          "clip": "chomp",
+          "duration": 1.43,
+          "facing": "toward_center",
+          "sound": "chomp"
+        }
+      ]
+    },
+    "tendril_combo": {
+      "description": "jab, slam and a tendril lash",
+      "steps": [
+        {
+          "clip": "jab",
+          "duration": 0.43,
+          "facing": "toward_center"
+        },
+        {
+          "clip": "slam",
+          "duration": 0.81
+        },
+        {
+          "clip": "tendril",
+          "duration": 0.71
+        }
+      ]
+    },
+    "tendrils": {
+      "description": "lashes out with a storm of symbiote tendrils",
+      "steps": [
+        {
+          "clip": "tendrils",
+          "duration": 2.44,
+          "facing": "toward_center"
+        }
+      ]
+    },
+    "roar": {
+      "description": "roars as the symbiote spreads",
+      "steps": [
+        {
+          "clip": "roar",
+          "duration": 1.57
+        },
+        {
+          "clip": "roar_end",
+          "duration": 0.67
+        }
+      ]
+    },
+    "lunge": {
+      "description": "lunges forward on all fours",
+      "steps": [
+        {
+          "clip": "dash_bite",
+          "duration": 0.93,
+          "facing": "toward_center",
+          "motion": {
+            "type": "walk",
+            "distance": 110,
+            "direction": "toward_center"
+          }
+        }
+      ]
+    },
+    "lurk": {
+      "description": "creeps a few steps",
+      "steps": [
+        {
+          "clip": "walk",
+          "duration": 1.8,
+          "motion": {
+            "type": "walk",
+            "speed": 60,
+            "direction": "random"
+          }
+        }
+      ]
+    },
+    "drool": {
+      "description": "stands still, tongue out",
+      "steps": [
+        {
+          "clip": "idle",
+          "duration": 1.6
+        }
+      ]
+    }
+  }
+}

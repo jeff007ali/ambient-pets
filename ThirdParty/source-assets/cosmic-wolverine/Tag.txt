@@ -1,0 +1,18 @@
+Game: Marvel Cosmic Invasion
+Subject: Wolverine
+Copyright: Tribute Games, Dotemu, Marvel, Adam J. Marin, Matthieu Godet,
+           Artem Samoilov, Aria "ThatArtisan" Fuhrmann, Marceline Gainsboro,
+           Jon Davies, Sean Johnston, Aaron Manzano (barosaros), omegachaino,
+           Rafael Ventura, Stephanie Blais, Konstantin Karpenuik,
+           Tom "Reggie" Schreiber, Olive Moss, Artem Brullov, Karl Kerschl
+Sprite Ripper: Random Talking Bush
+Hosting Permissions: The Spriters Resource
+                     Sprite Database
+Notes: The center point is at offset (128,224) by default. Raise the sprites by 96 pixels
+       to put them at their absolute center instead of the lower-biased offset (characters
+       rarely extend lower than 32 pixels past their center point). Sprites that extend past
+       the 256x256 boundary are still centered accordingly (for example, a 512-pixel height
+       means there's an extra 128 extra pixels on the top and bottom, making (128,352) the
+       absolute center for those). Animations with repeated frames are mentioned as such in
+       their filenames. Underscores imply separate frame numbers (e.g. "02_04_06_08" = frames
+       3, 5, 7 and 9), whereas dashes signify frame ranges (e.g. "01-02" = frames 2 to 3).

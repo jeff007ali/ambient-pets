@@ -1,0 +1,50 @@
+{
+  "id": "hover_watch",
+  "name": "Watchful Hover",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "explore"
+  ],
+  "cooldownMinutes": 20,
+  "region": "air",
+  "steps": [
+    {
+      "clip": "a_fly",
+      "duration": 1.4,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 600,
+        "curve": "easeOut"
+      },
+      "sound": "whoosh"
+    },
+    {
+      "clip": "a_fly_idle",
+      "duration": 2.0,
+      "facing": "toward_center",
+      "motion": {
+        "type": "hover",
+        "amplitude": 4,
+        "frequency": 0.6
+      },
+      "speech": {
+        "pool": "watch",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "a_fly",
+      "duration": 1.4,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 650,
+        "curve": "easeIn"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

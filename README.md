@@ -1,7 +1,7 @@
 # Ambient Desktop Pets
 
 A macOS menu-bar app that makes short, click-through cameos of pixel-art pets (Iron Man, Spider-Man, Batman,
-Captain America, Black Panther, Cosmic Ghost Rider, Hela, Thanos) over
+Captain America, Black Panther, Cosmic Ghost Rider, Venom, Wolverine, Hela, Thanos, The Flash, Superman) over
 your desktop, without stealing focus. Pets stay away during meetings, presentations, full-screen apps and games, keep
 clear of your text cursor, can appear together and interact, and can optionally let an AI (OpenAI or Claude) pick
 what happens next.
@@ -79,10 +79,13 @@ Sprites are ripped game art (personal use only) listed in [docs/ART_SOURCES.md](
 live in `ThirdParty/source-assets/` and the generated `sheet.png` files are gitignored; only frame picks
 (`Pets/*/sprites/labels.json`), atlases and behaviour are in the repo. `make art` (run by `make app`) rebuilds sheets:
 
-- **Iron Man**, **Spider-Man**, **Captain America**, **Black Panther**, **Cosmic Ghost Rider**, **Hela** and **Thanos**:
+- **Iron Man**, **Spider-Man**, **Captain America**, **Black Panther**, **Cosmic Ghost Rider**, **Venom**,
+  **Wolverine**, **Hela** and **Thanos**:
   Marvel Cosmic Invasion per-frame PNGs → `petpack frames` with `labels.json`
   (`"idle": ["Idle_*"]`, overlays like `"Idle_00.png+Spidersense_*"`, effects from `../effects/…`), one shared canvas
   anchor as the pivot (`pivotByClip`: `center` for projectiles, `left` for beams).
+- **The Flash** and **Superman**: two sliced sheets each (Flash: Genesis + SNES Justice League Task Force; Superman:
+  SNES Justice League Task Force + Taito arcade), packed into one atlas with labels.json `extra`.
 - **Batman**: SNES Batman Returns sheet → `petpack slice` (numbered candidates) → `petpack pack` with `labels.json`
   (frame indices per clip, `flip` for mixed facings, `pivotByClip: torso` for a steady walk).
 

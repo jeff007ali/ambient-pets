@@ -1,0 +1,135 @@
+{
+  "enter": [
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 230,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "skid",
+      "duration": 0.33
+    }
+  ],
+  "exit": [
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 230,
+        "curve": "linear"
+      }
+    }
+  ],
+  "blocks": {
+    "claw_combo": {
+      "description": "a fast three-hit claw combo",
+      "steps": [
+        {
+          "clip": "slash1",
+          "duration": 0.25,
+          "facing": "toward_center"
+        },
+        {
+          "clip": "slash2",
+          "duration": 0.38
+        },
+        {
+          "clip": "slash3",
+          "duration": 0.44
+        }
+      ]
+    },
+    "berserker": {
+      "description": "a spinning berserker barrage",
+      "steps": [
+        {
+          "clip": "berserker",
+          "duration": 1.0,
+          "facing": "toward_center"
+        }
+      ]
+    },
+    "x_slash": {
+      "description": "a huge X-shaped claw slash",
+      "steps": [
+        {
+          "clip": "x_slash",
+          "duration": 1.12
+        }
+      ]
+    },
+    "snikt": {
+      "description": "pops his claws with a SNIKT",
+      "steps": [
+        {
+          "clip": "pose",
+          "duration": 1.5
+        },
+        {
+          "clip": "pose_end",
+          "duration": 2.56
+        }
+      ]
+    },
+    "pounce": {
+      "description": "pounces forward",
+      "steps": [
+        {
+          "clip": "pounce",
+          "duration": 0.79,
+          "facing": "toward_center",
+          "motion": {
+            "type": "walk",
+            "distance": 110,
+            "direction": "toward_center"
+          }
+        }
+      ]
+    },
+    "dodge": {
+      "description": "rolls out of the way",
+      "steps": [
+        {
+          "clip": "dodge",
+          "duration": 0.62,
+          "motion": {
+            "type": "walk",
+            "distance": 80,
+            "direction": "random"
+          }
+        }
+      ]
+    },
+    "prowl": {
+      "description": "prowls a few steps",
+      "steps": [
+        {
+          "clip": "walk",
+          "duration": 1.8,
+          "motion": {
+            "type": "walk",
+            "speed": 60,
+            "direction": "random"
+          }
+        }
+      ]
+    },
+    "glare": {
+      "description": "stands still, glaring",
+      "steps": [
+        {
+          "clip": "idle",
+          "duration": 1.6
+        }
+      ]
+    }
+  }
+}

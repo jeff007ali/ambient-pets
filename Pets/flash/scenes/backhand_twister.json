@@ -1,0 +1,58 @@
+{
+  "id": "backhand_twister",
+  "name": "Twister",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 25,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "s_walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 70,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "s_backhand",
+      "duration": 0.42,
+      "facing": "toward_center",
+      "sound": "whoosh",
+      "effects": [
+        {
+          "type": "projectile",
+          "clip": "s_tornado",
+          "at": "hand",
+          "speed": 420,
+          "distance": 300,
+          "delay": 0.15
+        }
+      ]
+    },
+    {
+      "clip": "s_idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "tornado",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "s_run",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 260,
+        "curve": "linear"
+      }
+    }
+  ]
+}

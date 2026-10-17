@@ -1,0 +1,25 @@
+{
+  "id": "fly_by",
+  "name": "Up, Up and Away",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 10,
+  "region": "air",
+  "steps": [
+    {
+      "clip": "a_fly",
+      "duration": 3.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "opposite_offscreen",
+        "speed": 600,
+        "curve": "linear"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

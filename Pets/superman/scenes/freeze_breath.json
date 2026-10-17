@@ -1,0 +1,67 @@
+{
+  "id": "freeze_breath",
+  "name": "Freeze Breath",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 25,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "hover",
+      "duration": 1.4,
+      "motion": {
+        "type": "enter",
+        "from": "top_offscreen",
+        "to": "anchor",
+        "curve": "easeOut"
+      }
+    },
+    {
+      "clip": "land",
+      "duration": 0.25,
+      "effects": [
+        "dust_puff"
+      ],
+      "sound": "thud"
+    },
+    {
+      "clip": "freeze_stance",
+      "duration": 1.4,
+      "facing": "toward_center",
+      "effects": [
+        {
+          "type": "overlay",
+          "clip": "breath",
+          "at": "muzzle",
+          "hold": false
+        }
+      ],
+      "sound": "whoosh"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "freeze",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "power_up",
+      "duration": 0.5
+    },
+    {
+      "clip": "liftoff",
+      "duration": 1.0,
+      "motion": {
+        "type": "exit",
+        "to": "top_offscreen",
+        "curve": "easeIn"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

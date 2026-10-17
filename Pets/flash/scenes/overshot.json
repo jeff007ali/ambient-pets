@@ -1,0 +1,55 @@
+{
+  "id": "overshot",
+  "name": "Overshot",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "surprise"
+  ],
+  "cooldownMinutes": 30,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "s_speed",
+      "duration": 1.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 1400,
+        "curve": "linear"
+      },
+      "sound": "whoosh"
+    },
+    {
+      "clip": "s_knockdown",
+      "duration": 0.5,
+      "effects": [
+        "squash"
+      ],
+      "sound": "thud"
+    },
+    {
+      "clip": "s_getup",
+      "duration": 0.25
+    },
+    {
+      "clip": "s_rub_head",
+      "duration": 0.67,
+      "speech": {
+        "pool": "oops",
+        "chance": 0.7
+      }
+    },
+    {
+      "clip": "s_run",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 260,
+        "curve": "linear"
+      }
+    }
+  ]
+}

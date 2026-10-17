@@ -1,0 +1,30 @@
+{
+  "id": "rainbow_arrival",
+  "name": "Rainbow Arrival",
+  "tier": "rare",
+  "weight": 1.0,
+  "tags": [
+    "surprise",
+    "flashy"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "rainbow_in",
+      "duration": 1.5
+    },
+    {
+      "clip": "idle",
+      "duration": 1.2,
+      "speech": {
+        "pool": "rainbow",
+        "chance": 0.6
+      }
+    },
+    {
+      "clip": "rainbow_out",
+      "duration": 1.5
+    }
+  ]
+}

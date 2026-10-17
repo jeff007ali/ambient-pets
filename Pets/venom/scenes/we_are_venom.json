@@ -1,0 +1,49 @@
+{
+  "id": "we_are_venom",
+  "name": "We Are Venom",
+  "tier": "rare",
+  "weight": 1.0,
+  "tags": [
+    "surprise",
+    "flashy"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 80,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "roar",
+      "duration": 1.57,
+      "facing": "toward_center",
+      "sound": "roar"
+    },
+    {
+      "clip": "roar_end",
+      "duration": 0.67,
+      "speech": {
+        "pool": "we",
+        "chance": 0.8
+      }
+    },
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 80,
+        "curve": "linear"
+      }
+    }
+  ]
+}

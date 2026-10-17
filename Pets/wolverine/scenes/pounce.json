@@ -1,0 +1,62 @@
+{
+  "id": "pounce",
+  "name": "Pounce",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "surprise"
+  ],
+  "cooldownMinutes": 15,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 80,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "pounce",
+      "duration": 0.79,
+      "facing": "toward_center",
+      "motion": {
+        "type": "walk",
+        "distance": 120,
+        "direction": "toward_center"
+      },
+      "sound": "swish"
+    },
+    {
+      "clip": "idle",
+      "duration": 0.9,
+      "speech": {
+        "pool": "grumble",
+        "chance": 0.3
+      }
+    },
+    {
+      "clip": "dodge",
+      "duration": 0.62,
+      "motion": {
+        "type": "walk",
+        "distance": 80,
+        "direction": "away_from_center"
+      }
+    },
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 230,
+        "curve": "linear"
+      }
+    }
+  ]
+}

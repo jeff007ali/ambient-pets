@@ -1,0 +1,53 @@
+{
+  "id": "rapid_jabs",
+  "name": "Rapid Jabs",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "s_run",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 260,
+        "curve": "easeOut"
+      }
+    },
+    {
+      "clip": "s_rapid",
+      "duration": 0.33,
+      "facing": "toward_center",
+      "sound": "zap"
+    },
+    {
+      "clip": "s_rapid",
+      "duration": 0.33,
+      "sound": "zap"
+    },
+    {
+      "clip": "s_idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "combo",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "s_run",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 260,
+        "curve": "linear"
+      }
+    }
+  ]
+}

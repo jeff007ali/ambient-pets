@@ -1,0 +1,62 @@
+{
+  "id": "dive_slash",
+  "name": "Dive Slash",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 15,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "dive",
+      "duration": 0.9,
+      "motion": {
+        "type": "arc",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "height": 160,
+        "curve": "easeIn"
+      }
+    },
+    {
+      "clip": "dive_land",
+      "duration": 0.33,
+      "effects": [
+        "dust_puff",
+        "squash"
+      ],
+      "sound": "thud"
+    },
+    {
+      "clip": "rising_claw",
+      "duration": 1.06,
+      "facing": "toward_center",
+      "sound": "swish"
+    },
+    {
+      "clip": "spin",
+      "duration": 0.75,
+      "sound": "swish"
+    },
+    {
+      "clip": "idle",
+      "duration": 0.9,
+      "speech": {
+        "pool": "combo",
+        "chance": 0.3
+      }
+    },
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 230,
+        "curve": "linear"
+      }
+    }
+  ]
+}

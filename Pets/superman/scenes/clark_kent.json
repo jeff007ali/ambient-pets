@@ -1,0 +1,57 @@
+{
+  "id": "clark_kent",
+  "name": "Job for Superman",
+  "tier": "rare",
+  "weight": 1.0,
+  "tags": [
+    "surprise",
+    "greeting"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "a_clark_walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 60,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "a_change",
+      "duration": 1.9,
+      "facing": "toward_center",
+      "motion": {
+        "type": "walk",
+        "speed": 60,
+        "direction": "toward_center"
+      }
+    },
+    {
+      "clip": "a_leap",
+      "duration": 0.5,
+      "speech": {
+        "text": "Up, up and away!"
+      }
+    },
+    {
+      "clip": "a_fly",
+      "duration": 1.6,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 600,
+        "curve": "easeIn",
+        "offset": [
+          0,
+          160
+        ]
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "formatVersion": 1,
+  "id": "superman",
+  "name": "Superman",
+  "version": "0.2.0",
+  "renderer": "sprite",
+  "height": 86,
+  "personality": {
+    "activity": 0.9,
+    "friendliness": 0.9,
+    "mischievousness": 0.2,
+    "interaction": 0.6,
+    "curiosity": 0.5
+  },
+  "capabilities": {
+    "canFly": true,
+    "canWalk": true,
+    "cursorTracking": true,
+    "multiMonitor": true
+  },
+  "sounds": {
+    "beam": "sounds/beam.wav",
+    "boom": "sounds/boom.wav",
+    "swish": "sounds/swish.wav",
+    "thud": "sounds/thud.wav",
+    "whoosh": "sounds/whoosh.wav",
+    "zap": "sounds/zap.wav"
+  }
+}

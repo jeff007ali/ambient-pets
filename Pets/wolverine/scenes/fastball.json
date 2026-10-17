@@ -1,0 +1,52 @@
+{
+  "id": "fastball",
+  "name": "Fastball Special",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "surprise"
+  ],
+  "cooldownMinutes": 30,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "curl",
+      "duration": 1.0,
+      "motion": {
+        "type": "arc",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "height": 180,
+        "curve": "easeIn"
+      }
+    },
+    {
+      "clip": "land",
+      "duration": 0.29,
+      "effects": [
+        "dust_puff",
+        "squash"
+      ],
+      "sound": "thud"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "fastball",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 230,
+        "curve": "linear"
+      }
+    }
+  ]
+}

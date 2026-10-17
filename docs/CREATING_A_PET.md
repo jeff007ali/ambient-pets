@@ -43,6 +43,11 @@ Open `work/contact.png`, note the numbered frames you want, and write `sprites/l
 $P pack work/candidates.json Pets/<id>/sprites/labels.json --out Pets/<id>/sprites --facing right
 ```
 
+A second sheet of the same character (another game or version) can go in the same atlas: slice it into its own folder
+and add `"extra": [{ "work": "<that folder>", "clips": { "s_run": [49, 50, 51] } }]` to labels.json (its own frame
+numbers, plus optional `flip`, `pivot`, `pivotByClip`, `pivots`, and `scale` to resize it to match). Clip names must be
+unique across sheets; prefix them (`s_`, `a_`) and keep each scene on one sheet so the style doesn't change mid-scene.
+
 **One PNG per frame on a shared canvas** (Cosmic Invasion style):
 
 ```json

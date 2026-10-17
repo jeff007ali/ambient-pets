@@ -1,0 +1,32 @@
+{
+  "fast": [
+    "Did I miss anything?",
+    "Took the long way.",
+    "Fastest man alive!",
+    "Back already."
+  ],
+  "stroll": [
+    "Taking it slow today.",
+    "Walking is so… slow.",
+    "Nice desktop."
+  ],
+  "combo": [
+    "Too slow!",
+    "Blink and you miss it.",
+    "Whoosh."
+  ],
+  "tornado": [
+    "Wind's picking up.",
+    "Spin cycle!"
+  ],
+  "phase": [
+    "Bzzzz…",
+    "Vibrating…",
+    "Phase shift."
+  ],
+  "oops": [
+    "Ow. Overshot.",
+    "Speed bump.",
+    "Nobody saw that."
+  ]
+}

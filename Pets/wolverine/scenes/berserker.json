@@ -1,0 +1,66 @@
+{
+  "id": "berserker",
+  "name": "Berserker Barrage",
+  "tier": "elaborate",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 60,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 230,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "skid",
+      "duration": 0.33
+    },
+    {
+      "clip": "charge",
+      "duration": 0.8,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "berserk",
+        "chance": 0.4
+      }
+    },
+    {
+      "clip": "charge_slash",
+      "duration": 0.43,
+      "sound": "swish"
+    },
+    {
+      "clip": "berserker",
+      "duration": 1.0,
+      "sound": "swish"
+    },
+    {
+      "clip": "x_slash",
+      "duration": 1.12,
+      "sound": "boom"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0
+    },
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 230,
+        "curve": "linear"
+      }
+    }
+  ]
+}

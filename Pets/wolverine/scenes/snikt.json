@@ -1,0 +1,49 @@
+{
+  "id": "snikt",
+  "name": "Snikt!",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "greeting",
+    "flashy"
+  ],
+  "cooldownMinutes": 25,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 80,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "pose",
+      "duration": 1.5,
+      "facing": "toward_center",
+      "sound": "snikt",
+      "speech": {
+        "pool": "snikt",
+        "chance": 0.6
+      }
+    },
+    {
+      "clip": "pose_end",
+      "duration": 2.56
+    },
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 80,
+        "curve": "linear"
+      }
+    }
+  ]
+}

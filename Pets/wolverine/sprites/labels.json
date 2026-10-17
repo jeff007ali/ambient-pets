@@ -1,0 +1,125 @@
+{
+  "source": "ThirdParty/source-assets/cosmic-wolverine (Marvel Cosmic Invasion, Playable Characters - Wolverine, Default suit)",
+  "dir": "ThirdParty/source-assets/cosmic-wolverine/default",
+  "facing": "right",
+  "anchor": [
+    128,
+    226
+  ],
+  "canvas": [
+    256,
+    256
+  ],
+  "clips": {
+    "idle": [
+      "Idle_*"
+    ],
+    "walk": [
+      "Walk_*"
+    ],
+    "sprint": [
+      "Sprintstart.png",
+      "Sprint_*"
+    ],
+    "skid": [
+      "Sprintend_*"
+    ],
+    "jump": [
+      "Jump_*"
+    ],
+    "apex": [
+      "Jumpapex_*"
+    ],
+    "fall": [
+      "Jumpfall_*"
+    ],
+    "land": [
+      "Land_*"
+    ],
+    "slash1": [
+      "Attack1_*"
+    ],
+    "slash2": [
+      "Attack2_*"
+    ],
+    "slash3": [
+      "Attack3_*"
+    ],
+    "slash4": [
+      "Attack4_*"
+    ],
+    "slash5": [
+      "Attack5_*"
+    ],
+    "slash6": [
+      "Attack6_*"
+    ],
+    "rising_claw": [
+      "Attack7_*"
+    ],
+    "dive": [
+      "Attackairstart_*",
+      "Attackair_*"
+    ],
+    "dive_land": [
+      "Attackairland_*"
+    ],
+    "charge": [
+      "Attackchargedstart_*",
+      "Attackchargedheld_*"
+    ],
+    "charge_slash": [
+      "Attackcharged_*"
+    ],
+    "berserker": [
+      "Attackrisingstart_*",
+      "Attackrising_*"
+    ],
+    "dash_slash": [
+      "Attacksprinting_*"
+    ],
+    "dodge": [
+      "Dodge_*"
+    ],
+    "curl": [
+      "Powergrabstart_*"
+    ],
+    "pounce": [
+      "Powergrabthrow_*"
+    ],
+    "spin": [
+      "Specialstart_*",
+      "Special1_*"
+    ],
+    "x_slash": [
+      "Specialfinisher_*"
+    ],
+    "hit": [
+      "Hitstun_*"
+    ],
+    "knockdown": [
+      "Kd_*",
+      "Kdfall.png",
+      "Down.png",
+      "Downbounce_*"
+    ],
+    "getup": [
+      "Downgetup_*"
+    ],
+    "snikt": [
+      "Selectscreenstart_*"
+    ],
+    "pose": [
+      "Selectscreen_*"
+    ],
+    "pose_end": [
+      "Selectscreenend_*"
+    ],
+    "rainbow_in": [
+      "Spawnrainbow_*"
+    ],
+    "rainbow_out": [
+      "Spawnrainbowend_*"
+    ]
+  }
+}

@@ -113,6 +113,16 @@ public extension RGBAImage {
         return out
     }
 
+    /// Nearest-neighbour resize by `factor` (keeps pixel art crisp), at least 1×1.
+    func scaled(_ factor: Double) -> RGBAImage {
+        let w = max(1, Int((Double(width) * factor).rounded())), h = max(1, Int((Double(height) * factor).rounded()))
+        var out = RGBAImage(width: w, height: h)
+        for y in 0..<h {
+            for x in 0..<w { out.set(x, y, pixel(min(width - 1, Int(Double(x) / factor)), min(height - 1, Int(Double(y) / factor)))) }
+        }
+        return out
+    }
+
     /// Copies `src` into self at (x, y) (top-left origin).
     mutating func blit(_ src: RGBAImage, x: Int, y: Int) {
         for sy in 0..<src.height {

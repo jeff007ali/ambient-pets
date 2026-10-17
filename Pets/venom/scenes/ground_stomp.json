@@ -1,0 +1,61 @@
+{
+  "id": "ground_stomp",
+  "name": "Ground Stomp",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "surprise"
+  ],
+  "cooldownMinutes": 10,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "stomp",
+      "duration": 0.9,
+      "motion": {
+        "type": "enter",
+        "from": "top_offscreen",
+        "to": "anchor",
+        "curve": "easeIn"
+      }
+    },
+    {
+      "clip": "stomp_land",
+      "duration": 0.33,
+      "effects": [
+        "dust_puff",
+        "squash"
+      ],
+      "sound": "thud"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.2,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "hungry",
+        "chance": 0.3
+      }
+    },
+    {
+      "clip": "dash_bite",
+      "duration": 0.93,
+      "motion": {
+        "type": "walk",
+        "distance": 120,
+        "direction": "toward_center"
+      },
+      "sound": "chomp"
+    },
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 230,
+        "curve": "linear"
+      }
+    }
+  ]
+}

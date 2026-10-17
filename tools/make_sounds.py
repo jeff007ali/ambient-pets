@@ -86,6 +86,31 @@ def boom(d=0.7):
         out.append(s * math.exp(-t * 5) * 3 + math.sin(2 * math.pi * 55 * t) * math.exp(-t * 6))
     return out
 
+def chomp(d=0.22):
+    n = int(RATE * d); x = lowpass(noise(n), 0.3); out = []
+    for i, s in enumerate(x):
+        t = i / RATE
+        bite = 1.0 if t < 0.03 or 0.11 < t < 0.14 else 0.25   # two quick snaps
+        out.append(s * bite * env(i, n, 0.02, 0.6) + math.sin(2 * math.pi * 90 * t) * math.exp(-t * 18) * 0.6)
+    return out
+
+def roar(d=0.8):
+    n = int(RATE * d); x = lowpass(noise(n), 0.08); out = []
+    for i, s in enumerate(x):
+        t = i / RATE
+        growl = 0.6 + 0.4 * math.sin(2 * math.pi * 23 * t)          # rough amplitude flutter
+        out.append((s * 2 + math.sin(2 * math.pi * (70 + 20 * t) * t) * 0.5) * growl * env(i, n, 0.15, 0.7))
+    return out
+
+def snikt(d=0.35):
+    n = int(RATE * d); out = []
+    for i in range(n):
+        t = i / RATE
+        ring = sum(math.sin(2 * math.pi * f * t) / k for k, f in enumerate((2400, 3550, 5100), 1))
+        scrape = random.uniform(-1, 1) * math.exp(-t * 40)
+        out.append(ring * math.exp(-t * 9) * 0.6 + scrape)
+    return out
+
 SOUNDS = {
     "ironman": {"whoosh": whoosh, "thud": thud, "zap": zap, "beam": beam, "blip": blip, "boom": boom},
     "spiderman": {"whoosh": whoosh, "thud": thud, "thwip": thwip},
@@ -95,6 +120,10 @@ SOUNDS = {
     "ghostrider": {"whoosh": whoosh, "thud": thud, "zap": zap, "boom": boom, "swish": swish},
     "hela": {"swish": swish, "whoosh": whoosh, "zap": zap, "boom": boom, "beam": beam},
     "thanos": {"thud": thud, "boom": boom, "beam": beam, "zap": zap, "blip": blip},
+    "venom": {"chomp": chomp, "roar": roar, "swish": swish, "thud": thud, "thwip": thwip},
+    "wolverine": {"snikt": snikt, "swish": swish, "thud": thud, "whoosh": whoosh, "boom": boom},
+    "flash": {"whoosh": whoosh, "zap": zap, "swish": swish, "thud": thud},
+    "superman": {"whoosh": whoosh, "beam": beam, "boom": boom, "thud": thud, "swish": swish, "zap": zap},
 }
 
 if __name__ == "__main__":

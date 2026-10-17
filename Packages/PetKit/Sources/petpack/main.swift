@@ -17,7 +17,9 @@ USAGE
   petpack pack <dir>/candidates.json <labels.json> --out <pet-dir>/sprites [--facing right]
       Pack only the labelled frames into sheet.png + atlas.json (+ clips.suggested.json).
       labels.json: { "clips": { "fly": [12, 13, 14, 13], … }, "pivots": { "12": [58, 90] }, "flip": [12, 13],
-                     "pivot": "feet" | "torso" | "center" | "left", "pivotByClip": { "walk": "torso" } }
+                     "pivot": "feet" | "torso" | "center" | "left", "pivotByClip": { "walk": "torso" },
+                     "extra": [{ "work": "<other-slice-dir>", "scale": 0.8, "clips": { … } }] }
+      `extra` packs frames from more sliced sheets of the same character into the same atlas, resized to match.
 
   petpack frames <labels.json> --out <pet-dir>/sprites
       Build a sheet from a folder of per-frame PNGs on a shared canvas (one file per frame), keeping a common
@@ -130,6 +132,21 @@ struct Labels: Codable {
     var pivot: String?
     /// Per-clip pivot mode overrides.
     var pivotByClip: [String: String]?
+    /// More sliced sheets of the same character (another game or version), packed into the same atlas. Their frame
+    /// numbers, flips and pivot overrides refer to their own `candidates.json`.
+    var extra: [ExtraSource]?
+}
+
+/// A second sheet for `pack`: `work` is its slice folder (candidates.json + keyed.png); `scale` resizes its frames
+/// (nearest neighbour) so the character matches the main sheet's size.
+struct ExtraSource: Codable {
+    var work: String
+    var scale: Double?
+    var clips: [String: [Int]]
+    var pivots: [String: [Int]]?
+    var flip: [Int]?
+    var pivot: String?
+    var pivotByClip: [String: String]?
 }
 
 struct SuggestedClip: Codable {
@@ -143,40 +160,50 @@ func pack(_ a: Args) throws {
         throw CLIError("pack: need <candidates.json> <labels.json> --out <pet-dir>/sprites")
     }
     let candURL = url(a.positional[0])
-    let cands = try JSONDecoder().decode(Candidates.self, from: Data(contentsOf: candURL))
     let labels = try JSONDecoder().decode(Labels.self, from: Data(contentsOf: url(a.positional[1])))
-    let keyed = RGBAImage(cgImage: try ImageFiles.load(candURL.deletingLastPathComponent().appending(path: "keyed.png")))
-    let byIndex = Dictionary(uniqueKeysWithValues: cands.frames.map { ($0.index, $0) })
+    var sources = [ExtraSource(work: candURL.deletingLastPathComponent().path, scale: nil, clips: labels.clips,
+                               pivots: labels.pivots, flip: labels.flip, pivot: labels.pivot, pivotByClip: labels.pivotByClip)]
+    sources += labels.extra ?? []
 
     var items: [SheetPacker.Item] = []
-    var names: [Int: [String]] = [:] // source index → atlas names using it
     var suggested: [String: SuggestedClip] = [:]
-    for (label, indices) in labels.clips.sorted(by: { $0.key < $1.key }) {
-        var seen: [Int: String] = [:]
-        var clipFrames: [String] = []
-        for idx in indices {
-            guard let f = byIndex[idx] else { throw CLIError("label '\(label)' uses unknown frame index \(idx)") }
-            if let existing = seen[idx] { clipFrames.append(existing); continue }
-            let name = "\(label)_\(seen.count)"
-            seen[idx] = name
-            clipFrames.append(name)
-            var image = keyed.cropped(f.rect)
-            let mode = labels.pivotByClip?[label] ?? labels.pivot ?? "feet"
-            var pivot = switch mode {
-            case "torso": SpriteSlicer.torsoPivot(keyed, in: f.rect)
-            case "center": [f.rect.width / 2, f.rect.height / 2]
-            case "left": [0, f.rect.height / 2] // beams: anchored at the muzzle end
-            default: f.pivot
+    for source in sources {
+        let work = url(source.work)
+        let cands = try JSONDecoder().decode(Candidates.self, from: Data(contentsOf: work.appending(path: "candidates.json")))
+        let keyed = RGBAImage(cgImage: try ImageFiles.load(work.appending(path: "keyed.png")))
+        let byIndex = Dictionary(uniqueKeysWithValues: cands.frames.map { ($0.index, $0) })
+        let scale = source.scale ?? 1
+        for (label, indices) in source.clips.sorted(by: { $0.key < $1.key }) {
+            guard suggested[label] == nil else { throw CLIError("clip '\(label)' is labelled in more than one sheet") }
+            var seen: [Int: String] = [:]
+            var clipFrames: [String] = []
+            for idx in indices {
+                guard let f = byIndex[idx] else { throw CLIError("label '\(label)' uses unknown frame index \(idx) in \(source.work)") }
+                if let existing = seen[idx] { clipFrames.append(existing); continue }
+                let name = "\(label)_\(seen.count)"
+                seen[idx] = name
+                clipFrames.append(name)
+                var image = keyed.cropped(f.rect)
+                let mode = source.pivotByClip?[label] ?? source.pivot ?? "feet"
+                var pivot = switch mode {
+                case "torso": SpriteSlicer.torsoPivot(keyed, in: f.rect)
+                case "center": [f.rect.width / 2, f.rect.height / 2]
+                case "left": [0, f.rect.height / 2] // beams: anchored at the muzzle end
+                default: f.pivot
+                }
+                if source.flip?.contains(idx) == true {
+                    image = image.mirrored()
+                    pivot = [f.rect.width - pivot[0], pivot[1]]
+                }
+                pivot = source.pivots?[String(idx)] ?? pivot
+                if scale != 1 {
+                    image = image.scaled(scale)
+                    pivot = pivot.map { Int((Double($0) * scale).rounded()) }
+                }
+                items.append(SheetPacker.Item(name: name, image: image, pivot: pivot))
             }
-            if labels.flip?.contains(idx) == true {
-                image = image.mirrored()
-                pivot = [f.rect.width - pivot[0], pivot[1]]
-            }
-            pivot = labels.pivots?[String(idx)] ?? pivot
-            items.append(SheetPacker.Item(name: name, image: image, pivot: pivot))
-            names[idx, default: []].append(name)
+            suggested[label] = SuggestedClip(frames: clipFrames, fps: 8, loop: true)
         }
-        suggested[label] = SuggestedClip(frames: clipFrames, fps: 8, loop: true)
     }
     let (sheet, frames) = SheetPacker.pack(items)
     let outURL = url(out)

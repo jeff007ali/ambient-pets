@@ -1,0 +1,64 @@
+{
+  "id": "energy_blast",
+  "name": "Energy Blast",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 25,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "a_walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 70,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "a_charge",
+      "duration": 1.1,
+      "facing": "toward_center",
+      "sound": "zap"
+    },
+    {
+      "clip": "a_blast",
+      "duration": 0.5,
+      "effects": [
+        {
+          "type": "projectile",
+          "clip": "a_bolt",
+          "hit": "a_ring",
+          "at": "hand",
+          "speed": 520,
+          "distance": 300,
+          "delay": 0.1
+        }
+      ],
+      "sound": "boom"
+    },
+    {
+      "clip": "a_idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "strong",
+        "chance": 0.4
+      }
+    },
+    {
+      "clip": "a_fist_up",
+      "duration": 1.0,
+      "motion": {
+        "type": "exit",
+        "to": "top_offscreen",
+        "curve": "easeIn"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "sky_blast",
+  "name": "Sky Blast",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 15,
+  "region": "air",
+  "steps": [
+    {
+      "clip": "a_fly",
+      "duration": 1.4,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 600,
+        "curve": "easeOut"
+      },
+      "sound": "whoosh"
+    },
+    {
+      "clip": "a_fly_blast",
+      "duration": 0.38,
+      "facing": "toward_center",
+      "effects": [
+        {
+          "type": "projectile",
+          "clip": "a_bolt",
+          "hit": "a_ring",
+          "at": "hand",
+          "speed": 520,
+          "distance": 300,
+          "delay": 0.15
+        }
+      ],
+      "sound": "boom"
+    },
+    {
+      "clip": "a_fly_idle",
+      "duration": 0.8,
+      "motion": {
+        "type": "hover",
+        "amplitude": 3
+      }
+    },
+    {
+      "clip": "a_fly",
+      "duration": 1.4,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 650,
+        "curve": "easeIn"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

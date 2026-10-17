@@ -1,0 +1,62 @@
+{
+  "id": "tendril_lash",
+  "name": "Tendril Lash",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 80,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "jab",
+      "duration": 0.43,
+      "facing": "toward_center"
+    },
+    {
+      "clip": "slam",
+      "duration": 0.81,
+      "sound": "thud"
+    },
+    {
+      "clip": "tendril",
+      "duration": 0.71,
+      "sound": "swish"
+    },
+    {
+      "clip": "whip",
+      "duration": 0.79,
+      "sound": "swish"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "lurk",
+        "chance": 0.3
+      }
+    },
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 230,
+        "curve": "linear"
+      }
+    }
+  ]
+}

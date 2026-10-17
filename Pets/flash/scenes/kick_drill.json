@@ -1,0 +1,78 @@
+{
+  "id": "kick_drill",
+  "name": "Kick Drill",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "roll",
+      "duration": 0.9,
+      "motion": {
+        "type": "arc",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "height": 150,
+        "curve": "easeIn"
+      },
+      "sound": "whoosh"
+    },
+    {
+      "clip": "land",
+      "duration": 0.25,
+      "effects": [
+        "dust_puff",
+        "squash"
+      ],
+      "sound": "thud"
+    },
+    {
+      "clip": "kick",
+      "duration": 0.25,
+      "facing": "toward_center",
+      "sound": "swish"
+    },
+    {
+      "clip": "high_kick",
+      "duration": 0.3,
+      "sound": "swish"
+    },
+    {
+      "clip": "sweep",
+      "duration": 0.25,
+      "sound": "swish"
+    },
+    {
+      "clip": "slide",
+      "duration": 0.33,
+      "motion": {
+        "type": "walk",
+        "distance": 60,
+        "direction": "toward_center"
+      }
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "combo",
+        "chance": 0.4
+      }
+    },
+    {
+      "clip": "dash",
+      "duration": 1.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 1400,
+        "curve": "easeIn"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

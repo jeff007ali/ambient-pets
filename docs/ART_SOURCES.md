@@ -42,6 +42,30 @@ Record of the sprite art used, or considered, for each pet. Update it whenever a
 - In use: `petpack frames Pets/<id>/sprites/labels.json` with a fixed `"anchor": [128, 226]` (the game's own origin,
   feet on the ground) so flipping and pose changes never shift the character.
 
+### Venom, Wolverine — Marvel Cosmic Invasion, via The Spriters Resource
+- "Playable Characters - Venom / Wolverine" zips (in `ThirdParty/source-assets/OG/`), same format as the other Cosmic
+  Invasion pets. Downloaded ☑ 2026-10-17 → `cosmic-venom/default` (Default suit, 450 frames; the zip's `Boss/` Venom
+  and web pieces are kept in `boss/` and `effects/` but unused) and `cosmic-wolverine/default` (381 frames).
+- Venom: Webswing (+ the engine's tether line), Attackair = giant fanged maw, Special = tendril storm,
+  Selectscreen = symbiote roar. Wolverine: Selectscreen = claws out with "SNIKT", Specialfinisher = X-slash (512×512),
+  Powergrabstart = the curled-up Fastball Special.
+- In use: `petpack frames` with `"anchor": [128, 226], "canvas": [256, 256]`.
+
+### The Flash, Superman — two sheets each, via The Spriters Resource
+- **The Flash**: "Sega Genesis - Justice League Task Force - Fighters - Flash" (ripped by Apocalypse, `#008080`
+  background) is the main sheet: fighting-stance idle, walk, somersault, lightning punches, bolt throw, arm-spin
+  whirlwind, speed vortex, super-speed dash with speed lines, victory. The SNES version of the same game
+  ("SNES - Justice League Task Force - Fighters - The Flash", ripped by HijodeKrypton, transparent) is packed in as
+  `extra` (clips `s_*`): run cycle, vibrate/phase, rapid punches, backhand twister, crash and head rub.
+- **Superman**: "SNES - Justice League Task Force - Fighters - Superman" (HijodeKrypton, transparent) is the main sheet:
+  ground fighting, heat vision, freeze breath, cape flourish, the arms-up lift-off and the head-first dive. The Taito
+  arcade game ("Arcade - Superman - Playable Characters - Superman", `#6292B1` background) is packed in as `extra`
+  (clips `a_*`): Clark Kent walking and changing into Superman, walk cycle, idle, punches and kicks, energy charge and
+  blast, the cape-flapping flight loop, fist-up take-off.
+- Downloaded ☑ 2026-10-17 → `genesis-flash/`, `snes-flash/`, `snes-superman/`, `arcade-superman/` (each `sheet.png` +
+  `work/` from `petpack slice`). The two sheets of each hero draw him within ~7 % of the same height, so no rescaling is
+  applied; each scene sticks to one sheet so the art style never switches mid-scene.
+
 ### Batman — Batman Returns (SNES), via The Spriters Resource
 - "SNES - Batman Returns - Playable Characters - Batman" (sheet upgraded by DAD34853), `#A34D4D` background.
 - Downloaded: ☑ 2026-10-11 → `ThirdParty/source-assets/snes-batman/sheet.png` (900×1650).

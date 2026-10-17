@@ -1,0 +1,68 @@
+{
+  "id": "drop_in",
+  "name": "Drop In",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "greeting"
+  ],
+  "cooldownMinutes": 10,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "fly",
+      "duration": 1.2,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "offset": [
+          0,
+          120
+        ],
+        "speed": 600,
+        "curve": "easeOut"
+      },
+      "sound": "whoosh"
+    },
+    {
+      "clip": "hover",
+      "duration": 0.8,
+      "motion": {
+        "type": "drop",
+        "to": "ground"
+      }
+    },
+    {
+      "clip": "land",
+      "duration": 0.25,
+      "effects": [
+        "dust_puff"
+      ],
+      "sound": "thud"
+    },
+    {
+      "clip": "proud",
+      "duration": 1.6,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "hello",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "power_up",
+      "duration": 0.5
+    },
+    {
+      "clip": "liftoff",
+      "duration": 1.0,
+      "motion": {
+        "type": "exit",
+        "to": "top_offscreen",
+        "curve": "easeIn"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

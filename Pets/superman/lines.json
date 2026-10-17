@@ -1,0 +1,28 @@
+{
+  "hello": [
+    "Hello, citizen.",
+    "Everything all right?",
+    "Keep up the good work.",
+    "Need a hand?"
+  ],
+  "heat": [
+    "Just warming up.",
+    "Careful, that's hot.",
+    "Toasty."
+  ],
+  "freeze": [
+    "Chill out.",
+    "Cool it.",
+    "Brrr."
+  ],
+  "strong": [
+    "Up, up and away!",
+    "Truth and justice.",
+    "No problem."
+  ],
+  "watch": [
+    "All quiet.",
+    "Just keeping watch.",
+    "Looking good down there."
+  ]
+}

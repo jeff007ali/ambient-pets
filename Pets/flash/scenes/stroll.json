@@ -1,0 +1,48 @@
+{
+  "id": "stroll",
+  "name": "Slow Day",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "explore"
+  ],
+  "cooldownMinutes": 10,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 70,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "idle",
+      "duration": 1.6,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "stroll",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "pose",
+      "duration": 0.5
+    },
+    {
+      "clip": "dash",
+      "duration": 1.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 1400,
+        "curve": "easeIn"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

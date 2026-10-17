@@ -1,0 +1,52 @@
+{
+  "id": "toss",
+  "name": "Toss",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 30,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 80,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "grab",
+      "duration": 1.0,
+      "facing": "toward_center"
+    },
+    {
+      "clip": "toss",
+      "duration": 1.25,
+      "sound": "swish"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "we",
+        "chance": 0.3
+      }
+    },
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 80,
+        "curve": "linear"
+      }
+    }
+  ]
+}

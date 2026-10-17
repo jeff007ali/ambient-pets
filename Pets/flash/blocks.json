@@ -1,0 +1,144 @@
+{
+  "enter": [
+    {
+      "clip": "dash",
+      "duration": 1.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 1400,
+        "curve": "easeOut"
+      },
+      "sound": "whoosh"
+    }
+  ],
+  "exit": [
+    {
+      "clip": "dash",
+      "duration": 1.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 1400,
+        "curve": "easeIn"
+      },
+      "sound": "whoosh"
+    }
+  ],
+  "blocks": {
+    "lightning_punch": {
+      "description": "a crackling lightning punch",
+      "steps": [
+        {
+          "clip": "lightning_punch",
+          "duration": 0.67,
+          "facing": "toward_center",
+          "sound": "zap"
+        }
+      ]
+    },
+    "whirlwind": {
+      "description": "spins his arms into a whirlwind and sends it off",
+      "steps": [
+        {
+          "clip": "arm_spin",
+          "duration": 1.2,
+          "facing": "toward_center",
+          "effects": [
+            {
+              "type": "projectile",
+              "clip": "whirl",
+              "at": "hand",
+              "speed": 380,
+              "distance": 300,
+              "delay": 0.6
+            }
+          ]
+        }
+      ]
+    },
+    "kicks": {
+      "description": "a kick, a high kick and a sweep",
+      "steps": [
+        {
+          "clip": "kick",
+          "duration": 0.25,
+          "facing": "toward_center"
+        },
+        {
+          "clip": "high_kick",
+          "duration": 0.3
+        },
+        {
+          "clip": "sweep",
+          "duration": 0.25
+        }
+      ]
+    },
+    "somersault": {
+      "description": "a quick somersault in place",
+      "steps": [
+        {
+          "clip": "roll",
+          "duration": 0.7,
+          "motion": {
+            "type": "hop",
+            "height": 50
+          }
+        },
+        {
+          "clip": "land",
+          "duration": 0.25
+        }
+      ]
+    },
+    "vortex": {
+      "description": "spins on the spot so fast he becomes a vortex",
+      "steps": [
+        {
+          "clip": "vortex",
+          "duration": 1.2
+        }
+      ]
+    },
+    "bolt": {
+      "description": "throws a lightning bolt",
+      "steps": [
+        {
+          "clip": "bolt_throw",
+          "duration": 0.5,
+          "facing": "toward_center",
+          "effects": [
+            {
+              "type": "projectile",
+              "clip": "spark",
+              "at": "hand",
+              "speed": 650,
+              "distance": 260,
+              "delay": 0.35
+            }
+          ]
+        }
+      ]
+    },
+    "victory": {
+      "description": "pumps his fist",
+      "steps": [
+        {
+          "clip": "victory",
+          "duration": 0.5
+        }
+      ]
+    },
+    "tap_foot": {
+      "description": "stands still, impatient",
+      "steps": [
+        {
+          "clip": "idle",
+          "duration": 1.4
+        }
+      ]
+    }
+  }
+}

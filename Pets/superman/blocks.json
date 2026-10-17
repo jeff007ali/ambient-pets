@@ -1,0 +1,143 @@
+{
+  "enter": [
+    {
+      "clip": "fly",
+      "duration": 1.2,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "offset": [
+          0,
+          120
+        ],
+        "speed": 600,
+        "curve": "easeOut"
+      },
+      "sound": "whoosh"
+    },
+    {
+      "clip": "hover",
+      "duration": 0.8,
+      "motion": {
+        "type": "drop",
+        "to": "ground"
+      }
+    },
+    {
+      "clip": "land",
+      "duration": 0.25,
+      "effects": [
+        "dust_puff"
+      ],
+      "sound": "thud"
+    }
+  ],
+  "exit": [
+    {
+      "clip": "power_up",
+      "duration": 0.5
+    },
+    {
+      "clip": "liftoff",
+      "duration": 1.0,
+      "motion": {
+        "type": "exit",
+        "to": "top_offscreen",
+        "curve": "easeIn"
+      },
+      "sound": "whoosh"
+    }
+  ],
+  "blocks": {
+    "heat_vision": {
+      "description": "fires heat vision from his eyes",
+      "steps": [
+        {
+          "clip": "heat_stance",
+          "duration": 1.2,
+          "facing": "toward_center",
+          "effects": [
+            {
+              "type": "projectile",
+              "clip": "heat",
+              "hit": "heat_hit",
+              "at": "muzzle",
+              "speed": 700,
+              "distance": 260,
+              "delay": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    "freeze_breath": {
+      "description": "blows an icy freeze breath",
+      "steps": [
+        {
+          "clip": "freeze_stance",
+          "duration": 1.2,
+          "facing": "toward_center",
+          "effects": [
+            {
+              "type": "overlay",
+              "clip": "breath",
+              "at": "muzzle",
+              "hold": false
+            }
+          ]
+        }
+      ]
+    },
+    "punches": {
+      "description": "a jab and a heavy punch",
+      "steps": [
+        {
+          "clip": "jab",
+          "duration": 0.2,
+          "facing": "toward_center"
+        },
+        {
+          "clip": "punch",
+          "duration": 0.3
+        }
+      ]
+    },
+    "fire_punch": {
+      "description": "a blazing super punch",
+      "steps": [
+        {
+          "clip": "fire_punch",
+          "duration": 0.5
+        }
+      ]
+    },
+    "uppercut": {
+      "description": "a rising uppercut, cape flying",
+      "steps": [
+        {
+          "clip": "uppercut",
+          "duration": 0.5
+        }
+      ]
+    },
+    "cape_flourish": {
+      "description": "swirls his cape heroically",
+      "steps": [
+        {
+          "clip": "cape_flourish",
+          "duration": 0.75
+        }
+      ]
+    },
+    "stand_proud": {
+      "description": "stands proud, cape billowing",
+      "steps": [
+        {
+          "clip": "proud",
+          "duration": 1.6
+        }
+      ]
+    }
+  }
+}

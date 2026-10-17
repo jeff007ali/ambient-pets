@@ -1,0 +1,87 @@
+{
+  "id": "super_punch",
+  "name": "Super Punch",
+  "tier": "elaborate",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 45,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "fly",
+      "duration": 1.2,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "offset": [
+          0,
+          120
+        ],
+        "speed": 600,
+        "curve": "easeOut"
+      },
+      "sound": "whoosh"
+    },
+    {
+      "clip": "hover",
+      "duration": 0.8,
+      "motion": {
+        "type": "drop",
+        "to": "ground"
+      }
+    },
+    {
+      "clip": "land",
+      "duration": 0.25,
+      "effects": [
+        "dust_puff"
+      ],
+      "sound": "thud"
+    },
+    {
+      "clip": "jab",
+      "duration": 0.2,
+      "facing": "toward_center"
+    },
+    {
+      "clip": "punch",
+      "duration": 0.3,
+      "sound": "swish"
+    },
+    {
+      "clip": "fire_punch",
+      "duration": 0.5,
+      "sound": "boom"
+    },
+    {
+      "clip": "uppercut",
+      "duration": 0.5,
+      "sound": "swish"
+    },
+    {
+      "clip": "proud",
+      "duration": 1.0,
+      "speech": {
+        "pool": "strong",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "power_up",
+      "duration": 0.5
+    },
+    {
+      "clip": "liftoff",
+      "duration": 1.0,
+      "motion": {
+        "type": "exit",
+        "to": "top_offscreen",
+        "curve": "easeIn"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

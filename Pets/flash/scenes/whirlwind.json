@@ -1,0 +1,59 @@
+{
+  "id": "whirlwind",
+  "name": "Whirlwind",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 25,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 70,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "arm_spin",
+      "duration": 1.3,
+      "facing": "toward_center",
+      "effects": [
+        {
+          "type": "projectile",
+          "clip": "whirl",
+          "at": "hand",
+          "speed": 380,
+          "distance": 300,
+          "delay": 0.6
+        }
+      ],
+      "sound": "whoosh"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "tornado",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "dash",
+      "duration": 1.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 1400,
+        "curve": "easeIn"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "claw_flurry",
+  "name": "Claw Flurry",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 230,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "skid",
+      "duration": 0.33
+    },
+    {
+      "clip": "slash1",
+      "duration": 0.25,
+      "facing": "toward_center",
+      "sound": "swish"
+    },
+    {
+      "clip": "slash2",
+      "duration": 0.38,
+      "sound": "swish"
+    },
+    {
+      "clip": "slash3",
+      "duration": 0.44,
+      "sound": "swish"
+    },
+    {
+      "clip": "slash5",
+      "duration": 0.38,
+      "sound": "swish"
+    },
+    {
+      "clip": "slash6",
+      "duration": 0.38,
+      "sound": "swish"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "combo",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 230,
+        "curve": "linear"
+      }
+    }
+  ]
+}

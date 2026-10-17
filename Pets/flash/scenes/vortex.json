@@ -1,0 +1,51 @@
+{
+  "id": "vortex",
+  "name": "Speed Vortex",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "surprise",
+    "flashy"
+  ],
+  "cooldownMinutes": 25,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "vortex",
+      "duration": 1.2,
+      "effects": [
+        {
+          "type": "fade",
+          "mode": "in",
+          "duration": 0.4
+        }
+      ],
+      "sound": "whoosh"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.2,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "fast",
+        "chance": 0.4
+      }
+    },
+    {
+      "clip": "victory",
+      "duration": 0.5
+    },
+    {
+      "clip": "vortex",
+      "duration": 1.0,
+      "effects": [
+        {
+          "type": "fade",
+          "mode": "out",
+          "duration": 0.5
+        }
+      ],
+      "sound": "whoosh"
+    }
+  ]
+}

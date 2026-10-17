@@ -1,0 +1,54 @@
+{
+  "id": "cape_flourish",
+  "name": "Cape Flourish",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "greeting"
+  ],
+  "cooldownMinutes": 20,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "hover",
+      "duration": 1.4,
+      "motion": {
+        "type": "enter",
+        "from": "top_offscreen",
+        "to": "anchor",
+        "curve": "easeOut"
+      }
+    },
+    {
+      "clip": "land",
+      "duration": 0.25,
+      "effects": [
+        "dust_puff"
+      ],
+      "sound": "thud"
+    },
+    {
+      "clip": "cape_flourish",
+      "duration": 0.75,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "hello",
+        "chance": 0.6
+      }
+    },
+    {
+      "clip": "power_up",
+      "duration": 0.5
+    },
+    {
+      "clip": "liftoff",
+      "duration": 1.0,
+      "motion": {
+        "type": "exit",
+        "to": "top_offscreen",
+        "curve": "easeIn"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "id": "symbiote_storm",
+  "name": "Symbiote Storm",
+  "tier": "elaborate",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 60,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 80,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "charge",
+      "duration": 0.9,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "charge",
+        "chance": 0.4
+      }
+    },
+    {
+      "clip": "tendrils",
+      "duration": 2.44,
+      "sound": "swish"
+    },
+    {
+      "clip": "lunge",
+      "duration": 0.86,
+      "sound": "chomp"
+    },
+    {
+      "clip": "idle",
+      "duration": 0.8
+    },
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 230,
+        "curve": "linear"
+      }
+    }
+  ]
+}

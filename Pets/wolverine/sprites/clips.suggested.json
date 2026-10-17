@@ -1,0 +1,640 @@
+{
+  "clips" : {
+    "apex" : {
+      "fps" : 12,
+      "frames" : [
+        "apex_0",
+        "apex_1",
+        "apex_2",
+        "apex_3",
+        "apex_4",
+        "apex_5",
+        "apex_6"
+      ],
+      "loop" : true
+    },
+    "berserker" : {
+      "fps" : 12,
+      "frames" : [
+        "berserker_0",
+        "berserker_1",
+        "berserker_2",
+        "berserker_3",
+        "berserker_4",
+        "berserker_5",
+        "berserker_6",
+        "berserker_7",
+        "berserker_8",
+        "berserker_9",
+        "berserker_10",
+        "berserker_11",
+        "berserker_12",
+        "berserker_13",
+        "berserker_14",
+        "berserker_15"
+      ],
+      "loop" : true
+    },
+    "charge" : {
+      "fps" : 12,
+      "frames" : [
+        "charge_0",
+        "charge_1",
+        "charge_2"
+      ],
+      "loop" : true
+    },
+    "charge_slash" : {
+      "fps" : 12,
+      "frames" : [
+        "charge_slash_0",
+        "charge_slash_1",
+        "charge_slash_2",
+        "charge_slash_3",
+        "charge_slash_4",
+        "charge_slash_5"
+      ],
+      "loop" : true
+    },
+    "curl" : {
+      "fps" : 12,
+      "frames" : [
+        "curl_0",
+        "curl_1",
+        "curl_2",
+        "curl_3",
+        "curl_4",
+        "curl_5",
+        "curl_4",
+        "curl_5",
+        "curl_4",
+        "curl_5",
+        "curl_4",
+        "curl_5",
+        "curl_4",
+        "curl_5"
+      ],
+      "loop" : true
+    },
+    "dash_slash" : {
+      "fps" : 12,
+      "frames" : [
+        "dash_slash_0",
+        "dash_slash_1",
+        "dash_slash_2",
+        "dash_slash_3",
+        "dash_slash_4",
+        "dash_slash_5",
+        "dash_slash_6",
+        "dash_slash_7",
+        "dash_slash_8"
+      ],
+      "loop" : true
+    },
+    "dive" : {
+      "fps" : 12,
+      "frames" : [
+        "dive_0",
+        "dive_1",
+        "dive_2",
+        "dive_3"
+      ],
+      "loop" : true
+    },
+    "dive_land" : {
+      "fps" : 12,
+      "frames" : [
+        "dive_land_0",
+        "dive_land_1",
+        "dive_land_2",
+        "dive_land_3"
+      ],
+      "loop" : true
+    },
+    "dodge" : {
+      "fps" : 12,
+      "frames" : [
+        "dodge_0",
+        "dodge_1",
+        "dodge_2",
+        "dodge_3",
+        "dodge_4",
+        "dodge_5",
+        "dodge_6",
+        "dodge_7",
+        "dodge_8",
+        "dodge_9"
+      ],
+      "loop" : true
+    },
+    "fall" : {
+      "fps" : 12,
+      "frames" : [
+        "fall_0",
+        "fall_1"
+      ],
+      "loop" : true
+    },
+    "getup" : {
+      "fps" : 12,
+      "frames" : [
+        "getup_0",
+        "getup_1",
+        "getup_2",
+        "getup_3"
+      ],
+      "loop" : true
+    },
+    "hit" : {
+      "fps" : 12,
+      "frames" : [
+        "hit_0",
+        "hit_1"
+      ],
+      "loop" : true
+    },
+    "idle" : {
+      "fps" : 12,
+      "frames" : [
+        "idle_0",
+        "idle_1",
+        "idle_2",
+        "idle_3",
+        "idle_4",
+        "idle_5",
+        "idle_6",
+        "idle_7",
+        "idle_8",
+        "idle_9",
+        "idle_0",
+        "idle_1",
+        "idle_2",
+        "idle_3",
+        "idle_4",
+        "idle_5",
+        "idle_6",
+        "idle_7",
+        "idle_8",
+        "idle_9",
+        "idle_10",
+        "idle_11",
+        "idle_12",
+        "idle_13",
+        "idle_14",
+        "idle_15",
+        "idle_16",
+        "idle_17",
+        "idle_18",
+        "idle_19",
+        "idle_20",
+        "idle_21",
+        "idle_22"
+      ],
+      "loop" : true
+    },
+    "jump" : {
+      "fps" : 12,
+      "frames" : [
+        "jump_0",
+        "jump_1"
+      ],
+      "loop" : true
+    },
+    "knockdown" : {
+      "fps" : 12,
+      "frames" : [
+        "knockdown_0",
+        "knockdown_1",
+        "knockdown_2",
+        "knockdown_3",
+        "knockdown_4",
+        "knockdown_5",
+        "knockdown_6",
+        "knockdown_7",
+        "knockdown_8",
+        "knockdown_9",
+        "knockdown_10",
+        "knockdown_11",
+        "knockdown_12",
+        "knockdown_13"
+      ],
+      "loop" : true
+    },
+    "land" : {
+      "fps" : 12,
+      "frames" : [
+        "land_0",
+        "land_1",
+        "land_2",
+        "land_3"
+      ],
+      "loop" : true
+    },
+    "pose" : {
+      "fps" : 12,
+      "frames" : [
+        "pose_0",
+        "pose_1",
+        "pose_2",
+        "pose_3",
+        "pose_2",
+        "pose_3",
+        "pose_2",
+        "pose_3",
+        "pose_2",
+        "pose_3",
+        "pose_4",
+        "pose_5",
+        "pose_6",
+        "pose_7",
+        "pose_8",
+        "pose_9",
+        "pose_10",
+        "pose_11"
+      ],
+      "loop" : true
+    },
+    "pose_end" : {
+      "fps" : 12,
+      "frames" : [
+        "pose_end_0",
+        "pose_end_1",
+        "pose_end_2",
+        "pose_end_3",
+        "pose_end_4",
+        "pose_end_5",
+        "pose_end_6",
+        "pose_end_7",
+        "pose_end_0",
+        "pose_end_1",
+        "pose_end_2",
+        "pose_end_3",
+        "pose_end_4",
+        "pose_end_5",
+        "pose_end_6",
+        "pose_end_7",
+        "pose_end_0",
+        "pose_end_1",
+        "pose_end_2",
+        "pose_end_3",
+        "pose_end_4",
+        "pose_end_5",
+        "pose_end_6",
+        "pose_end_7",
+        "pose_end_8",
+        "pose_end_9",
+        "pose_end_10",
+        "pose_end_11",
+        "pose_end_12",
+        "pose_end_13",
+        "pose_end_14",
+        "pose_end_15",
+        "pose_end_16",
+        "pose_end_17",
+        "pose_end_14",
+        "pose_end_15",
+        "pose_end_16",
+        "pose_end_17",
+        "pose_end_18",
+        "pose_end_19",
+        "pose_end_20"
+      ],
+      "loop" : true
+    },
+    "pounce" : {
+      "fps" : 12,
+      "frames" : [
+        "pounce_0",
+        "pounce_1",
+        "pounce_2",
+        "pounce_3",
+        "pounce_4",
+        "pounce_5",
+        "pounce_6",
+        "pounce_7",
+        "pounce_8",
+        "pounce_9",
+        "pounce_10"
+      ],
+      "loop" : true
+    },
+    "rainbow_in" : {
+      "fps" : 12,
+      "frames" : [
+        "rainbow_in_0",
+        "rainbow_in_1",
+        "rainbow_in_2",
+        "rainbow_in_3",
+        "rainbow_in_4",
+        "rainbow_in_5",
+        "rainbow_in_6",
+        "rainbow_in_7",
+        "rainbow_in_8",
+        "rainbow_in_9",
+        "rainbow_in_10",
+        "rainbow_in_11",
+        "rainbow_in_12",
+        "rainbow_in_13",
+        "rainbow_in_14",
+        "rainbow_in_15",
+        "rainbow_in_16",
+        "rainbow_in_17",
+        "rainbow_in_18",
+        "rainbow_in_19",
+        "rainbow_in_20",
+        "rainbow_in_21",
+        "rainbow_in_22",
+        "rainbow_in_23",
+        "rainbow_in_24",
+        "rainbow_in_25",
+        "rainbow_in_26",
+        "rainbow_in_27",
+        "rainbow_in_28",
+        "rainbow_in_29",
+        "rainbow_in_30",
+        "rainbow_in_31",
+        "rainbow_in_32",
+        "rainbow_in_33",
+        "rainbow_in_34",
+        "rainbow_in_35"
+      ],
+      "loop" : true
+    },
+    "rainbow_out" : {
+      "fps" : 12,
+      "frames" : [
+        "rainbow_out_0",
+        "rainbow_out_1",
+        "rainbow_out_2",
+        "rainbow_out_3",
+        "rainbow_out_4",
+        "rainbow_out_5",
+        "rainbow_out_6",
+        "rainbow_out_7",
+        "rainbow_out_8",
+        "rainbow_out_9",
+        "rainbow_out_10",
+        "rainbow_out_11",
+        "rainbow_out_12",
+        "rainbow_out_13",
+        "rainbow_out_14",
+        "rainbow_out_15",
+        "rainbow_out_16",
+        "rainbow_out_17",
+        "rainbow_out_18",
+        "rainbow_out_19",
+        "rainbow_out_20",
+        "rainbow_out_21",
+        "rainbow_out_22",
+        "rainbow_out_23",
+        "rainbow_out_24",
+        "rainbow_out_25",
+        "rainbow_out_26",
+        "rainbow_out_27",
+        "rainbow_out_28",
+        "rainbow_out_29",
+        "rainbow_out_30",
+        "rainbow_out_31",
+        "rainbow_out_32",
+        "rainbow_out_33",
+        "rainbow_out_34",
+        "rainbow_out_35"
+      ],
+      "loop" : true
+    },
+    "rising_claw" : {
+      "fps" : 12,
+      "frames" : [
+        "rising_claw_0",
+        "rising_claw_1",
+        "rising_claw_2",
+        "rising_claw_3",
+        "rising_claw_4",
+        "rising_claw_5",
+        "rising_claw_6",
+        "rising_claw_7",
+        "rising_claw_8",
+        "rising_claw_9",
+        "rising_claw_10",
+        "rising_claw_11",
+        "rising_claw_12",
+        "rising_claw_13",
+        "rising_claw_14",
+        "rising_claw_15",
+        "rising_claw_16"
+      ],
+      "loop" : true
+    },
+    "skid" : {
+      "fps" : 12,
+      "frames" : [
+        "skid_0",
+        "skid_1",
+        "skid_2",
+        "skid_3"
+      ],
+      "loop" : true
+    },
+    "slash1" : {
+      "fps" : 12,
+      "frames" : [
+        "slash1_0",
+        "slash1_1",
+        "slash1_1",
+        "slash1_2"
+      ],
+      "loop" : true
+    },
+    "slash2" : {
+      "fps" : 12,
+      "frames" : [
+        "slash2_0",
+        "slash2_1",
+        "slash2_2",
+        "slash2_3",
+        "slash2_4",
+        "slash2_5"
+      ],
+      "loop" : true
+    },
+    "slash3" : {
+      "fps" : 12,
+      "frames" : [
+        "slash3_0",
+        "slash3_1",
+        "slash3_2",
+        "slash3_3",
+        "slash3_4",
+        "slash3_5",
+        "slash3_6"
+      ],
+      "loop" : true
+    },
+    "slash4" : {
+      "fps" : 12,
+      "frames" : [
+        "slash4_0",
+        "slash4_1",
+        "slash4_2",
+        "slash4_3",
+        "slash4_4",
+        "slash4_5"
+      ],
+      "loop" : true
+    },
+    "slash5" : {
+      "fps" : 12,
+      "frames" : [
+        "slash5_0",
+        "slash5_1",
+        "slash5_2",
+        "slash5_3",
+        "slash5_4",
+        "slash5_5"
+      ],
+      "loop" : true
+    },
+    "slash6" : {
+      "fps" : 12,
+      "frames" : [
+        "slash6_0",
+        "slash6_1",
+        "slash6_2",
+        "slash6_3",
+        "slash6_4",
+        "slash6_5"
+      ],
+      "loop" : true
+    },
+    "snikt" : {
+      "fps" : 12,
+      "frames" : [
+        "snikt_0",
+        "snikt_1",
+        "snikt_2",
+        "snikt_3",
+        "snikt_4",
+        "snikt_5",
+        "snikt_6",
+        "snikt_7",
+        "snikt_8",
+        "snikt_9",
+        "snikt_10",
+        "snikt_11",
+        "snikt_12",
+        "snikt_13",
+        "snikt_14",
+        "snikt_0",
+        "snikt_1",
+        "snikt_2",
+        "snikt_3",
+        "snikt_4",
+        "snikt_5",
+        "snikt_6",
+        "snikt_7",
+        "snikt_8",
+        "snikt_9",
+        "snikt_10",
+        "snikt_11",
+        "snikt_12",
+        "snikt_13",
+        "snikt_14",
+        "snikt_15",
+        "snikt_16",
+        "snikt_17",
+        "snikt_18",
+        "snikt_19",
+        "snikt_20",
+        "snikt_21",
+        "snikt_22",
+        "snikt_23",
+        "snikt_24",
+        "snikt_25",
+        "snikt_26",
+        "snikt_27",
+        "snikt_28",
+        "snikt_29",
+        "snikt_30",
+        "snikt_31",
+        "snikt_32",
+        "snikt_33",
+        "snikt_34",
+        "snikt_35",
+        "snikt_36",
+        "snikt_37"
+      ],
+      "loop" : true
+    },
+    "spin" : {
+      "fps" : 12,
+      "frames" : [
+        "spin_0",
+        "spin_1",
+        "spin_2",
+        "spin_3",
+        "spin_2",
+        "spin_3",
+        "spin_4",
+        "spin_5",
+        "spin_6",
+        "spin_7",
+        "spin_8",
+        "spin_9"
+      ],
+      "loop" : true
+    },
+    "sprint" : {
+      "fps" : 12,
+      "frames" : [
+        "sprint_0",
+        "sprint_1",
+        "sprint_2",
+        "sprint_3",
+        "sprint_4",
+        "sprint_5",
+        "sprint_6",
+        "sprint_7",
+        "sprint_8"
+      ],
+      "loop" : true
+    },
+    "walk" : {
+      "fps" : 12,
+      "frames" : [
+        "walk_0",
+        "walk_1",
+        "walk_2",
+        "walk_3",
+        "walk_4",
+        "walk_5",
+        "walk_6",
+        "walk_7"
+      ],
+      "loop" : true
+    },
+    "x_slash" : {
+      "fps" : 12,
+      "frames" : [
+        "x_slash_0",
+        "x_slash_1",
+        "x_slash_2",
+        "x_slash_3",
+        "x_slash_2",
+        "x_slash_3",
+        "x_slash_2",
+        "x_slash_3",
+        "x_slash_4",
+        "x_slash_5",
+        "x_slash_6",
+        "x_slash_7",
+        "x_slash_8",
+        "x_slash_9",
+        "x_slash_10",
+        "x_slash_11",
+        "x_slash_12",
+        "x_slash_13"
+      ],
+      "loop" : true
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "lightning_bolt",
+  "name": "Lightning Bolt",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 15,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "dash",
+      "duration": 1.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 1400,
+        "curve": "easeOut"
+      },
+      "sound": "whoosh"
+    },
+    {
+      "clip": "bolt_throw",
+      "duration": 0.5,
+      "facing": "toward_center",
+      "sound": "zap",
+      "effects": [
+        {
+          "type": "projectile",
+          "clip": "spark",
+          "at": "hand",
+          "speed": 650,
+          "distance": 280,
+          "delay": 0.35
+        }
+      ]
+    },
+    {
+      "clip": "idle",
+      "duration": 0.9,
+      "speech": {
+        "pool": "fast",
+        "chance": 0.3
+      }
+    },
+    {
+      "clip": "roll",
+      "duration": 1.0,
+      "motion": {
+        "type": "arc",
+        "to": "opposite_offscreen",
+        "height": 150,
+        "curve": "easeOut"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

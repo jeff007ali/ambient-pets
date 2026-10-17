@@ -1,0 +1,246 @@
+{
+  "source": "ThirdParty/source-assets/genesis-flash/sheet.png (Sega Genesis, Justice League Task Force, Fighters - Flash; ripped by Apocalypse) + ThirdParty/source-assets/snes-flash/sheet.png (SNES version; ripped by HijodeKrypton)",
+  "slice": {
+    "bg": "#008080",
+    "merge": 1,
+    "minPixels": 40
+  },
+  "pivot": "feet",
+  "pivotByClip": {
+    "whirl": "center",
+    "spark": "center",
+    "dash": "torso",
+    "roll": "center"
+  },
+  "clips": {
+    "pose": [
+      0
+    ],
+    "idle": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "walk": [
+      7,
+      8
+    ],
+    "crouch": [
+      9
+    ],
+    "jump": [
+      10,
+      11
+    ],
+    "roll": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "land": [
+      16,
+      9
+    ],
+    "jab": [
+      17,
+      18
+    ],
+    "punch": [
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "lightning_punch": [
+      24,
+      25,
+      26,
+      27
+    ],
+    "kick": [
+      28,
+      29
+    ],
+    "high_kick": [
+      30,
+      31,
+      32
+    ],
+    "crouch_jab": [
+      33,
+      34
+    ],
+    "uppercut": [
+      39
+    ],
+    "sweep": [
+      40,
+      41
+    ],
+    "slide": [
+      42,
+      43
+    ],
+    "air_kick": [
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "bolt_throw": [
+      51,
+      52,
+      53,
+      55
+    ],
+    "spin_kick": [
+      54
+    ],
+    "arm_spin": [
+      67,
+      68,
+      69,
+      70
+    ],
+    "dash": [
+      71
+    ],
+    "vortex": [
+      72,
+      73,
+      74
+    ],
+    "victory": [
+      75
+    ],
+    "hit": [
+      76,
+      77,
+      78
+    ],
+    "knockdown": [
+      79,
+      80,
+      81
+    ],
+    "getup": [
+      82
+    ],
+    "dizzy": [
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89
+    ],
+    "whirl": [
+      56,
+      57,
+      58,
+      59,
+      60,
+      61
+    ],
+    "spark": [
+      62,
+      63,
+      64,
+      65,
+      66
+    ]
+  },
+  "extra": [
+    {
+      "work": "ThirdParty/source-assets/snes-flash/work",
+      "pivot": "feet",
+      "pivotByClip": {
+        "s_run": "torso",
+        "s_speed": "torso",
+        "s_tornado": "center"
+      },
+      "clips": {
+        "s_idle": [
+          0,
+          1,
+          2,
+          1
+        ],
+        "s_walk": [
+          6,
+          7,
+          8,
+          7
+        ],
+        "s_backhand": [
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "s_flip": [
+          36,
+          37,
+          38,
+          39
+        ],
+        "s_run": [
+          49,
+          50,
+          51,
+          52
+        ],
+        "s_speed": [
+          53,
+          54
+        ],
+        "s_zip": [
+          55
+        ],
+        "s_vibrate": [
+          56,
+          57
+        ],
+        "s_rapid": [
+          58,
+          59,
+          61,
+          62,
+          64,
+          65
+        ],
+        "s_knockdown": [
+          77,
+          78,
+          79,
+          80
+        ],
+        "s_getup": [
+          76,
+          75
+        ],
+        "s_rub_head": [
+          81,
+          82,
+          83,
+          82
+        ],
+        "s_tornado": [
+          67,
+          68,
+          70
+        ]
+      }
+    }
+  ]
+}

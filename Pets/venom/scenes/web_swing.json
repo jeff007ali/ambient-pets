@@ -1,0 +1,86 @@
+{
+  "id": "web_swing",
+  "name": "Web Swing",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 15,
+  "region": "air",
+  "steps": [
+    {
+      "clip": "webswing",
+      "duration": 1.6,
+      "effects": [
+        {
+          "type": "tether_line"
+        }
+      ],
+      "motion": {
+        "type": "swing",
+        "from": "side_offscreen",
+        "to": "center",
+        "sweep": 70,
+        "curve": "easeInOut",
+        "attach": "top"
+      },
+      "sound": "thwip"
+    },
+    {
+      "clip": "apex",
+      "duration": 0.45,
+      "motion": {
+        "type": "arc",
+        "advance": [
+          100,
+          0
+        ],
+        "height": 40,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "fall",
+      "duration": 0.6,
+      "motion": {
+        "type": "drop",
+        "to": "ground"
+      }
+    },
+    {
+      "clip": "land",
+      "duration": 0.29,
+      "effects": [
+        "dust_puff",
+        "squash"
+      ],
+      "sound": "thud"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.2,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "lurk",
+        "chance": 0.3
+      }
+    },
+    {
+      "clip": "jump",
+      "duration": 0.9,
+      "effects": [
+        {
+          "type": "tether_line",
+          "shoot": 0.08
+        }
+      ],
+      "motion": {
+        "type": "exit",
+        "to": "top_offscreen",
+        "curve": "easeIn"
+      },
+      "sound": "thwip"
+    }
+  ]
+}

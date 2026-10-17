@@ -1,0 +1,388 @@
+{
+  "clips" : {
+    "air_kick" : {
+      "fps" : 8,
+      "frames" : [
+        "air_kick_0",
+        "air_kick_1",
+        "air_kick_2",
+        "air_kick_3",
+        "air_kick_4",
+        "air_kick_5",
+        "air_kick_6"
+      ],
+      "loop" : true
+    },
+    "arm_spin" : {
+      "fps" : 8,
+      "frames" : [
+        "arm_spin_0",
+        "arm_spin_1",
+        "arm_spin_2",
+        "arm_spin_3"
+      ],
+      "loop" : true
+    },
+    "bolt_throw" : {
+      "fps" : 8,
+      "frames" : [
+        "bolt_throw_0",
+        "bolt_throw_1",
+        "bolt_throw_2",
+        "bolt_throw_3"
+      ],
+      "loop" : true
+    },
+    "crouch" : {
+      "fps" : 8,
+      "frames" : [
+        "crouch_0"
+      ],
+      "loop" : true
+    },
+    "crouch_jab" : {
+      "fps" : 8,
+      "frames" : [
+        "crouch_jab_0",
+        "crouch_jab_1"
+      ],
+      "loop" : true
+    },
+    "dash" : {
+      "fps" : 8,
+      "frames" : [
+        "dash_0"
+      ],
+      "loop" : true
+    },
+    "dizzy" : {
+      "fps" : 8,
+      "frames" : [
+        "dizzy_0",
+        "dizzy_1",
+        "dizzy_2",
+        "dizzy_3",
+        "dizzy_4",
+        "dizzy_5",
+        "dizzy_6"
+      ],
+      "loop" : true
+    },
+    "getup" : {
+      "fps" : 8,
+      "frames" : [
+        "getup_0"
+      ],
+      "loop" : true
+    },
+    "high_kick" : {
+      "fps" : 8,
+      "frames" : [
+        "high_kick_0",
+        "high_kick_1",
+        "high_kick_2"
+      ],
+      "loop" : true
+    },
+    "hit" : {
+      "fps" : 8,
+      "frames" : [
+        "hit_0",
+        "hit_1",
+        "hit_2"
+      ],
+      "loop" : true
+    },
+    "idle" : {
+      "fps" : 8,
+      "frames" : [
+        "idle_0",
+        "idle_1",
+        "idle_2",
+        "idle_3",
+        "idle_4",
+        "idle_5"
+      ],
+      "loop" : true
+    },
+    "jab" : {
+      "fps" : 8,
+      "frames" : [
+        "jab_0",
+        "jab_1"
+      ],
+      "loop" : true
+    },
+    "jump" : {
+      "fps" : 8,
+      "frames" : [
+        "jump_0",
+        "jump_1"
+      ],
+      "loop" : true
+    },
+    "kick" : {
+      "fps" : 8,
+      "frames" : [
+        "kick_0",
+        "kick_1"
+      ],
+      "loop" : true
+    },
+    "knockdown" : {
+      "fps" : 8,
+      "frames" : [
+        "knockdown_0",
+        "knockdown_1",
+        "knockdown_2"
+      ],
+      "loop" : true
+    },
+    "land" : {
+      "fps" : 8,
+      "frames" : [
+        "land_0",
+        "land_1"
+      ],
+      "loop" : true
+    },
+    "lightning_punch" : {
+      "fps" : 8,
+      "frames" : [
+        "lightning_punch_0",
+        "lightning_punch_1",
+        "lightning_punch_2",
+        "lightning_punch_3"
+      ],
+      "loop" : true
+    },
+    "pose" : {
+      "fps" : 8,
+      "frames" : [
+        "pose_0"
+      ],
+      "loop" : true
+    },
+    "punch" : {
+      "fps" : 8,
+      "frames" : [
+        "punch_0",
+        "punch_1",
+        "punch_2",
+        "punch_3",
+        "punch_4"
+      ],
+      "loop" : true
+    },
+    "roll" : {
+      "fps" : 8,
+      "frames" : [
+        "roll_0",
+        "roll_1",
+        "roll_2",
+        "roll_3"
+      ],
+      "loop" : true
+    },
+    "s_backhand" : {
+      "fps" : 8,
+      "frames" : [
+        "s_backhand_0",
+        "s_backhand_1",
+        "s_backhand_2",
+        "s_backhand_3",
+        "s_backhand_4"
+      ],
+      "loop" : true
+    },
+    "s_flip" : {
+      "fps" : 8,
+      "frames" : [
+        "s_flip_0",
+        "s_flip_1",
+        "s_flip_2",
+        "s_flip_3"
+      ],
+      "loop" : true
+    },
+    "s_getup" : {
+      "fps" : 8,
+      "frames" : [
+        "s_getup_0",
+        "s_getup_1"
+      ],
+      "loop" : true
+    },
+    "s_idle" : {
+      "fps" : 8,
+      "frames" : [
+        "s_idle_0",
+        "s_idle_1",
+        "s_idle_2",
+        "s_idle_1"
+      ],
+      "loop" : true
+    },
+    "s_knockdown" : {
+      "fps" : 8,
+      "frames" : [
+        "s_knockdown_0",
+        "s_knockdown_1",
+        "s_knockdown_2",
+        "s_knockdown_3"
+      ],
+      "loop" : true
+    },
+    "s_rapid" : {
+      "fps" : 8,
+      "frames" : [
+        "s_rapid_0",
+        "s_rapid_1",
+        "s_rapid_2",
+        "s_rapid_3",
+        "s_rapid_4",
+        "s_rapid_5"
+      ],
+      "loop" : true
+    },
+    "s_rub_head" : {
+      "fps" : 8,
+      "frames" : [
+        "s_rub_head_0",
+        "s_rub_head_1",
+        "s_rub_head_2",
+        "s_rub_head_1"
+      ],
+      "loop" : true
+    },
+    "s_run" : {
+      "fps" : 8,
+      "frames" : [
+        "s_run_0",
+        "s_run_1",
+        "s_run_2",
+        "s_run_3"
+      ],
+      "loop" : true
+    },
+    "s_speed" : {
+      "fps" : 8,
+      "frames" : [
+        "s_speed_0",
+        "s_speed_1"
+      ],
+      "loop" : true
+    },
+    "s_tornado" : {
+      "fps" : 8,
+      "frames" : [
+        "s_tornado_0",
+        "s_tornado_1",
+        "s_tornado_2"
+      ],
+      "loop" : true
+    },
+    "s_vibrate" : {
+      "fps" : 8,
+      "frames" : [
+        "s_vibrate_0",
+        "s_vibrate_1"
+      ],
+      "loop" : true
+    },
+    "s_walk" : {
+      "fps" : 8,
+      "frames" : [
+        "s_walk_0",
+        "s_walk_1",
+        "s_walk_2",
+        "s_walk_1"
+      ],
+      "loop" : true
+    },
+    "s_zip" : {
+      "fps" : 8,
+      "frames" : [
+        "s_zip_0"
+      ],
+      "loop" : true
+    },
+    "slide" : {
+      "fps" : 8,
+      "frames" : [
+        "slide_0",
+        "slide_1"
+      ],
+      "loop" : true
+    },
+    "spark" : {
+      "fps" : 8,
+      "frames" : [
+        "spark_0",
+        "spark_1",
+        "spark_2",
+        "spark_3",
+        "spark_4"
+      ],
+      "loop" : true
+    },
+    "spin_kick" : {
+      "fps" : 8,
+      "frames" : [
+        "spin_kick_0"
+      ],
+      "loop" : true
+    },
+    "sweep" : {
+      "fps" : 8,
+      "frames" : [
+        "sweep_0",
+        "sweep_1"
+      ],
+      "loop" : true
+    },
+    "uppercut" : {
+      "fps" : 8,
+      "frames" : [
+        "uppercut_0"
+      ],
+      "loop" : true
+    },
+    "victory" : {
+      "fps" : 8,
+      "frames" : [
+        "victory_0"
+      ],
+      "loop" : true
+    },
+    "vortex" : {
+      "fps" : 8,
+      "frames" : [
+        "vortex_0",
+        "vortex_1",
+        "vortex_2"
+      ],
+      "loop" : true
+    },
+    "walk" : {
+      "fps" : 8,
+      "frames" : [
+        "walk_0",
+        "walk_1"
+      ],
+      "loop" : true
+    },
+    "whirl" : {
+      "fps" : 8,
+      "frames" : [
+        "whirl_0",
+        "whirl_1",
+        "whirl_2",
+        "whirl_3",
+        "whirl_4",
+        "whirl_5"
+      ],
+      "loop" : true
+    }
+  }
+}

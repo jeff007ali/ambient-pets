@@ -1,0 +1,58 @@
+{
+  "id": "somersault",
+  "name": "Somersault",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "surprise"
+  ],
+  "cooldownMinutes": 12,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "roll",
+      "duration": 0.9,
+      "motion": {
+        "type": "arc",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "height": 150,
+        "curve": "easeIn"
+      },
+      "sound": "whoosh"
+    },
+    {
+      "clip": "land",
+      "duration": 0.25,
+      "effects": [
+        "dust_puff",
+        "squash"
+      ],
+      "sound": "thud"
+    },
+    {
+      "clip": "victory",
+      "duration": 0.5,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "fast",
+        "chance": 0.4
+      }
+    },
+    {
+      "clip": "idle",
+      "duration": 0.8
+    },
+    {
+      "clip": "roll",
+      "duration": 1.0,
+      "motion": {
+        "type": "arc",
+        "to": "opposite_offscreen",
+        "height": 150,
+        "curve": "easeOut"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

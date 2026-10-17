@@ -1,0 +1,28 @@
+{
+  "formatVersion": 1,
+  "id": "venom",
+  "name": "Venom",
+  "version": "0.1.0",
+  "renderer": "sprite",
+  "height": 74,
+  "personality": {
+    "activity": 0.9,
+    "friendliness": 0.3,
+    "mischievousness": 0.9,
+    "interaction": 0.5,
+    "curiosity": 0.5
+  },
+  "capabilities": {
+    "canWalk": true,
+    "canSwing": true,
+    "cursorTracking": true,
+    "multiMonitor": true
+  },
+  "sounds": {
+    "chomp": "sounds/chomp.wav",
+    "roar": "sounds/roar.wav",
+    "swish": "sounds/swish.wav",
+    "thud": "sounds/thud.wav",
+    "thwip": "sounds/thwip.wav"
+  }
+}

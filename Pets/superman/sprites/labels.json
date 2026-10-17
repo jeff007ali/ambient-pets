@@ -1,0 +1,322 @@
+{
+  "source": "ThirdParty/source-assets/snes-superman/sheet.png (SNES, Justice League Task Force, Fighters - Superman; ripped by HijodeKrypton) + ThirdParty/source-assets/arcade-superman/sheet.png (Arcade, Superman, Taito 1988)",
+  "slice": {
+    "merge": 0,
+    "minPixels": 40
+  },
+  "pivot": "feet",
+  "pivotByClip": {
+    "fly": "center",
+    "fly_punch": "center",
+    "dive_down": "center",
+    "dive_kick": "center",
+    "heat": "left",
+    "heat_hit": "center",
+    "breath": "left"
+  },
+  "clips": {
+    "idle": [
+      0,
+      1,
+      2,
+      1
+    ],
+    "crouch": [
+      3,
+      4
+    ],
+    "jump": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "cape_up": [
+      10
+    ],
+    "hover": [
+      17,
+      11
+    ],
+    "fly": [
+      13
+    ],
+    "dive_kick": [
+      14
+    ],
+    "dive_down": [
+      56
+    ],
+    "land": [
+      18,
+      4
+    ],
+    "jab": [
+      19,
+      20
+    ],
+    "punch": [
+      21,
+      22,
+      23
+    ],
+    "uppercut": [
+      43,
+      44,
+      45,
+      46
+    ],
+    "power_up": [
+      51,
+      54
+    ],
+    "liftoff": [
+      55
+    ],
+    "heat_stance": [
+      57,
+      58
+    ],
+    "freeze_stance": [
+      66,
+      67
+    ],
+    "fire_punch": [
+      74,
+      75,
+      76,
+      77
+    ],
+    "fly_punch": [
+      78,
+      79
+    ],
+    "recover": [
+      80
+    ],
+    "hit": [
+      81,
+      82,
+      83
+    ],
+    "knockdown": [
+      84,
+      85,
+      86,
+      88
+    ],
+    "getup": [
+      89,
+      90,
+      91,
+      92,
+      93
+    ],
+    "cape_flourish": [
+      96,
+      97,
+      98,
+      99,
+      98,
+      97
+    ],
+    "proud": [
+      100,
+      101,
+      102,
+      101
+    ],
+    "heat": [
+      59,
+      60,
+      61,
+      62
+    ],
+    "heat_hit": [
+      63,
+      64,
+      65
+    ],
+    "breath": [
+      68,
+      69,
+      70,
+      71,
+      72,
+      73
+    ]
+  },
+  "extra": [
+    {
+      "work": "ThirdParty/source-assets/arcade-superman/work",
+      "pivot": "feet",
+      "pivotByClip": {
+        "a_bolt": "center",
+        "a_ring": "center"
+      },
+      "clips": {
+        "a_clark_walk": [
+          41,
+          45,
+          47,
+          50,
+          52,
+          54,
+          56,
+          58,
+          60,
+          62,
+          63,
+          65,
+          67,
+          69,
+          71,
+          73,
+          75,
+          76,
+          78,
+          79,
+          81
+        ],
+        "a_change": [
+          43,
+          44,
+          46,
+          49,
+          51,
+          53,
+          55,
+          57,
+          59,
+          61,
+          64,
+          66,
+          68,
+          70,
+          72
+        ],
+        "a_leap": [
+          74
+        ],
+        "a_idle": [
+          84,
+          85
+        ],
+        "a_walk": [
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126
+        ],
+        "a_punch": [
+          92,
+          93,
+          94,
+          95,
+          96
+        ],
+        "a_kick": [
+          97,
+          98,
+          99,
+          100,
+          101
+        ],
+        "a_crouch": [
+          132,
+          133
+        ],
+        "a_charge": [
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112
+        ],
+        "a_blast": [
+          113,
+          114,
+          115,
+          116,
+          117
+        ],
+        "a_up": [
+          90,
+          91
+        ],
+        "a_fist_up": [
+          145
+        ],
+        "a_fly": [
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          193,
+          194,
+          195,
+          196,
+          197
+        ],
+        "a_fly_idle": [
+          216,
+          217,
+          218,
+          219
+        ],
+        "a_fly_blast": [
+          207,
+          208,
+          209
+        ],
+        "a_glow": [
+          294,
+          295,
+          296
+        ],
+        "a_dissolve": [
+          331,
+          332,
+          333,
+          334,
+          335,
+          336,
+          337,
+          338,
+          339,
+          340,
+          341,
+          342
+        ],
+        "a_bolt": [
+          236,
+          237,
+          238,
+          239
+        ],
+        "a_ring": [
+          224,
+          225,
+          226,
+          227,
+          228,
+          229,
+          230
+        ]
+      }
+    }
+  ]
+}

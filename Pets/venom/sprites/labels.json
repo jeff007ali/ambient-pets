@@ -1,0 +1,123 @@
+{
+  "source": "ThirdParty/source-assets/cosmic-venom (Marvel Cosmic Invasion, Playable Characters - Venom, Default suit; Boss/ and effects/ unused)",
+  "dir": "ThirdParty/source-assets/cosmic-venom/default",
+  "facing": "right",
+  "anchor": [
+    128,
+    226
+  ],
+  "canvas": [
+    256,
+    256
+  ],
+  "clips": {
+    "idle": [
+      "Idle_*"
+    ],
+    "walk": [
+      "Walk_*"
+    ],
+    "sprint": [
+      "Sprintstart.png",
+      "Sprint_*"
+    ],
+    "skid": [
+      "Sprintend_*"
+    ],
+    "jump": [
+      "Jump_*"
+    ],
+    "apex": [
+      "Jumpapex_*"
+    ],
+    "fall": [
+      "Jumpfall_*"
+    ],
+    "land": [
+      "Land_*"
+    ],
+    "jab": [
+      "Attack1_*"
+    ],
+    "slam": [
+      "Attack2_*"
+    ],
+    "tendril": [
+      "Attack3_*"
+    ],
+    "lunge": [
+      "Attack4_*"
+    ],
+    "chomp": [
+      "Attackair_*"
+    ],
+    "charge": [
+      "Attackchargedstart_*",
+      "Attackchargedheld_*"
+    ],
+    "charge_hit": [
+      "Attackcharged_*",
+      "Attackchargedend_*"
+    ],
+    "dash_bite": [
+      "Attacksprinting_*"
+    ],
+    "block": [
+      "Blockstart_*",
+      "Block_*"
+    ],
+    "block_end": [
+      "Blockend_*"
+    ],
+    "whip": [
+      "Parry_*"
+    ],
+    "grab": [
+      "Powergrabstart_*",
+      "Powergrabwhiff_*"
+    ],
+    "toss": [
+      "Powerthrow2_*"
+    ],
+    "stomp": [
+      "Powerairgrabstompstart_*",
+      "Powerairgrabstomp_*"
+    ],
+    "stomp_land": [
+      "Powerairgrabstompland_*"
+    ],
+    "webswing": [
+      "Webswing_*"
+    ],
+    "tendrils": [
+      "Special_*"
+    ],
+    "hit": [
+      "Hitstun_*"
+    ],
+    "knockdown": [
+      "Kd_*",
+      "Kdfall_*",
+      "Down.png",
+      "Downbounce_*"
+    ],
+    "getup": [
+      "Downgetup_*"
+    ],
+    "loom": [
+      "Selectscreenstart_*"
+    ],
+    "roar": [
+      "Selectscreen_*"
+    ],
+    "roar_end": [
+      "Selectscreenend_*"
+    ],
+    "rainbow_in": [
+      "Spawnrainbow_*"
+    ],
+    "rainbow_out": [
+      "Spawnrainbowend_*"
+    ]
+  }
+}

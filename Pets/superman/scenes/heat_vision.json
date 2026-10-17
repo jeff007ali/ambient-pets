@@ -1,0 +1,71 @@
+{
+  "id": "heat_vision",
+  "name": "Heat Vision",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "flashy"
+  ],
+  "cooldownMinutes": 25,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "dive_down",
+      "duration": 0.8,
+      "motion": {
+        "type": "enter",
+        "from": "top_offscreen",
+        "to": "anchor",
+        "curve": "easeIn"
+      }
+    },
+    {
+      "clip": "crouch",
+      "duration": 0.25,
+      "effects": [
+        "dust_puff",
+        "squash"
+      ],
+      "sound": "boom"
+    },
+    {
+      "clip": "heat_stance",
+      "duration": 1.4,
+      "facing": "toward_center",
+      "effects": [
+        {
+          "type": "projectile",
+          "clip": "heat",
+          "hit": "heat_hit",
+          "at": "muzzle",
+          "speed": 700,
+          "distance": 300,
+          "delay": 0.3
+        }
+      ],
+      "sound": "beam"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "heat",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "power_up",
+      "duration": 0.5
+    },
+    {
+      "clip": "liftoff",
+      "duration": 1.0,
+      "motion": {
+        "type": "exit",
+        "to": "top_offscreen",
+        "curve": "easeIn"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "big_bite",
+  "name": "Big Bite",
+  "tier": "funny",
+  "weight": 1.0,
+  "tags": [
+    "surprise"
+  ],
+  "cooldownMinutes": 25,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 230,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "skid",
+      "duration": 0.33
+    },
+    {
+      "clip": "chomp",
+      "duration": 1.43,
+      "facing": "toward_center",
+      "sound": "chomp"
+    },
+    {
+      "clip": "idle",
+      "duration": 1.0,
+      "speech": {
+        "pool": "hungry",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "sprint",
+      "duration": 2.0,
+      "motion": {
+        "type": "exit",
+        "to": "opposite_offscreen",
+        "speed": 230,
+        "curve": "linear"
+      }
+    }
+  ]
+}

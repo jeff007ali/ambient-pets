@@ -1,0 +1,43 @@
+{
+  "id": "stroll",
+  "name": "Stroll",
+  "tier": "quick",
+  "weight": 1.0,
+  "tags": [
+    "explore"
+  ],
+  "cooldownMinutes": 10,
+  "region": "bottom_edge",
+  "steps": [
+    {
+      "clip": "a_walk",
+      "duration": 2.0,
+      "motion": {
+        "type": "moveTo",
+        "from": "side_offscreen",
+        "to": "anchor",
+        "speed": 70,
+        "curve": "linear"
+      }
+    },
+    {
+      "clip": "a_idle",
+      "duration": 1.6,
+      "facing": "toward_center",
+      "speech": {
+        "pool": "watch",
+        "chance": 0.5
+      }
+    },
+    {
+      "clip": "a_fist_up",
+      "duration": 1.0,
+      "motion": {
+        "type": "exit",
+        "to": "top_offscreen",
+        "curve": "easeIn"
+      },
+      "sound": "whoosh"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "formatVersion": 1,
+  "id": "wolverine",
+  "name": "Wolverine",
+  "version": "0.1.0",
+  "renderer": "sprite",
+  "height": 72,
+  "personality": {
+    "activity": 1.0,
+    "friendliness": 0.3,
+    "mischievousness": 0.6,
+    "interaction": 0.5,
+    "curiosity": 0.5
+  },
+  "capabilities": {
+    "canWalk": true,
+    "cursorTracking": true,
+    "multiMonitor": true
+  },
+  "sounds": {
+    "boom": "sounds/boom.wav",
+    "snikt": "sounds/snikt.wav",
+    "swish": "sounds/swish.wav",
+    "thud": "sounds/thud.wav",
+    "whoosh": "sounds/whoosh.wav"
+  }
+}
